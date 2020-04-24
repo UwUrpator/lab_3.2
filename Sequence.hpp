@@ -12,7 +12,7 @@ public:
 public:
 	virtual void Prepend(T value) = 0;
 	virtual void Append(T value) = 0;
-	virtual void InsertAt(const int index, T value) = 0;
+	virtual void InsertAt(T value, const int index) = 0;
 	virtual void RemoveAt(const int index) = 0;
 	virtual void Remove(T value) = 0;
 	virtual void RemoveAll(T value)  = 0;

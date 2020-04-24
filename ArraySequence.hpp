@@ -18,20 +18,23 @@ public:
         this->count = count;
 	}
 
-	ArraySequence(const Sequence<T>& other) {
-	    DynamicArray<T>* castedArray = static_cast<DynamicArray<T>*>(*other);
+	ArraySequence(Sequence<T>& other) {
+	    ArraySequence<T>* castedArray = static_cast<ArraySequence<T>*>(&other);
 
 	    if (castedArray) {
-            this->items = castedArray;
+            this->items = new DynamicArray<T>(*castedArray->items);
+            this->count = castedArray->GetLength();
+
+            return;
 	    }
-	    else {
-            DynamicArray<T>* newArray = new DynamicArray<T>(other.GetLength());
-	        for (int i = 0; i < other.GetLength(); ++i) {
-                (*newArray)[i] = other.Get(i);
-	        }
-            this->items = newArray;
-            this->count = other.GetLength();
+
+	    int newLength = other.GetLength();
+	    DynamicArray<T>* newArray = new DynamicArray<T>(newLength);
+        for (int i = 0; i < other.GetLength(); ++i) {
+            (*newArray)[i] = other.Get(i);
         }
+        this->items = newArray;
+        this->count = newLength;
 	}
 
 	ArraySequence(const DynamicArray<T>* other) {
@@ -85,7 +88,7 @@ public:
         this->count++;
 	}
 
-	virtual void InsertAt(const int index, T value) override {
+	virtual void InsertAt(T value, const int index) override {
 	    this->items->Resize(this->count + 1);
         for (int i = this->count; i > index + 1; --i) {
             (*(this->items))[i] = (*(this->items))[i-1];

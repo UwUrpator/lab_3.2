@@ -6,6 +6,7 @@ CMakeFiles/lab_2_my.dir/main.cpp.obj: ../DynamicArray.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../Exception.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../LinearForm.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../LinkedList.hpp
+CMakeFiles/lab_2_my.dir/main.cpp.obj: ../ListSequence.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../Node.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../Optional.hpp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../Sequence.hpp

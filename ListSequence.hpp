@@ -55,9 +55,11 @@ public:
     }
 
     virtual Sequence<T>* GetSubsequence(const int start_index, const int end_index) const override {
-        ListSequence<T>* newListSeq = this->GetSubsequence(start_index, end_index);
+        ListSequence<T>* subsequence = new ListSequence<T>();
 
-        return newListSeq;
+        subsequence->items = this->items->GetSubList(start_index, end_index);
+
+        return subsequence;
     }
 
     virtual void Prepend(T value) override {
@@ -89,7 +91,7 @@ public:
         ListSequence<T>* castedList = static_cast<ListSequence<T>*>(other);
 
         if (castedList) {
-            newSequence->items->Concat(castedList->items);
+            newSequence->items = newSequence->items->Concat(castedList->items);
         }
         else {
             for (int i = 0; i < castedList->GetLength(); i++) {
