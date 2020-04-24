@@ -27,11 +27,16 @@ int main() {
 
     cout << seq->Get(6);*/
 
-    Sequence<char>* seq = new ArraySequence<char>(arr1, 3);
-    ArraySequence<char>* arrSeq = new ArraySequence<char>(*seq);
+    Sequence<char>* seq = new ListSequence<char>(arr1, 3);
+    /*ArraySequence<char>* arrSeq = new ArraySequence<char>(*seq);
 
     cout << "Check seq -> arrSeq" << endl;
-    cout << "Expected: " << seq->GetLast() << " Reality: " << arrSeq->GetLast();
+    cout << "Expected: " << seq->GetLast() << " Reality: " << arrSeq->GetLast();*/
+
+    ListSequence<char>* listSeq = new ListSequence<char>(*seq);
+
+    cout << "Check seq -> arrSeq" << endl;
+    cout << "Expected: " << seq->GetLast() << " Reality: " << listSeq->GetLast();
 
     return 0;
 }

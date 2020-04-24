@@ -30,7 +30,7 @@ public:
 
 	    int newLength = other.GetLength();
 	    DynamicArray<T>* newArray = new DynamicArray<T>(newLength);
-        for (int i = 0; i < other.GetLength(); ++i) {
+        for (int i = 0; i < newLength; ++i) {
             (*newArray)[i] = other.Get(i);
         }
         this->items = newArray;

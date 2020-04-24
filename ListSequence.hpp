@@ -19,16 +19,23 @@ public:
         this->items = new LinkedList<T>(*other.items);
         this->count = other.GetLength();
     }
-    ListSequence(const Sequence<T>& other) {
-        ListSequence<T>* castedList = static_cast<ListSequence<T>*>(*other);
+    ListSequence(Sequence<T>& other) {
+        ListSequence<T>* castedList = static_cast<ListSequence<T>*>(&other);
 
         if (castedList) {
-            this->items = castedList;
+            this->items = new LinkedList<T>(*castedList->items);
+            this->count = castedList->GetLength();
+
+            return;
         }
-        else {
-            this->items = new ListSequence<T>(*other.items);
-            this->count = other.GetLength();
+
+        int newLength = other.GetLength();
+        LinkedList<T>* newList = new LinkedList<T>();
+        for (int i = 0; i < newLength; ++i) {
+            newList->Append(other.Get(i));
         }
+        this->items = newList;
+        this->count = newLength;
     }
 
     ListSequence() {
