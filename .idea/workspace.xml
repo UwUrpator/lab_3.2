@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="lab_2_my" targetName="lab_2_my" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="82403ca3-75cf-4c62-a1f3-a6487e284cb2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1adomPbSGCQ0YRFm4JKBfpTnvvW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ConsoleApplication1" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="lab_2_my" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="lab_2_my" TARGET_NAME="lab_2_my" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="lab_2_my" RUN_TARGET_NAME="lab_2_my">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82403ca3-75cf-4c62-a1f3-a6487e284cb2" name="Default Changelist" comment="" />
+      <created>1587074989081</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587074989081</updated>
+      <workItem from="1587074991143" duration="231000" />
+      <workItem from="1587124871581" duration="1578000" />
+      <workItem from="1587126505728" duration="134000" />
+      <workItem from="1587127604914" duration="49278000" />
+      <workItem from="1587294242255" duration="9468000" />
+      <workItem from="1587396058589" duration="31510000" />
+      <workItem from="1587547885533" duration="18367000" />
+      <workItem from="1587639020593" duration="1061000" />
+      <workItem from="1587659229543" duration="7215000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="214" width="802" height="672" key="#Vim_Emulation" timestamp="1587126439707">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="555" y="214" width="802" height="672" key="#Vim_Emulation/0.25.1920.1055@0.25.1920.1055" timestamp="1587126439707" />
+    <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl" timestamp="1587740062241">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1587740062241" />
+    <state width="1872" height="199" key="GridCell.Tab.0.bottom" timestamp="1587637999747">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1872" height="199" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
+    <state width="1872" height="199" key="GridCell.Tab.0.center" timestamp="1587637999746">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1872" height="199" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999746" />
+    <state width="1872" height="199" key="GridCell.Tab.0.left" timestamp="1587637999745">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1872" height="199" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999745" />
+    <state width="1872" height="199" key="GridCell.Tab.0.right" timestamp="1587637999747">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1872" height="199" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
+    <state x="449" y="188" key="SettingsEditor" timestamp="1587126149968">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="449" y="188" key="SettingsEditor/0.25.1920.1055@0.25.1920.1055" timestamp="1587126149968" />
+    <state x="616" y="265" width="842" height="650" key="find.popup" timestamp="1587742014102">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="616" y="265" width="842" height="650" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1587742014102" />
+    <state x="623" y="255" key="run.anything.popup" timestamp="1587493346904">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="623" y="255" key="run.anything.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1587493346904" />
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup" timestamp="1587493372764">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="623" y="258" width="672" height="678" key="search.everywhere.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1587493372764" />
+  </component>
+</project>
