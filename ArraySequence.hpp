@@ -19,12 +19,24 @@ public:
 	}
 
 	ArraySequence(const Sequence<T>& other) {
-	    DynamicArray<T>* dynArr = static_cast<DynamicArray<T>*>(*other);
-	    if (dynArr) {
+	    DynamicArray<T>* castedArray = static_cast<DynamicArray<T>*>(*other);
 
+	    if (castedArray) {
+            this->items = castedArray;
 	    }
-	    this->items = new DynamicArray<T>(*other.items);
-        this->count = other.GetLength();
+	    else {
+            DynamicArray<T>* newArray = new DynamicArray<T>(other.GetLength());
+	        for (int i = 0; i < other.GetLength(); ++i) {
+                (*newArray)[i] = other.Get(i);
+	        }
+            this->items = newArray;
+            this->count = other.GetLength();
+        }
+	}
+
+	ArraySequence(const DynamicArray<T>* other) {
+	    this->items = new DynamicArray<T>(other);
+	    this->count = other->GetSize;
 	}
 
 	virtual T GetLength() const override

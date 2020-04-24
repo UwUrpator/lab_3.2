@@ -6,65 +6,65 @@
 
 #IncludeRegexTransform: 
 
-/home/uwurpator/mephi/c_labs/lab_2_my/ArraySequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/ArraySequence.hpp
 Sequence.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Sequence.hpp
 DynamicArray.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/DynamicArray.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/DynamicArray.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/DynamicArray.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/DynamicArray.hpp
 iostream
 -
 Optional.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Optional.hpp
 Exception.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 iostream
-/home/uwurpator/mephi/c_labs/lab_2_my/iostream
+C:/Users/Uzurpator/CLionProjects/lab2/iostream
 
-/home/uwurpator/mephi/c_labs/lab_2_my/LinearForm.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/LinearForm.hpp
 iostream
 -
 Sequence.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Sequence.hpp
 ArraySequence.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/ArraySequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/ArraySequence.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/LinkedList.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/LinkedList.hpp
 iostream
 -
 Optional.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Optional.hpp
 Node.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Node.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Node.hpp
 Exception.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/Node.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Node.hpp
 iostream
 -
 Optional.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Optional.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Optional.hpp
 Exception.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 iostream
 -
 
-/home/uwurpator/mephi/c_labs/lab_2_my/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Sequence.hpp
 
-/home/uwurpator/mephi/c_labs/lab_2_my/main.cpp
+C:/Users/Uzurpator/CLionProjects/lab2/main.cpp
 iostream
 -
 DynamicArray.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/DynamicArray.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/DynamicArray.hpp
 LinkedList.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/LinkedList.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/LinkedList.hpp
 ArraySequence.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/ArraySequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/ArraySequence.hpp
 LinearForm.hpp
-/home/uwurpator/mephi/c_labs/lab_2_my/LinearForm.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/LinearForm.hpp
 

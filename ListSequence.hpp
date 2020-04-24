@@ -19,6 +19,17 @@ public:
         this->items = new LinkedList<T>(*other.items);
         this->count = other.GetLength();
     }
+    ListSequence(const Sequence<T>& other) {
+        ListSequence<T>* castedList = static_cast<ListSequence<T>*>(*other);
+
+        if (castedList) {
+            this->items = castedList;
+        }
+        else {
+            this->items = new ListSequence<T>(*other.items);
+            this->count = other.GetLength();
+        }
+    }
 
     ListSequence() {
         this->items = new LinkedList<T>();
@@ -79,7 +90,8 @@ public:
 
         if (castedList) {
             newSequence->items->Concat(castedList->items);
-        } else {
+        }
+        else {
             for (int i = 0; i < castedList->GetLength(); i++) {
                 newSequence->Append(other->Get(i));
             }
