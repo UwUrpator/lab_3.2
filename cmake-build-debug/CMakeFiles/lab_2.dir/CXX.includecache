@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+iostream
+C:/Users/Uzurpator/CLionProjects/lab2/iostream
+
+C:/Users/Uzurpator/CLionProjects/lab2/main.cpp
+iostream
+-
+source/DynamicArray/DynamicArray.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
+iostream
+-
+../../Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
+../../Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+

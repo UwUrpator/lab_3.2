@@ -57,6 +57,7 @@ include CMakeFiles/lab_2_my.dir/progress.make
 include CMakeFiles/lab_2_my.dir/flags.make
 
 CMakeFiles/lab_2_my.dir/main.cpp.obj: CMakeFiles/lab_2_my.dir/flags.make
+CMakeFiles/lab_2_my.dir/main.cpp.obj: CMakeFiles/lab_2_my.dir/includes_CXX.rsp
 CMakeFiles/lab_2_my.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab_2_my.dir/main.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\lab_2_my.dir\main.cpp.obj -c C:\Users\Uzurpator\CLionProjects\lab2\main.cpp

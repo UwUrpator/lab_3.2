@@ -52,7 +52,7 @@ CMAKE_BINARY_DIR = C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/lab_2_my.dir/all
+all: CMakeFiles/lab_2.dir/all
 
 .PHONY : all
 
@@ -62,36 +62,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/lab_2_my.dir/clean
+clean: CMakeFiles/lab_2.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/lab_2_my.dir
+# Target rules for target CMakeFiles/lab_2.dir
 
 # All Build rule for target.
-CMakeFiles/lab_2_my.dir/all:
-	$(MAKE) -f CMakeFiles\lab_2_my.dir\build.make CMakeFiles/lab_2_my.dir/depend
-	$(MAKE) -f CMakeFiles\lab_2_my.dir\build.make CMakeFiles/lab_2_my.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target lab_2_my"
-.PHONY : CMakeFiles/lab_2_my.dir/all
+CMakeFiles/lab_2.dir/all:
+	$(MAKE) -f CMakeFiles\lab_2.dir\build.make CMakeFiles/lab_2.dir/depend
+	$(MAKE) -f CMakeFiles\lab_2.dir\build.make CMakeFiles/lab_2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target lab_2"
+.PHONY : CMakeFiles/lab_2.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/lab_2_my.dir/rule: cmake_check_build_system
+CMakeFiles/lab_2.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug\CMakeFiles 2
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/lab_2_my.dir/all
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/lab_2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Uzurpator\CLionProjects\lab2\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/lab_2_my.dir/rule
+.PHONY : CMakeFiles/lab_2.dir/rule
 
 # Convenience name for target.
-lab_2_my: CMakeFiles/lab_2_my.dir/rule
+lab_2: CMakeFiles/lab_2.dir/rule
 
-.PHONY : lab_2_my
+.PHONY : lab_2
 
 # clean rule for target.
-CMakeFiles/lab_2_my.dir/clean:
-	$(MAKE) -f CMakeFiles\lab_2_my.dir\build.make CMakeFiles/lab_2_my.dir/clean
-.PHONY : CMakeFiles/lab_2_my.dir/clean
+CMakeFiles/lab_2.dir/clean:
+	$(MAKE) -f CMakeFiles\lab_2.dir\build.make CMakeFiles/lab_2.dir/clean
+.PHONY : CMakeFiles/lab_2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

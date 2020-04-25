@@ -3,4 +3,16 @@ project(lab_2_my)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(lab_2_my main.cpp Optional.hpp DynamicArray.hpp Exception.hpp Node.hpp LinkedList.hpp ArraySequence.hpp ListSequence.hpp LinearForm.hpp)
+include_directories(source)
+
+set(SOURCE_FILES
+        main.cpp
+        source/DynamicArray/DynamicArray.hpp
+        source/DynamicArray/Optional.hpp
+        source/LinearForm/LinearForm.hpp
+        source/LinkedList/LinkedList.hpp
+        source/ListSequence/ListSequence.hpp
+        source/Sequence/Sequence.hpp
+        )
+
+add_executable(lab_2 ${SOURCE_FILES})

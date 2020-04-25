@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/lab_2_my.dir/includes_CXX.rsp
+CXX_INCLUDES = 
 
