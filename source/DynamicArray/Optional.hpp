@@ -83,4 +83,8 @@ Optional<T>::Optional() {
     this->hasValue = false;
 }
 
+template<class T>
+bool Optional<T>::emptyIsSet;
 
+template<class T>
+Optional<T>* Optional<T>::empty;
