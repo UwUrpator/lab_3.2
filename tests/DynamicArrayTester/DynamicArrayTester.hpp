@@ -22,6 +22,10 @@ public:
     void TestConstructor2();
 
     void TestConstructor3();
+
+    void TestGetSize();
+
+    void TestResize();
 };
 
 DynamicArrayTester::DynamicArrayTester() {
@@ -41,6 +45,9 @@ DynamicArrayTester::DynamicArrayTester() {
     TestConstructor1();
     TestConstructor2();
     TestConstructor3();
+
+    TestGetSize();
+    TestResize();
 }
 
 void DynamicArrayTester::TestConstructor1() {
@@ -64,6 +71,8 @@ void DynamicArrayTester::TestConstructor1() {
         cout << "Success: DynamicArray(T* items, int size); passed: dummyCharArr, dummyCharArrLen" << endl;
     }
 
+    isError = false;
+
     DynamicArray<DummyClass> *darrClass = new DynamicArray<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
 
     for (int i = 0; i < dummyClassArrLen; ++i) {
@@ -81,6 +90,8 @@ void DynamicArrayTester::TestConstructor1() {
     if (!isError) {
         cout << "Success: DynamicArray(T* items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
     }
+
+    isError = false;
 
     try {
         DynamicArray<char> *darr_zero = new DynamicArray<char>(this->dummyCharArr, 0);
@@ -111,6 +122,8 @@ void DynamicArrayTester::TestConstructor2() {
         cout << "Error: DynamicArray(const int size); passed: dummyCharArrLen" << endl <<
              "Item is not Empty";
     }
+
+    isError = false;
 
     try {
         DynamicArray<char> *darr_zero = new DynamicArray<char>(0);
@@ -147,6 +160,8 @@ void DynamicArrayTester::TestConstructor3() {
         cout << "Success: DynamicArray(const DynamicArray<T> &array); passed: darrChar (array of chars)" << endl;
     }
 
+    isError = false;
+
     (*darrChar)[0] = 'z';
 
     if (darrChar->Get(0) == darrCharCopied->Get(0)) {
@@ -163,6 +178,7 @@ void DynamicArrayTester::TestConstructor3() {
                 << endl;
     }
 
+    isError = false;
 
     DynamicArray<DummyClass> *darrClass = new DynamicArray<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
     DynamicArray<DummyClass> *darrClassCopied = new DynamicArray<DummyClass>(*darrClass);
@@ -184,6 +200,8 @@ void DynamicArrayTester::TestConstructor3() {
         cout << "Success: DynamicArray(const DynamicArray<T> &array); passed: darrClass (array of DummyClass)" << endl;
     }
 
+    isError = false;
+
     DummyClass *newArr = this->dummyClassArr;
     newArr[0] = *(new DummyClass(456));
     darrClass = new DynamicArray<DummyClass>(newArr, this->dummyClassArrLen);
@@ -204,3 +222,76 @@ void DynamicArrayTester::TestConstructor3() {
     }
 }
 
+void DynamicArrayTester::TestGetSize() {
+    bool isError = false;
+
+    DynamicArray<char> *darrChar = new DynamicArray<char>(this->dummyCharArr, this->dummyCharArrLen);
+
+    int darrCharSize = darrChar->GetSize();
+    if (this->dummyCharArrLen == darrCharSize) {
+        cout << "Success: DynamicArray::GetSize(); returns correct size" << endl;
+    } else {
+        isError = true;
+
+        cout << "Error: DynamicArray::GetSize(); returns uncorrect size" << endl << "Expected: "
+             << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
+    }
+
+    isError = false;
+
+    DynamicArray<char> *darrCharEmpty = new DynamicArray<char>(this->dummyCharArrLen);
+
+    int darrCharEmptySize = darrCharEmpty->GetSize();
+    if (this->dummyCharArrLen == darrCharEmptySize) {
+        cout << "Success: DynamicArray::GetSize(); returns correct size of empty array" << endl;
+    } else {
+        isError = true;
+
+        cout << "Error: DynamicArray::GetSize(); returns uncorrect size of empty array" << endl << "Expected: "
+             << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
+    }
+}
+
+void DynamicArrayTester::TestResize() {
+    bool isError = false;
+
+    DynamicArray<char>* darrChar = new DynamicArray<char>(this->dummyCharArr, this->dummyClassArrLen);
+
+    try {
+        darrChar->Resize(0);
+        isError = true;
+    } catch (...) {
+        cout << "Success: DynamicArray::Resize(int newSize); array of 0 length was not created" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: DynamicArray::Resize(int newSize); array of 0 length was created" << endl;
+    }
+
+    isError = false;
+
+    darrChar->Resize(1);
+    if (darrChar->GetSize() == 1 && darrChar->Get(0) == this->dummyCharArr[0]) {
+        cout << "Success: DynamicArray::Resize(int newSize); new size 1" << endl;
+    } else {
+        cout << "Error: DynamicArray::Resize(int newSize); new size was not set correctly" << endl;
+    }
+
+    isError = false;
+
+    darrChar->Resize(2);
+    if (darrChar->GetSize() == 2 && darrChar->Get(0) == this->dummyCharArr[0]) {
+        try {
+            darrChar->Get(1);
+            isError = true;
+        } catch (...) {
+            cout << "Success: DynamicArray::Resize(int newSize); new size 2" << endl;
+        }
+
+        if (isError) {
+            cout << "Error: DynamicArray::Resize(int newSize); new size 2 was not set correctly" << endl;
+        }
+    } else {
+        cout << "Error: DynamicArray::Resize(int newSize); new size 2 was not set correctly" << endl;
+    }
+}
