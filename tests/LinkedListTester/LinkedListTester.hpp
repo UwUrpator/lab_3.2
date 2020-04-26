@@ -27,6 +27,10 @@ public:
     void TestGetLast();
 
     void TestGet();
+
+    void TestGetSubList();
+
+    void TestGetLength();
 };
 
 LinkedListTester::LinkedListTester() {
@@ -50,6 +54,8 @@ LinkedListTester::LinkedListTester() {
     TestGetFirst();
     TestGetLast();
     TestGet();
+    TestGetSubList();
+    TestGetLength();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -312,4 +318,91 @@ void LinkedListTester::TestGet() {
     if (!isError) {
         cout << "Success: LinkedList::Get(int index); Correct index item" << endl;
     }
+}
+
+void LinkedListTester::TestGetSubList() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        llistCharEmpty->GetSubList(0, 1);
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::GetSubList(int start_index, int end_index); Sublist from empty list was not gotten"
+             << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::GetSubList(int start_index, int end_index); Sublist from empty list was gotten"
+             << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    try {
+        llistChar->GetSubList(-1, 100);
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::GetSubList(int start_index, int end_index); Sublist with incorrect borders was not gotten"
+             << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::GetSubList(int start_index, int end_index); Sublist with incorrect borders was gotten"
+             << endl;
+    }
+
+    isError = false;
+
+    int start_index = 0;
+    int end_index = 1;
+    LinkedList<char> *subList = llistChar->GetSubList(start_index, end_index);
+    for (int i = start_index; i < end_index; ++i) {
+        char expectedItem = this->dummyCharArr[i];
+        char recievedItem = subList->Get(i);
+        if (expectedItem != recievedItem) {
+            cout << "Error: LinkedList::GetSubList(int start_index, int end_index); Sublist is incorrect" << endl;
+
+            isError = true;
+            break;
+        }
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::GetSubList(int start_index, int end_index); Sublist is correct" << endl;
+    }
+}
+
+void LinkedListTester::TestGetLength() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        llistCharEmpty->GetLength();
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::TestGetLength(); Length of empty list was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::TestGetLength(); Length of empty list was gotten" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+
+    int expectedLen = this->dummyCharArrLen;
+    int recievedLen = llistChar->GetLength();
+
+    if (expectedLen != recievedLen) {
+        cout << "Error: LinkedList::TestGetLength(); Length of list is incorrect" << endl;
+        isError = true;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::TestGetLength(); Length of list is correct" << endl;
+    }
+
 }
