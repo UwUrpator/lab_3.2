@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+../source/DynamicArray/DynamicArray.hpp
+iostream
+-
+../../Exception.hpp
+../Exception.hpp
+Optional.hpp
+../source/DynamicArray/Optional.hpp
+
 C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 iostream
 C:/Users/Uzurpator/CLionProjects/lab2/iostream
@@ -15,6 +23,10 @@ iostream
 -
 source/DynamicArray/DynamicArray.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
+source/LinkedList/LinkedList.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
+tests/DynamicArrayTester/DynamicArrayTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 iostream
@@ -27,4 +39,30 @@ C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
 ../../Exception.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
+iostream
+-
+Node.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
+../../Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
+iostream
+-
+../DynamicArray/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+iostream
+-
+
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+iostream
+-
+../source/DynamicArray/DynamicArray.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/DynamicArray/DynamicArray.hpp
+../DummyClass/DummyClass.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
 

@@ -97,10 +97,19 @@
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp">
 			<Option target="lab_2"/>
 		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/ListSequence/ListSequence.hpp">
 			<Option target="lab_2"/>
 		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp">
+			<Option target="lab_2"/>
+		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp">
+			<Option target="lab_2"/>
+		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp">
 			<Option target="lab_2"/>
 		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/CMakeLists.txt">

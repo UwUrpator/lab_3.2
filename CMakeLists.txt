@@ -11,8 +11,9 @@ set(SOURCE_FILES
         source/DynamicArray/Optional.hpp
         source/LinearForm/LinearForm.hpp
         source/LinkedList/LinkedList.hpp
+        source/LinkedList/Node.hpp
         source/ListSequence/ListSequence.hpp
         source/Sequence/Sequence.hpp
-        )
+        tests/DynamicArrayTester/DynamicArrayTester.hpp tests/DummyClass/DummyClass.hpp)
 
 add_executable(lab_2 ${SOURCE_FILES})

@@ -4,9 +4,12 @@
 
 class Exception
 {
+private:
+    std::string message;
+
 public:
-    Exception()
+    Exception(std::string msg = "Exception")
     {
-        std::cout << "Exception\n";
+        this->message = msg;
     }
 };

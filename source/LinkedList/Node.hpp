@@ -1,22 +1,22 @@
 #pragma once
 
 #include <iostream>
-#include "../DynamicArray/Optional.h"
+#include "../DynamicArray/Optional.hpp"
 
 using namespace std;
 
 template<class T>
 class Node {
 public:
-    Optional<T> *value;
+    T *value;
     Node *next;
 
     Node(T value);
 };
 
 template<class T>
-Node::Node(T value) {
-    this->value = static_cast<Optional<T> *>(operator new(sizeof(Optional<T>)));
-    *(this->value) = value;
+Node<T>::Node(T value) {
+    this->value = static_cast<T*>(operator new[](sizeof(T)));
+    *this->value = value;
     this->next = NULL;
 }
