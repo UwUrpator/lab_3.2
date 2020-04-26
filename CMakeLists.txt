@@ -14,6 +14,9 @@ set(SOURCE_FILES
         source/LinkedList/Node.hpp
         source/ListSequence/ListSequence.hpp
         source/Sequence/Sequence.hpp
-        tests/DynamicArrayTester/DynamicArrayTester.hpp tests/DummyClass/DummyClass.hpp)
+        tests/DummyClass/DummyClass.hpp
+        tests/DynamicArrayTester/DynamicArrayTester.hpp
+        tests/LinkedListTester/LinkedListTester.hpp
+        )
 
 add_executable(lab_2 ${SOURCE_FILES})

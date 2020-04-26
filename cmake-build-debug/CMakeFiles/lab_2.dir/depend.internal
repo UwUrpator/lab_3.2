@@ -3,6 +3,7 @@
 
 CMakeFiles/lab_2.dir/main.cpp.obj
  ../source/DynamicArray/DynamicArray.hpp
+ ../source/LinkedList/LinkedList.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/main.cpp
  C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
@@ -11,3 +12,4 @@ CMakeFiles/lab_2.dir/main.cpp.obj
  C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+ C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp

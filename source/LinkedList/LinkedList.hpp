@@ -46,6 +46,10 @@ public:
 
 template<class T>
 LinkedList<T>::LinkedList(T *items, int size) {
+    if (size < 1) {
+        throw new Exception;
+    }
+
     Node<T> *tmp = new Node<T>(items[0]);
 
     head = tmp;
