@@ -119,6 +119,21 @@ void LinkedListTester::TestConstructor2() {
 void LinkedListTester::TestConstructor3() {
     bool isError = false;
 
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        LinkedList<char> *llistEmpty = new LinkedList<char>(*llistCharEmpty);
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList(const LinkedList<T> &list); passed: llistCharEmpty (empty list)" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList(const LinkedList<T> &list); passed: llistCharEmpty (empty list)" << endl
+             << "Empty list was copied";
+    }
+
+    isError = false;
+
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
     LinkedList<char> *llistCharCopied = new LinkedList<char>(*llistChar);
 
@@ -126,8 +141,8 @@ void LinkedListTester::TestConstructor3() {
         char expectedItem = this->dummyCharArr[i];
         char recievedItem = llistCharCopied->Get(i);
         if (expectedItem != recievedItem) {
-            cout << "Error: LinkedList(const LinkedList<T> &list); passed: llistChar (list of chars)" << endl <<
-                 "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+            cout << "Error: LinkedList(const LinkedList<T> &list); passed: llistChar (list of chars)" << endl
+                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
 
             isError = true;
             break;
