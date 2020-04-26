@@ -78,7 +78,7 @@ LinkedListTester::LinkedListTester() {
     TestRemoveAt();
     TestRemove();
     TestRemoveAll();
-    //TestConcat();
+    TestConcat();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -533,6 +533,7 @@ void LinkedListTester::TestAppend() {
     } catch (...) {
         cout << "Error: LinkedList::Append(T item); Appended char to empty list" << endl
              << "Length error" << endl;
+        isError = true;
     }
 
     if (!isError) {
@@ -573,6 +574,7 @@ void LinkedListTester::TestInsertAt() {
     } catch (...) {
         cout << "Error: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl
              << "Length error" << endl;
+        isError = true;
     }
 
     if (!isError) {
@@ -612,6 +614,7 @@ void LinkedListTester::TestRemoveAt() {
     } catch (...) {
         cout << "Error: LinkedList::RemoveAt(int index); Removed char at index of list" << endl
              << "Length error" << endl;
+        isError = true;
     }
 
     if (!isError) {
@@ -647,6 +650,7 @@ void LinkedListTester::TestRemove() {
     } catch (...) {
         cout << "Error: LinkedList::Remove(T value); Removed char by its value of list" << endl
              << "Length error" << endl;
+        isError = true;
     }
 
     if (!isError) {
@@ -681,9 +685,46 @@ void LinkedListTester::TestRemoveAll() {
     } catch (...) {
         cout << "Error: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl
              << "Length error" << endl;
+        isError = true;
     }
 
     if (!isError) {
         cout << "Success: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl;
+    }
+}
+
+void LinkedListTester::TestConcat() {
+    bool isError = false;
+
+    char recievedItem;
+    char expectedItem;
+
+    LinkedList<char>* llistChar1 = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    LinkedList<char>* llistChar2 = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+
+    llistChar1 = llistChar1->Concat(llistChar2);
+
+    int expectedLen = this->dummyCharArrLen * 2;
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar1->Get(i);
+
+            expectedItem = this->dummyCharArr[i % 3];
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::Concat(LinkedList<T> *list); Concated 2 same lists" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::Concat(LinkedList<T> *list); Concated 2 same lists" << endl
+             << "Length error" << endl;
+        isError = true;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Concat(LinkedList<T> *list); Concated 2 same lists" << endl;
     }
 }
