@@ -21,6 +21,10 @@ public:
     void TestConstructor2();
 
     void TestConstructor3();
+
+    void TestGetFirst();
+
+    void TestGetLast();
 };
 
 LinkedListTester::LinkedListTester() {
@@ -40,6 +44,9 @@ LinkedListTester::LinkedListTester() {
     TestConstructor1();
     TestConstructor2();
     TestConstructor3();
+
+    TestGetFirst();
+    TestGetLast();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -210,3 +217,62 @@ void LinkedListTester::TestConstructor3() {
     }
 }
 
+void LinkedListTester::TestGetFirst() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        llistCharEmpty->GetFirst();
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::GetFirst(); First item of empty list was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::GetFirst(); First item of empty list was gotten" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyClassArrLen);
+    char expectedItem = this->dummyCharArr[0];
+    char recievedItem = llistChar->GetFirst();
+
+    if (expectedItem != recievedItem) {
+        cout << "Error: LinkedList::GetFirst(); Wrong first item" << endl
+             << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+        isError = true;
+    } else {
+        cout << "Success: LinkedList::GetFirst(); Correct first element" << endl;
+    }
+}
+
+void LinkedListTester::TestGetLast() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        llistCharEmpty->GetLast();
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::GetLast(); Last item of empty list was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::GetLast(); Last item of empty list was gotten" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    char expectedItem = this->dummyCharArr[this->dummyCharArrLen - 1];
+    char recievedItem = llistChar->GetLast();
+
+    if (expectedItem != recievedItem) {
+        cout << "Error: LinkedList::GetLast(); Wrong last item" << endl
+             << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+        isError = true;
+    } else {
+        cout << "Success: LinkedList::GetLast(); Correct last element" << endl;
+    }
+}
