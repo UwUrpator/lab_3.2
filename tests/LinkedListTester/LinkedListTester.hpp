@@ -31,6 +31,12 @@ public:
     void TestGetSubList();
 
     void TestGetLength();
+
+    void TestPrepend();
+
+    void TestAppend();
+
+    void TestInsertAt();
 };
 
 LinkedListTester::LinkedListTester() {
@@ -56,6 +62,10 @@ LinkedListTester::LinkedListTester() {
     TestGet();
     TestGetSubList();
     TestGetLength();
+
+    TestPrepend();
+    TestAppend();
+    TestInsertAt();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -403,6 +413,157 @@ void LinkedListTester::TestGetLength() {
 
     if (!isError) {
         cout << "Success: LinkedList::TestGetLength(); Length of list is correct" << endl;
+    }
+
+}
+
+void LinkedListTester::TestPrepend() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+
+    char expectedItem = 'z';
+    llistCharEmpty->Prepend(expectedItem);
+
+    char recievedItem = llistCharEmpty->GetFirst();
+    int recievedLen = llistCharEmpty->GetLength();
+    if (expectedItem != recievedItem || recievedLen != 1) {
+        cout << "Error: LinkedList::Prepend(T item); Prepended char to empty list" << endl
+             << "Expected: " << expectedItem << " Recieved " << recievedItem << " Expected length " << recievedLen << endl;
+
+        isError = true;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Prepend(T item); Prepended char to empty list" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->Prepend('z');
+
+    int expectedLen = this->dummyCharArrLen + 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            if (i == 0) {
+                expectedItem = 'z';
+            } else {
+                expectedItem = this->dummyCharArr[i - 1];
+            }
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::Prepend(T item); Prepended char to list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::Prepend(T item); Prepended char to empty list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Prepend(T item); Prepended char to list" << endl;
+    }
+}
+
+void LinkedListTester::TestAppend() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+
+    char expectedItem = 'z';
+    llistCharEmpty->Append(expectedItem);
+
+    char recievedItem = llistCharEmpty->GetFirst();
+    int recievedLen = llistCharEmpty->GetLength();
+    if (expectedItem != recievedItem || recievedLen != 1) {
+        cout << "Error: LinkedList::Append(T item); Appended char to empty list" << endl
+             << "Expected: " << expectedItem << " Recieved " << recievedItem << " Expected length " << recievedLen << endl;
+
+        isError = true;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Append(T item); Appended char to empty list" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->Append('z');
+
+    int expectedLen = this->dummyCharArrLen + 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            if (i == expectedLen - 1) {
+                expectedItem = 'z';
+            } else {
+                expectedItem = this->dummyCharArr[i];
+            }
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::Append(T item); Appended char to list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::Append(T item); Appended char to empty list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Append(T item); Appended char to list" << endl;
+    }
+}
+
+void LinkedListTester::TestInsertAt() {
+    bool isError = false;
+
+    char recievedItem;
+    char expectedItem;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->InsertAt('z', 1);
+
+    int expectedLen = this->dummyCharArrLen + 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            if (i < 1) {
+                expectedItem = this->dummyCharArr[i];
+            } else if (i == 1) {
+                expectedItem = 'z';
+            } else {
+                expectedItem = this->dummyCharArr[i - 1];
+            }
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl;
     }
 
 }
