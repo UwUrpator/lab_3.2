@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/main.cpp">
 			<Option target="lab_2"/>
 		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp">
 			<Option target="lab_2"/>
 		</Unit>

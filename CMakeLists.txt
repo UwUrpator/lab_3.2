@@ -7,6 +7,7 @@ include_directories(source)
 
 set(SOURCE_FILES
         main.cpp
+        source/ArraySequence/ArraySequence.hpp
         source/DynamicArray/DynamicArray.hpp
         source/DynamicArray/Optional.hpp
         source/LinearForm/LinearForm.hpp
