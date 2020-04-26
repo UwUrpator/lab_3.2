@@ -37,6 +37,14 @@ public:
     void TestAppend();
 
     void TestInsertAt();
+
+    void TestRemoveAt();
+
+    void TestRemove();
+
+    void TestRemoveAll();
+
+    void TestConcat();
 };
 
 LinkedListTester::LinkedListTester() {
@@ -66,6 +74,11 @@ LinkedListTester::LinkedListTester() {
     TestPrepend();
     TestAppend();
     TestInsertAt();
+
+    TestRemoveAt();
+    TestRemove();
+    TestRemoveAll();
+    //TestConcat();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -566,4 +579,111 @@ void LinkedListTester::TestInsertAt() {
         cout << "Success: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl;
     }
 
+}
+
+void LinkedListTester::TestRemoveAt() {
+    bool isError = false;
+
+    char recievedItem;
+    char expectedItem;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->RemoveAt(1);
+
+    int expectedLen = this->dummyCharArrLen - 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            if (i < 1) {
+                expectedItem = this->dummyCharArr[i];
+            } else if (i >= 1) {
+                expectedItem = this->dummyCharArr[i+1];
+            }
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::RemoveAt(int index); Removed char at index of list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::RemoveAt(int index); Removed char at index of list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::RemoveAt(int index); Removed char at index of list" << endl;
+    }
+
+}
+
+void LinkedListTester::TestRemove() {
+    bool isError = false;
+
+    char recievedItem;
+    char expectedItem;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->Remove('a');
+
+    int expectedLen = this->dummyCharArrLen - 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            expectedItem = this->dummyCharArr[i+1];
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::Remove(T value); Removed char by its value of list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::Remove(T value); Removed char by its value of list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::Remove(T value); Removed char by its value of list" << endl;
+    }
+}
+
+void LinkedListTester::TestRemoveAll() {
+    bool isError = false;
+
+    char recievedItem;
+    char expectedItem;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    llistChar->RemoveAll('a');
+
+    int expectedLen = this->dummyCharArrLen - 1;
+
+    try {
+        for (int i = 0; i < expectedLen; ++i) {
+            recievedItem = llistChar->Get(i);
+
+            expectedItem = this->dummyCharArr[i+1];
+            if (expectedItem != recievedItem) {
+                cout << "Error: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl
+                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+
+                isError = true;
+                return;
+            }
+        }
+    } catch (...) {
+        cout << "Error: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl
+             << "Length error" << endl;
+    }
+
+    if (!isError) {
+        cout << "Success: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl;
+    }
 }
