@@ -165,17 +165,14 @@ void DynamicArrayTester::TestConstructor3() {
     (*darrChar)[0] = 'z';
 
     if (darrChar->Get(0) == darrCharCopied->Get(0)) {
-        cout
-                << "Error: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
-                << endl <<
-                "Copied array changes after changing of source";
+        cout << "Error: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
+             << endl << "Copied array changes after changing of source";
         isError = true;
     }
 
     if (!isError) {
-        cout
-                << "Success: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
-                << endl;
+        cout << "Success: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
+             << endl;
     }
 
     isError = false;
@@ -188,8 +185,7 @@ void DynamicArrayTester::TestConstructor3() {
         DummyClass recievedItem = darrClassCopied->Get(i);
         if (expectedItem != recievedItem) {
             cout << "Error: DynamicArray(const DynamicArray<T> &array); passed: darrClass (array of DummyClass)" << endl
-                 <<
-                 "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
 
             isError = true;
             break;
@@ -210,15 +206,14 @@ void DynamicArrayTester::TestConstructor3() {
     DummyClass firstCopied = darrClassCopied->Get(0);
 
     if (firstSource == firstCopied) {
-        cout << "Error: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray" << endl <<
-             "Copied array changes after changing of source (array of DummyClass)";
+        cout << "Error: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray" << endl
+             << "Copied array changes after changing of source (array of DummyClass)";
         isError = true;
     }
 
     if (!isError) {
-        cout
-                << "Success: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of DummyClass)"
-                << endl;
+        cout << "Success: DynamicArray(const DynamicArray<T> &array); trying to change source DynamicArray (array of DummyClass)"
+             << endl;
     }
 }
 

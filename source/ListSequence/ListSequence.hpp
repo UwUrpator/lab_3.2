@@ -98,7 +98,7 @@ T ListSequence<T>::GetLast() const {
 
 template<class T>
 T ListSequence<T>::Get(const int index) const {
-    return this->items->GetIndex(index);
+    return this->items->Get(index);
 }
 
 template<class T>

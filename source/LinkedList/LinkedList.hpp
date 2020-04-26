@@ -23,7 +23,7 @@ public:
 
     T GetLast();
 
-    T GetIndex(int index);
+    T Get(int index);
 
     LinkedList<T> *GetSubList(int start_index, int end_index);
 
@@ -109,7 +109,7 @@ T LinkedList<T>::GetLast() {
 }
 
 template<class T>
-T LinkedList<T>::GetIndex(int index) {
+T LinkedList<T>::Get(int index) {
     if (index < 0 || index >= this->GetLength()) {
         throw new Exception;
     }
