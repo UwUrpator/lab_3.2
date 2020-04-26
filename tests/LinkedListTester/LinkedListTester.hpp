@@ -25,6 +25,8 @@ public:
     void TestGetFirst();
 
     void TestGetLast();
+
+    void TestGet();
 };
 
 LinkedListTester::LinkedListTester() {
@@ -47,6 +49,7 @@ LinkedListTester::LinkedListTester() {
 
     TestGetFirst();
     TestGetLast();
+    TestGet();
 }
 
 void LinkedListTester::TestConstructor1() {
@@ -243,7 +246,7 @@ void LinkedListTester::TestGetFirst() {
              << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
         isError = true;
     } else {
-        cout << "Success: LinkedList::GetFirst(); Correct first element" << endl;
+        cout << "Success: LinkedList::GetFirst(); Correct first item" << endl;
     }
 }
 
@@ -273,6 +276,40 @@ void LinkedListTester::TestGetLast() {
              << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
         isError = true;
     } else {
-        cout << "Success: LinkedList::GetLast(); Correct last element" << endl;
+        cout << "Success: LinkedList::GetLast(); Correct last item" << endl;
+    }
+}
+
+void LinkedListTester::TestGet() {
+    bool isError = false;
+
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    try {
+        llistCharEmpty->Get(1);
+        isError = true;
+    } catch (...) {
+        cout << "Success: LinkedList::Get(int index); Item of empty list was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: LinkedList::Get(int index); Item of empty list was gotten" << endl;
+    }
+
+    isError = false;
+
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    for (int i = 0; i < this->dummyCharArrLen; ++i) {
+        char expectedItem = this->dummyCharArr[i];
+        char recievedItem = llistChar->Get(i);
+
+        if (expectedItem != recievedItem) {
+            cout << "Error: LinkedList::Get(int index); Wrong index item" << endl
+                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+            isError = true;
+            break;
+        }
+    }
+    if (!isError) {
+        cout << "Success: LinkedList::Get(int index); Correct index item" << endl;
     }
 }

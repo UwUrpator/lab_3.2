@@ -26,6 +26,8 @@ public:
     void TestGetSize();
 
     void TestResize();
+
+    void TestGet();
 };
 
 DynamicArrayTester::DynamicArrayTester() {
@@ -48,6 +50,7 @@ DynamicArrayTester::DynamicArrayTester() {
 
     TestGetSize();
     TestResize();
+    TestGet();
 }
 
 void DynamicArrayTester::TestConstructor1() {
@@ -228,7 +231,7 @@ void DynamicArrayTester::TestGetSize() {
     } else {
         isError = true;
 
-        cout << "Error: DynamicArray::GetSize(); returns uncorrect size" << endl << "Expected: "
+        cout << "Error: DynamicArray::GetSize(); returns incorrectsize" << endl << "Expected: "
              << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
     }
 
@@ -242,7 +245,7 @@ void DynamicArrayTester::TestGetSize() {
     } else {
         isError = true;
 
-        cout << "Error: DynamicArray::GetSize(); returns uncorrect size of empty array" << endl << "Expected: "
+        cout << "Error: DynamicArray::GetSize(); returns incorrectsize of empty array" << endl << "Expected: "
              << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
     }
 }
@@ -288,5 +291,51 @@ void DynamicArrayTester::TestResize() {
         }
     } else {
         cout << "Error: DynamicArray::Resize(int newSize); new size 2 was not set correctly" << endl;
+    }
+}
+
+void DynamicArrayTester::TestGet() {
+    bool isError = false;
+
+    DynamicArray<char> *darrCharEmpty = new DynamicArray<char>(this->dummyCharArrLen);
+    try {
+        darrCharEmpty->Get(0);
+        isError = true;
+    } catch (...) {
+        cout << "Success: DynamicArray::Get(int index); Item of empty array was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: DynamicArray::Get(int index); Item of empty array was gotten" << endl;
+    }
+
+    isError = false;
+
+    DynamicArray<char> *darrChar = new DynamicArray<char>(this->dummyCharArr, this->dummyCharArrLen);
+
+    try {
+        darrCharEmpty->Get(-1);
+        isError = true;
+    } catch (...) {
+        cout << "Success: DynamicArray::Get(int index); Item with incorrect index was not gotten" << endl;
+    }
+
+    if (isError) {
+        cout << "Error: DynamicArray::Get(int index); Item with incorrect index was gotten" << endl;
+    }
+
+    for (int i = 0; i < this->dummyCharArrLen; ++i) {
+        char expectedItem = this->dummyCharArr[i];
+        char recievedItem = darrChar->Get(i);
+
+        if (expectedItem != recievedItem) {
+            cout << "Error: DynamicArray::Get(int index); Wrong index item" << endl
+                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+            isError = true;
+            break;
+        }
+    }
+    if (!isError) {
+        cout << "Success: DynamicArray::Get(int index); Correct index item" << endl;
     }
 }
