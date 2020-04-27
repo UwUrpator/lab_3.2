@@ -70,8 +70,9 @@ DynamicArray<T> &DynamicArray<T>::operator=(const DynamicArray &array) {
 
 template<class T>
 Optional<T> &DynamicArray<T>::operator[](int index) {
-    if (index < 0 || index >= this->size)
+    if (index < 0 || index >= this->size) {
         throw new Exception;
+    }
     return this->items[index];
 }
 

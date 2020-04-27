@@ -4,6 +4,7 @@
 #include "tests/DynamicArrayTester/DynamicArrayTester.hpp"
 #include "tests/LinkedListTester/LinkedListTester.hpp"
 #include "tests/ListSequenceTester/ListSequenceTester.hpp"
+#include "tests/ArraySequenceTester/ArraySequenceTester.hpp"
 
 using namespace std;
 
@@ -11,6 +12,7 @@ int main() {
     DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
+    ArraySequenceTester();
 
     /*char arr1[3] = {'a', 'b', 'c'};
     char arr2[4] = {'a', 'b', 'c', 'd'};

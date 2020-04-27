@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Exception.hpp"
+#include <iostream>
 
 template<class T>
 class Optional {
@@ -24,6 +25,8 @@ public:
     bool operator==(Optional<T> &other);
 
     operator T() const;
+
+    T& operator=(const T& other);
 
 private:
     Optional();
@@ -73,14 +76,22 @@ bool Optional<T>::operator==(Optional<T> &other) {
 
 template<class T>
 Optional<T>::operator T() const {
-    if (!this->hasValue)
-        return false;
+    if (!this->hasValue) {
+        throw new Exception;
+    }
     return this->value;
 }
 
 template<class T>
 Optional<T>::Optional() {
     this->hasValue = false;
+}
+
+template<class T>
+T &Optional<T>::operator=(const T &other) {
+    this->value = other;
+    this->hasValue = true;
+    return this->value;
 }
 
 template<class T>

@@ -173,7 +173,7 @@ void ListSequenceTester::TestConstructor3() {
 
     if (isError) {
         cout << "Error: ListSequence(const LinkedList<T> &list); passed: llistCharEmpty (empty list)" << endl
-             << "Empty list was copied";
+             << "Empty list was copied" << endl;
     }
 
     isError = false;
@@ -203,7 +203,7 @@ void ListSequenceTester::TestConstructor3() {
 
     if (llistChar->Get(0) == lsCharCopied->Get(0)) {
         cout << "Error: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of chars)"
-             << endl << "Copied list changes after changing of source";
+             << endl << "Copied list changes after changing of source" << endl;
         isError = true;
     }
 
@@ -246,7 +246,7 @@ void ListSequenceTester::TestConstructor3() {
     if (firstSource == firstCopied) {
         cout
                 << "Error: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of DummyClass)"
-                << endl << "Copied list changes after changing of source";
+                << endl << "Copied list changes after changing of source" << endl;
         isError = true;
     }
 
@@ -271,7 +271,7 @@ void ListSequenceTester::TestConstructor4() {
 
     if (isError) {
         cout << "Error: ListSequence(const Sequence<T> &list); passed: sCharEmpty (empty seq)" << endl
-             << "Empty list was copied";
+             << "Empty list was copied" << endl;
     }
 
     isError = false;
@@ -301,7 +301,7 @@ void ListSequenceTester::TestConstructor4() {
 
     if (sChar->Get(0) == lsCharCopied->Get(0)) {
         cout << "Error: ListSequence(const Sequence<T> &list); trying to change source Sequence (seq of chars)"
-             << endl << "Copied list changes after changing of source";
+             << endl << "Copied list changes after changing of source" << endl;
         isError = true;
     }
 
@@ -342,7 +342,7 @@ void ListSequenceTester::TestConstructor4() {
 
     if (firstSource == firstCopied) {
         cout << "Error: ListSequence(const Sequence<T> &list); trying to change source Sequence (seq of DummyClass)"
-             << endl << "Copied list changes after changing of source";
+             << endl << "Copied list changes after changing of source" << endl;
         isError = true;
     }
 

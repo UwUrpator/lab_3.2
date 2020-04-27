@@ -76,8 +76,8 @@ ArraySequence<T>::ArraySequence(Sequence<T> &other) {
 
 template<class T>
 ArraySequence<T>::ArraySequence(const DynamicArray<T> *other) {
-    this->items = new DynamicArray<T>(other);
-    this->count = other->GetSize;
+    this->items = new DynamicArray<T>(*other);
+    this->count = other->GetSize();
 }
 
 template<class T>
@@ -115,7 +115,7 @@ Sequence<T> *ArraySequence<T>::GetSubsequence(const int start_index, const int e
 template<class T>
 void ArraySequence<T>::Prepend(T value) {
     this->items->Resize(this->count + 1);
-    for (int i = this->count; i > 1; --i) {
+    for (int i = this->count; i > 0; --i) {
         (*(this->items))[i] = (*(this->items))[i - 1];
     }
     (*(this->items))[0] = value;
@@ -134,7 +134,7 @@ void ArraySequence<T>::Append(T value) {
 template<class T>
 void ArraySequence<T>::InsertAt(T value, const int index) {
     this->items->Resize(this->count + 1);
-    for (int i = this->count; i > index + 1; --i) {
+    for (int i = this->count; i > index; --i) {
         (*(this->items))[i] = (*(this->items))[i - 1];
     }
     (*(this->items))[index] = value;
@@ -155,7 +155,7 @@ void ArraySequence<T>::RemoveAt(const int index) {
 template<class T>
 void ArraySequence<T>::Remove(T value) {
     for (int i = 0; i < this->count; ++i) {
-        if (((*(this->items)))[i] == value) {
+        if ((((*(this->items)))[i]).GetValue() == value) {
             this->RemoveAt(i);
             return;
         }
@@ -165,7 +165,7 @@ void ArraySequence<T>::Remove(T value) {
 template<class T>
 void ArraySequence<T>::RemoveAll(T value) {
     for (int i = 0; i < this->count; ++i) {
-        if (((*(this->items)))[i] == value) {
+        if ((((*(this->items)))[i]).GetValue() == value) {
             this->RemoveAt(i);
         }
     }
