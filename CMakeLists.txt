@@ -18,6 +18,8 @@ set(SOURCE_FILES
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
         tests/LinkedListTester/LinkedListTester.hpp
+        tests/ArraySequenceTester/ArraySequenceTester.hpp
+        tests/ListSequenceTester/ListSequenceTester.hpp
         )
 
 add_executable(lab_2 ${SOURCE_FILES})

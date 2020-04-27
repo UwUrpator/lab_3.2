@@ -60,10 +60,10 @@ void DynamicArrayTester::TestConstructor1() {
 
     for (int i = 0; i < dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = darrChar->Get(i);
-        if (expectedItem != recievedItem) {
+        char receivedItem = darrChar->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: DynamicArray(T* items, int size); passed: dummyCharArr, dummyCharArrLen" << endl <<
-                 "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -80,10 +80,10 @@ void DynamicArrayTester::TestConstructor1() {
 
     for (int i = 0; i < dummyClassArrLen; ++i) {
         DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass recievedItem = darrClass->Get(i);
-        if (expectedItem != recievedItem) {
+        DummyClass receivedItem = darrClass->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: DynamicArray(T* items, int size); passed: dummyClassArr, dummyClassArrLen" << endl <<
-                 "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -149,10 +149,10 @@ void DynamicArrayTester::TestConstructor3() {
 
     for (int i = 0; i < dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = darrCharCopied->Get(i);
-        if (expectedItem != recievedItem) {
+        char receivedItem = darrCharCopied->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: DynamicArray(const DynamicArray<T> &array); passed: darrChar (array of chars)" << endl <<
-                 "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -185,10 +185,10 @@ void DynamicArrayTester::TestConstructor3() {
 
     for (int i = 0; i < dummyClassArrLen; ++i) {
         DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass recievedItem = darrClassCopied->Get(i);
-        if (expectedItem != recievedItem) {
+        DummyClass receivedItem = darrClassCopied->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: DynamicArray(const DynamicArray<T> &array); passed: darrClass (array of DummyClass)" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -232,7 +232,7 @@ void DynamicArrayTester::TestGetSize() {
         isError = true;
 
         cout << "Error: DynamicArray::GetSize(); returns incorrectsize" << endl << "Expected: "
-             << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
+             << this->dummyCharArrLen << " Received: " << darrCharSize << endl;
     }
 
     isError = false;
@@ -246,7 +246,7 @@ void DynamicArrayTester::TestGetSize() {
         isError = true;
 
         cout << "Error: DynamicArray::GetSize(); returns incorrectsize of empty array" << endl << "Expected: "
-             << this->dummyCharArrLen << " Recieved: " << darrCharSize << endl;
+             << this->dummyCharArrLen << " Received: " << darrCharSize << endl;
     }
 }
 
@@ -326,11 +326,11 @@ void DynamicArrayTester::TestGet() {
 
     for (int i = 0; i < this->dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = darrChar->Get(i);
+        char receivedItem = darrChar->Get(i);
 
-        if (expectedItem != recievedItem) {
+        if (expectedItem != receivedItem) {
             cout << "Error: DynamicArray::Get(int index); Wrong index item" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
             isError = true;
             break;
         }

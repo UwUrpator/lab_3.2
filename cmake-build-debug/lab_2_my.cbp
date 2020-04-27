@@ -109,6 +109,9 @@
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp">
 			<Option target="lab_2"/>
 		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp">
 			<Option target="lab_2"/>
 		</Unit>
@@ -116,6 +119,9 @@
 			<Option target="lab_2"/>
 		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp">
+			<Option target="lab_2"/>
+		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp">
 			<Option target="lab_2"/>
 		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/CMakeLists.txt">

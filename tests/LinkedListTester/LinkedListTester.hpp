@@ -100,10 +100,10 @@ void LinkedListTester::TestConstructor1() {
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
     for (int i = 0; i < this->dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = llistChar->Get(i);
-        if (expectedItem != recievedItem) {
+        char receivedItem = llistChar->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -119,10 +119,10 @@ void LinkedListTester::TestConstructor1() {
     LinkedList<DummyClass> *llistClass = new LinkedList<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
     for (int i = 0; i < this->dummyClassArrLen; ++i) {
         DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass recievedItem = llistClass->Get(i);
-        if (expectedItem != recievedItem) {
+        DummyClass receivedItem = llistClass->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -178,10 +178,10 @@ void LinkedListTester::TestConstructor3() {
 
     for (int i = 0; i < dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = llistCharCopied->Get(i);
-        if (expectedItem != recievedItem) {
+        char receivedItem = llistCharCopied->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList(const LinkedList<T> &list); passed: llistChar (list of chars)" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -214,10 +214,10 @@ void LinkedListTester::TestConstructor3() {
 
     for (int i = 0; i < dummyClassArrLen; ++i) {
         DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass recievedItem = llistClassCopied->Get(i);
-        if (expectedItem != recievedItem) {
+        DummyClass receivedItem = llistClassCopied->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList(const LinkedList<T> &list); passed: llistClass (list of DummyClass)" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
             break;
@@ -268,11 +268,11 @@ void LinkedListTester::TestGetFirst() {
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyClassArrLen);
     char expectedItem = this->dummyCharArr[0];
-    char recievedItem = llistChar->GetFirst();
+    char receivedItem = llistChar->GetFirst();
 
-    if (expectedItem != recievedItem) {
+    if (expectedItem != receivedItem) {
         cout << "Error: LinkedList::GetFirst(); Wrong first item" << endl
-             << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+             << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
         isError = true;
     } else {
         cout << "Success: LinkedList::GetFirst(); Correct first item" << endl;
@@ -298,11 +298,11 @@ void LinkedListTester::TestGetLast() {
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
     char expectedItem = this->dummyCharArr[this->dummyCharArrLen - 1];
-    char recievedItem = llistChar->GetLast();
+    char receivedItem = llistChar->GetLast();
 
-    if (expectedItem != recievedItem) {
+    if (expectedItem != receivedItem) {
         cout << "Error: LinkedList::GetLast(); Wrong last item" << endl
-             << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+             << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
         isError = true;
     } else {
         cout << "Success: LinkedList::GetLast(); Correct last item" << endl;
@@ -329,11 +329,11 @@ void LinkedListTester::TestGet() {
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
     for (int i = 0; i < this->dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = llistChar->Get(i);
+        char receivedItem = llistChar->Get(i);
 
-        if (expectedItem != recievedItem) {
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList::Get(int index); Wrong index item" << endl
-                 << "Expected: " << expectedItem << " Recieved: " << recievedItem << endl;
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
             isError = true;
             break;
         }
@@ -383,8 +383,8 @@ void LinkedListTester::TestGetSubList() {
     LinkedList<char> *subList = llistChar->GetSubList(start_index, end_index);
     for (int i = start_index; i < end_index; ++i) {
         char expectedItem = this->dummyCharArr[i];
-        char recievedItem = subList->Get(i);
-        if (expectedItem != recievedItem) {
+        char receivedItem = subList->Get(i);
+        if (expectedItem != receivedItem) {
             cout << "Error: LinkedList::GetSubList(int start_index, int end_index); Sublist is incorrect" << endl;
 
             isError = true;
@@ -417,9 +417,9 @@ void LinkedListTester::TestGetLength() {
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
 
     int expectedLen = this->dummyCharArrLen;
-    int recievedLen = llistChar->GetLength();
+    int receivedLen = llistChar->GetLength();
 
-    if (expectedLen != recievedLen) {
+    if (expectedLen != receivedLen) {
         cout << "Error: LinkedList::TestGetLength(); Length of list is incorrect" << endl;
         isError = true;
     }
@@ -438,11 +438,11 @@ void LinkedListTester::TestPrepend() {
     char expectedItem = 'z';
     llistCharEmpty->Prepend(expectedItem);
 
-    char recievedItem = llistCharEmpty->GetFirst();
-    int recievedLen = llistCharEmpty->GetLength();
-    if (expectedItem != recievedItem || recievedLen != 1) {
+    char receivedItem = llistCharEmpty->GetFirst();
+    int receivedLen = llistCharEmpty->GetLength();
+    if (expectedItem != receivedItem || receivedLen != 1) {
         cout << "Error: LinkedList::Prepend(T item); Prepended char to empty list" << endl
-             << "Expected: " << expectedItem << " Recieved " << recievedItem << " Expected length " << recievedLen << endl;
+             << "Expected: " << expectedItem << " Received: " << receivedItem << " Expected length " << receivedLen << endl;
 
         isError = true;
     }
@@ -460,16 +460,16 @@ void LinkedListTester::TestPrepend() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             if (i == 0) {
                 expectedItem = 'z';
             } else {
                 expectedItem = this->dummyCharArr[i - 1];
             }
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::Prepend(T item); Prepended char to list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -493,11 +493,11 @@ void LinkedListTester::TestAppend() {
     char expectedItem = 'z';
     llistCharEmpty->Append(expectedItem);
 
-    char recievedItem = llistCharEmpty->GetFirst();
-    int recievedLen = llistCharEmpty->GetLength();
-    if (expectedItem != recievedItem || recievedLen != 1) {
+    char receivedItem = llistCharEmpty->GetFirst();
+    int receivedLen = llistCharEmpty->GetLength();
+    if (expectedItem != receivedItem || receivedLen != 1) {
         cout << "Error: LinkedList::Append(T item); Appended char to empty list" << endl
-             << "Expected: " << expectedItem << " Recieved " << recievedItem << " Expected length " << recievedLen << endl;
+             << "Expected: " << expectedItem << " Received " << receivedItem << " Expected length " << receivedLen << endl;
 
         isError = true;
     }
@@ -515,16 +515,16 @@ void LinkedListTester::TestAppend() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             if (i == expectedLen - 1) {
                 expectedItem = 'z';
             } else {
                 expectedItem = this->dummyCharArr[i];
             }
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::Append(T item); Appended char to list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -544,7 +544,7 @@ void LinkedListTester::TestAppend() {
 void LinkedListTester::TestInsertAt() {
     bool isError = false;
 
-    char recievedItem;
+    char receivedItem;
     char expectedItem;
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
@@ -554,7 +554,7 @@ void LinkedListTester::TestInsertAt() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             if (i < 1) {
                 expectedItem = this->dummyCharArr[i];
@@ -563,9 +563,9 @@ void LinkedListTester::TestInsertAt() {
             } else {
                 expectedItem = this->dummyCharArr[i - 1];
             }
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::InsertAt(T item, int index); Inserted char to list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -586,7 +586,7 @@ void LinkedListTester::TestInsertAt() {
 void LinkedListTester::TestRemoveAt() {
     bool isError = false;
 
-    char recievedItem;
+    char receivedItem;
     char expectedItem;
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
@@ -596,16 +596,16 @@ void LinkedListTester::TestRemoveAt() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             if (i < 1) {
                 expectedItem = this->dummyCharArr[i];
             } else if (i >= 1) {
                 expectedItem = this->dummyCharArr[i+1];
             }
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::RemoveAt(int index); Removed char at index of list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -626,7 +626,7 @@ void LinkedListTester::TestRemoveAt() {
 void LinkedListTester::TestRemove() {
     bool isError = false;
 
-    char recievedItem;
+    char receivedItem;
     char expectedItem;
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
@@ -636,12 +636,12 @@ void LinkedListTester::TestRemove() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             expectedItem = this->dummyCharArr[i+1];
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::Remove(T value); Removed char by its value of list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -661,7 +661,7 @@ void LinkedListTester::TestRemove() {
 void LinkedListTester::TestRemoveAll() {
     bool isError = false;
 
-    char recievedItem;
+    char receivedItem;
     char expectedItem;
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
@@ -671,12 +671,12 @@ void LinkedListTester::TestRemoveAll() {
 
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar->Get(i);
+            receivedItem = llistChar->Get(i);
 
             expectedItem = this->dummyCharArr[i+1];
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::RemoveAll(T value); Removed all chars by its value of list" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;
@@ -696,7 +696,7 @@ void LinkedListTester::TestRemoveAll() {
 void LinkedListTester::TestConcat() {
     bool isError = false;
 
-    char recievedItem;
+    char receivedItem;
     char expectedItem;
 
     LinkedList<char>* llistChar1 = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
@@ -707,12 +707,12 @@ void LinkedListTester::TestConcat() {
     int expectedLen = this->dummyCharArrLen * 2;
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            recievedItem = llistChar1->Get(i);
+            receivedItem = llistChar1->Get(i);
 
             expectedItem = this->dummyCharArr[i % 3];
-            if (expectedItem != recievedItem) {
+            if (expectedItem != receivedItem) {
                 cout << "Error: LinkedList::Concat(LinkedList<T> *list); Concated 2 same lists" << endl
-                     << "Expected: " << expectedItem << " Recieved " << recievedItem << endl;
+                     << "Expected: " << expectedItem << " Received " << receivedItem << endl;
 
                 isError = true;
                 return;

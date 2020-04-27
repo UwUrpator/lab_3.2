@@ -22,6 +22,16 @@ Node.hpp
 ../../Exception.hpp
 ../Exception.hpp
 
+../source/ListSequence/ListSequence.hpp
+iostream
+-
+../Sequence/Sequence.hpp
+../source/Sequence/Sequence.hpp
+../LinkedList/LinkedList.hpp
+../source/LinkedList/LinkedList.hpp
+
+../source/Sequence/Sequence.hpp
+
 C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 iostream
 C:/Users/Uzurpator/CLionProjects/lab2/iostream
@@ -37,6 +47,8 @@ tests/DynamicArrayTester/DynamicArrayTester.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
 tests/LinkedListTester/LinkedListTester.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
+tests/ListSequenceTester/ListSequenceTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 iostream
@@ -83,4 +95,16 @@ iostream
 C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinkedList/LinkedList.hpp
 ../DummyClass/DummyClass.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
+iostream
+-
+../source/LinkedList/LinkedList.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinkedList/LinkedList.hpp
+../source/ListSequence/ListSequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ListSequence/ListSequence.hpp
+../DummyClass/DummyClass.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+../source/Sequence/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/Sequence/Sequence.hpp
 

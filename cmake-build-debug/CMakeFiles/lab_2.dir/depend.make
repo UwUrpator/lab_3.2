@@ -3,6 +3,8 @@
 
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/DynamicArray/DynamicArray.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/LinkedList/LinkedList.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../source/ListSequence/ListSequence.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../source/Sequence/Sequence.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../Exception.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/DynamicArray/DynamicArray.hpp
@@ -12,4 +14,5 @@ CMakeFiles/lab_2.dir/main.cpp.obj: ../source/LinkedList/Node.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/DummyClass/DummyClass.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/DynamicArrayTester/DynamicArrayTester.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/LinkedListTester/LinkedListTester.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/ListSequenceTester/ListSequenceTester.hpp
 

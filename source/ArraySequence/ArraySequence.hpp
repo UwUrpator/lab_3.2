@@ -17,7 +17,7 @@ public:
 
     ArraySequence(const DynamicArray<T> *other);
 
-    virtual T GetLength() const override;
+    virtual int GetLength() const override;
 
     virtual T GetFirst() const override;
 
@@ -81,7 +81,7 @@ ArraySequence<T>::ArraySequence(const DynamicArray<T> *other) {
 }
 
 template<class T>
-T ArraySequence<T>::GetLength() const {
+int ArraySequence<T>::GetLength() const {
     return this->items->GetSize();
 }
 

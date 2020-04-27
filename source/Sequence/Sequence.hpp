@@ -3,7 +3,7 @@
 template<class T>
 class Sequence {
 public:
-    virtual T GetLength() const = 0;
+    virtual int GetLength() const = 0;
 
     virtual T GetFirst() const = 0;
 

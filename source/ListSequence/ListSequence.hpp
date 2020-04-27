@@ -18,7 +18,7 @@ public:
 
     ListSequence();
 
-    virtual T GetLength() const override;
+    virtual int GetLength() const override;
 
     virtual T GetFirst() const override;
 
@@ -57,14 +57,14 @@ ListSequence<T>::ListSequence(const ListSequence<T> &other) {
 
 template<class T>
 ListSequence<T>::ListSequence(Sequence<T> &other) {
-    ListSequence<T> *castedList = static_cast<ListSequence<T> *>(&other);
+    //ListSequence<T> *castedList = static_cast<ListSequence<T> *>(&other);
 
-    if (castedList) {
+    /*if (castedList) {
         this->items = new LinkedList<T>(*castedList->items);
         this->count = castedList->GetLength();
 
         return;
-    }
+    }*/
 
     int newLength = other.GetLength();
     LinkedList<T> *newList = new LinkedList<T>();
@@ -82,7 +82,7 @@ ListSequence<T>::ListSequence() {
 }
 
 template<class T>
-T ListSequence<T>::GetLength() const {
+int ListSequence<T>::GetLength() const {
     return this->items->GetLength();
 }
 
