@@ -8,11 +8,10 @@ template<class T>
 class ListSequence : public Sequence<T> {
 private:
     LinkedList<T> *items;
-    int count{};
 public:
     ListSequence(T *items, int count);
 
-    ListSequence(const ListSequence<T> &other);
+    ListSequence(const LinkedList<T> *other);
 
     ListSequence(Sequence<T> &other);
 
@@ -46,13 +45,11 @@ public:
 template<class T>
 ListSequence<T>::ListSequence(T *items, int count) {
     this->items = new LinkedList<T>(items, count);
-    this->count = count;
 }
 
 template<class T>
-ListSequence<T>::ListSequence(const ListSequence<T> &other) {
-    this->items = new LinkedList<T>(*other.items);
-    this->count = other.GetLength();
+ListSequence<T>::ListSequence(const LinkedList<T> *other) {
+    this->items = new LinkedList<T>(*other);
 }
 
 template<class T>
@@ -72,13 +69,11 @@ ListSequence<T>::ListSequence(Sequence<T> &other) {
         newList->Append(other.Get(i));
     }
     this->items = newList;
-    this->count = newLength;
 }
 
 template<class T>
 ListSequence<T>::ListSequence() {
     this->items = new LinkedList<T>();
-    this->count = 0;
 }
 
 template<class T>

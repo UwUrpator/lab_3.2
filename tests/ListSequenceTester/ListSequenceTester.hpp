@@ -163,29 +163,29 @@ void ListSequenceTester::TestConstructor2() {
 void ListSequenceTester::TestConstructor3() {
     bool isError = false;
 
-    ListSequence<char> *lsCharEmpty = new ListSequence<char>();
+    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
     try {
-        ListSequence<char> *lsEmpty = new ListSequence<char>(*lsCharEmpty);
+        ListSequence<char> *lsEmpty = new ListSequence<char>(llistCharEmpty);
         isError = true;
     } catch (...) {
-        cout << "Success: ListSequence(const ListSequence<T> &list); passed: lsCharEmpty (empty list)" << endl;
+        cout << "Success: ListSequence(const LinkedList<T> &list); passed: llistCharEmpty (empty list)" << endl;
     }
 
     if (isError) {
-        cout << "Error: ListSequence(const ListSequence<T> &list); passed: lsCharEmpty (empty list)" << endl
+        cout << "Error: ListSequence(const LinkedList<T> &list); passed: llistCharEmpty (empty list)" << endl
              << "Empty list was copied";
     }
 
     isError = false;
 
-    ListSequence<char> *lsChar = new ListSequence<char>(this->dummyCharArr, this->dummyCharArrLen);
-    ListSequence<char> *lsCharCopied = new ListSequence<char>(*lsChar);
+    LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
+    ListSequence<char> *lsCharCopied = new ListSequence<char>(llistChar);
 
     for (int i = 0; i < dummyCharArrLen; ++i) {
         char expectedItem = this->dummyCharArr[i];
         char receivedItem = lsCharCopied->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ListSequence(const ListSequence<T> &list); passed: lsChar (list of chars)" << endl
+            cout << "Error: ListSequence(const LinkedList<T> &list); passed: llistChar (list of chars)" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -194,35 +194,35 @@ void ListSequenceTester::TestConstructor3() {
     }
 
     if (!isError) {
-        cout << "Success: ListSequence(const ListSequence<T> &list); passed: lsChar (list of chars)" << endl;
+        cout << "Success: ListSequence(const LinkedList<T> &list); passed: llistChar (list of chars)" << endl;
     }
 
     isError = false;
 
-    lsChar->InsertAt('z', 0);
+    llistChar->InsertAt('z', 0);
 
-    if (lsChar->Get(0) == lsCharCopied->Get(0)) {
-        cout << "Error: ListSequence(const ListSequence<T> &list); trying to change source ListSequence (list of chars)"
+    if (llistChar->Get(0) == lsCharCopied->Get(0)) {
+        cout << "Error: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of chars)"
              << endl << "Copied list changes after changing of source";
         isError = true;
     }
 
     if (!isError) {
         cout
-                << "Success: ListSequence(const ListSequence<T> &list); trying to change source ListSequence (list of chars)"
+                << "Success: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of chars)"
                 << endl;
     }
 
     isError = false;
 
-    ListSequence<DummyClass> *lsClass = new ListSequence<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
-    ListSequence<DummyClass> *lsClassCopied = new ListSequence<DummyClass>(*lsClass);
+    LinkedList<DummyClass> *llistClass = new LinkedList<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
+    ListSequence<DummyClass> *lsClassCopied = new ListSequence<DummyClass>(llistClass);
 
     for (int i = 0; i < dummyClassArrLen; ++i) {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = lsClassCopied->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ListSequence(const ListSequence<T> &list); passed: lsClass (list of DummyClass)" << endl
+            cout << "Error: ListSequence(const LinkedList<T> &list); passed: llistClass (list of DummyClass)" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -231,28 +231,28 @@ void ListSequenceTester::TestConstructor3() {
     }
 
     if (!isError) {
-        cout << "Success: ListSequence(const ListSequence<T> &list); passed: lsClass (list of DummyClass)" << endl;
+        cout << "Success: ListSequence(const LinkedList<T> &list); passed: llistClass (list of DummyClass)" << endl;
     }
 
     isError = false;
 
     DummyClass *newArr = this->dummyClassArr;
     newArr[0] = *(new DummyClass(456));
-    lsClass = new ListSequence<DummyClass>(newArr, this->dummyClassArrLen);
+    llistClass = new LinkedList<DummyClass>(newArr, this->dummyClassArrLen);
 
-    DummyClass firstSource = lsClass->Get(0);
+    DummyClass firstSource = llistClass->Get(0);
     DummyClass firstCopied = lsClassCopied->Get(0);
 
     if (firstSource == firstCopied) {
         cout
-                << "Error: ListSequence(const ListSequence<T> &list); trying to change source ListSequence (list of DummyClass)"
+                << "Error: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of DummyClass)"
                 << endl << "Copied list changes after changing of source";
         isError = true;
     }
 
     if (!isError) {
         cout
-                << "Success: ListSequence(const ListSequence<T> &list); trying to change source ListSequence (list of chars)"
+                << "Success: ListSequence(const LinkedList<T> &list); trying to change source LinkedList (list of chars)"
                 << endl;
     }
 }

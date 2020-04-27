@@ -17,7 +17,7 @@ public:
 
     LinkedList();
 
-    LinkedList(LinkedList<T> &list);
+    LinkedList(const LinkedList<T> &list);
 
     T GetFirst();
 
@@ -71,7 +71,7 @@ LinkedList<T>::LinkedList() {
 }
 
 template<class T>
-LinkedList<T>::LinkedList(LinkedList<T> &list) {
+LinkedList<T>::LinkedList(const LinkedList<T> &list) {
     if (!list.head) {
         throw new Exception;
     }
