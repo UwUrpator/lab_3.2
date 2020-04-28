@@ -98,11 +98,11 @@ void ArraySequenceTester::TestConstructor1() {
         ArraySequence<char> *asChar = new ArraySequence<char>(this->dummyCharArr, 0);
         isError = true;
     } catch (...) {
-        cout << "Success: ArraySequence(T *items, int size); passed: dummyCharArr, 0" << endl;
+        cout << "Success: ArraySequence(T *items, int size); passed: dummyIntArr, 0" << endl;
     }
 
     if (isError) {
-        cout << "Error: ArraySequence(T *items, int size); passed: dummyCharArr, 0" << endl
+        cout << "Error: ArraySequence(T *items, int size); passed: dummyIntArr, 0" << endl
              << "Not empty array of 0 length was created" << endl;
     }
 
@@ -113,7 +113,7 @@ void ArraySequenceTester::TestConstructor1() {
         char expectedItem = this->dummyCharArr[i];
         char receivedItem = asChar->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ArraySequence(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl
+            cout << "Error: ArraySequence(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -122,7 +122,7 @@ void ArraySequenceTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: ArraySequence(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl;
+        cout << "Success: ArraySequence(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl;
     }
 
     isError = false;

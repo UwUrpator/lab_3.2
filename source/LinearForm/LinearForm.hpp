@@ -17,7 +17,9 @@ public:
 
     LinearForm<T> &operator=(const LinearForm<T> &other);
 
-    LinearForm<T> &operator+=(LinearForm<T> &other);
+    LinearForm<T> &operator+=(const LinearForm<T> &other);
+
+    LinearForm<T> operator+(const LinearForm<T> &other);
 
     LinearForm<T> &operator*=(const int value);
 
@@ -43,18 +45,40 @@ LinearForm<T> &LinearForm<T>::operator=(const LinearForm<T> &other) {
 }
 
 template<class T>
-LinearForm<T> &LinearForm<T>::operator+=(LinearForm<T> &other) {
-    int size = this->coefficients->GetLength();
-    T *newItems = new T[size];
+LinearForm<T> &LinearForm<T>::operator+=(const LinearForm<T> &other) {
+    int size1 = this->coefficients->GetLength();
+    int size2 = other.coefficients->GetLength();
 
-    for (int i = 0; i < size; ++i) {
-        newItems[i] = this->coefficients->Get(i) + other->coefficients->Get(i);
+    int size_max = 0;
+    int size_min = 0;
+
+    if (size1 >= size2) {
+        size_max = size1;
+        size_min = size2;
+    } else {
+        size_max = size2;
+        size_min = size1;
     }
 
-    this->coefficients = new ArraySequence<T>(newItems, size);
-    cout << newItems[0] << endl;
+    for (int i = 0; i < size_min; ++i) {
+        this->coefficients->Set(this->coefficients->Get(i) + other.coefficients->Get(i), i);
+    }
+
+    for (int i = size_min; i < size_max; ++i) {
+        if (size1 < size2) {
+            this->coefficients->Append(other.coefficients->Get(i));
+        }
+    }
 
     return *this;
+}
+
+template<class T>
+LinearForm<T> LinearForm<T>::operator+(const LinearForm<T> &other) {
+    LinearForm<T> result = *this;
+    result += other;
+
+    return result;
 }
 
 template<class T>

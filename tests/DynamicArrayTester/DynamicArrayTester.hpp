@@ -62,7 +62,7 @@ void DynamicArrayTester::TestConstructor1() {
         char expectedItem = this->dummyCharArr[i];
         char receivedItem = darrChar->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: DynamicArray(T* items, int size); passed: dummyCharArr, dummyCharArrLen" << endl <<
+            cout << "Error: DynamicArray(T* items, int size); passed: dummyIntArr, dummyIntArrLen" << endl <<
                  "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -71,7 +71,7 @@ void DynamicArrayTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: DynamicArray(T* items, int size); passed: dummyCharArr, dummyCharArrLen" << endl;
+        cout << "Success: DynamicArray(T* items, int size); passed: dummyIntArr, dummyIntArrLen" << endl;
     }
 
     isError = false;
@@ -100,11 +100,11 @@ void DynamicArrayTester::TestConstructor1() {
         DynamicArray<char> *darr_zero = new DynamicArray<char>(this->dummyCharArr, 0);
         isError = true;
     } catch (...) {
-        cout << "Success: DynamicArray(T* items, int size); passed: dummyCharArr, 0" << endl;
+        cout << "Success: DynamicArray(T* items, int size); passed: dummyIntArr, 0" << endl;
     }
 
     if (isError) {
-        cout << "Error: DynamicArray(T* items, int size); passed: dummyCharArr, 0" << endl <<
+        cout << "Error: DynamicArray(T* items, int size); passed: dummyIntArr, 0" << endl <<
              "DynamicArray with 0 length was created";
     }
 }
@@ -118,11 +118,11 @@ void DynamicArrayTester::TestConstructor2() {
         darr->Get(0);
         isError = true;
     } catch (...) {
-        cout << "Success: DynamicArray(const int size); passed: dummyCharArrLen" << endl;
+        cout << "Success: DynamicArray(const int size); passed: dummyIntArrLen" << endl;
     }
 
     if (isError) {
-        cout << "Error: DynamicArray(const int size); passed: dummyCharArrLen" << endl <<
+        cout << "Error: DynamicArray(const int size); passed: dummyIntArrLen" << endl <<
              "Item is not Empty";
     }
 

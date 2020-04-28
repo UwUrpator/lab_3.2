@@ -87,11 +87,11 @@ void LinkedListTester::TestConstructor1() {
         LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, 0);
         isError = true;
     } catch (...) {
-        cout << "Success: LinkedList(T *items, int size); passed: dummyCharArr, 0" << endl;
+        cout << "Success: LinkedList(T *items, int size); passed: dummyIntArr, 0" << endl;
     }
 
     if (isError) {
-        cout << "Error: LinkedList(T *items, int size); passed: dummyCharArr, 0" << endl
+        cout << "Error: LinkedList(T *items, int size); passed: dummyIntArr, 0" << endl
              << "Not empty list of 0 length was created" << endl;
     }
 
@@ -102,7 +102,7 @@ void LinkedListTester::TestConstructor1() {
         char expectedItem = this->dummyCharArr[i];
         char receivedItem = llistChar->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: LinkedList(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl
+            cout << "Error: LinkedList(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -111,7 +111,7 @@ void LinkedListTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: LinkedList(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl;
+        cout << "Success: LinkedList(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl;
     }
 
     isError = false;

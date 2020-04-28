@@ -99,11 +99,11 @@ void ListSequenceTester::TestConstructor1() {
         ListSequence<char> *lsChar = new ListSequence<char>(this->dummyCharArr, 0);
         isError = true;
     } catch (...) {
-        cout << "Success: ListSequence(T *items, int size); passed: dummyCharArr, 0" << endl;
+        cout << "Success: ListSequence(T *items, int size); passed: dummyIntArr, 0" << endl;
     }
 
     if (isError) {
-        cout << "Error: ListSequence(T *items, int size); passed: dummyCharArr, 0" << endl
+        cout << "Error: ListSequence(T *items, int size); passed: dummyIntArr, 0" << endl
              << "Not empty list of 0 length was created" << endl;
     }
 
@@ -114,7 +114,7 @@ void ListSequenceTester::TestConstructor1() {
         char expectedItem = this->dummyCharArr[i];
         char receivedItem = lsChar->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ListSequence(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl
+            cout << "Error: ListSequence(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -123,7 +123,7 @@ void ListSequenceTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: ListSequence(T *items, int size); passed: dummyCharArr, dummyCharArrLen" << endl;
+        cout << "Success: ListSequence(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl;
     }
 
     isError = false;
