@@ -40,6 +40,8 @@ public:
     virtual void RemoveAll(T value) override;
 
     virtual Sequence<T> *Concat(Sequence<T> *other) override;
+
+    virtual Sequence<T> *Copy() override;
 };
 
 template<class T>
@@ -180,4 +182,9 @@ Sequence<T> *ArraySequence<T>::Concat(Sequence<T> *other) {
     }
 
     return newArrSeq;
+}
+
+template<class T>
+Sequence<T> *ArraySequence<T>::Copy() {
+    return new ArraySequence<T>(*this);
 }

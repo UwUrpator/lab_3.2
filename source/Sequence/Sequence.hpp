@@ -27,4 +27,6 @@ public:
     virtual void RemoveAll(T value) = 0;
 
     virtual Sequence<T> *Concat(Sequence<T> *other) = 0;
+
+    virtual Sequence<T> *Copy() = 0;
 };
