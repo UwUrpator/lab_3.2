@@ -29,4 +29,6 @@ public:
     virtual Sequence<T> *Concat(Sequence<T> *other) = 0;
 
     virtual Sequence<T> *Copy() = 0;
+
+    virtual void Set(T value, const int index) = 0;
 };

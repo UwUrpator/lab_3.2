@@ -118,6 +118,9 @@
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp">
 			<Option target="lab_2"/>
 		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp">
 			<Option target="lab_2"/>
 		</Unit>

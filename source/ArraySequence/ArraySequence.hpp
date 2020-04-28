@@ -13,9 +13,11 @@ public:
 
     ArraySequence(T *items, int count);
 
-    ArraySequence(Sequence<T> &other);
+    ArraySequence(const Sequence<T> &other);
 
     ArraySequence(const DynamicArray<T> *other);
+
+    ArraySequence(const ArraySequence<T> &other);
 
     virtual int GetLength() const override;
 
@@ -42,6 +44,8 @@ public:
     virtual Sequence<T> *Concat(Sequence<T> *other) override;
 
     virtual Sequence<T> *Copy() override;
+
+    virtual void Set(T value, const int index) override;
 };
 
 template<class T>
@@ -57,8 +61,8 @@ ArraySequence<T>::ArraySequence(T *items, int count) {
 }
 
 template<class T>
-ArraySequence<T>::ArraySequence(Sequence<T> &other) {
-    ArraySequence<T> *castedArray = static_cast<ArraySequence<T> *>(&other);
+ArraySequence<T>::ArraySequence(const Sequence<T> &other) {
+    const ArraySequence<T> *castedArray = static_cast<const ArraySequence<T> *>(&other);
 
     if (castedArray) {
         this->items = new DynamicArray<T>(*castedArray->items);
@@ -175,16 +179,24 @@ void ArraySequence<T>::RemoveAll(T value) {
 
 template<class T>
 Sequence<T> *ArraySequence<T>::Concat(Sequence<T> *other) {
-    ArraySequence<T> *newArrSeq = new ArraySequence<T>(*this);
+    ArraySequence<T> *newSequence = new ArraySequence<T>(*(Sequence<T>*)this);
 
     for (int i = 0; i < other->GetLength(); ++i) {
-        newArrSeq->Append((*(this->items))[i]);
+        newSequence->Append((*(this->items))[i]);
     }
 
-    return newArrSeq;
+    return newSequence;
 }
 
 template<class T>
 Sequence<T> *ArraySequence<T>::Copy() {
-    return new ArraySequence<T>(*this);
+    Sequence<T>* newSequence = new ArraySequence<T>(*(Sequence<T>*)this);
+    return newSequence;
 }
+
+template<class T>
+void ArraySequence<T>::Set(T value, const int index) {
+    this->RemoveAt(index);
+    this->InsertAt(value, index);
+}
+

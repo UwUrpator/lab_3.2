@@ -5,6 +5,7 @@
 #include "tests/LinkedListTester/LinkedListTester.hpp"
 #include "tests/ListSequenceTester/ListSequenceTester.hpp"
 #include "tests/ArraySequenceTester/ArraySequenceTester.hpp"
+#include "tests/LinearFormTester/LinearFormTester.hpp"
 
 using namespace std;
 
@@ -13,16 +14,7 @@ int main() {
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
-
-    /*char arr1[3] = {'a', 'b', 'c'};
-    char arr2[4] = {'a', 'b', 'c', 'd'};
-    char arr3[5] = {'a', 'a', 'b', 'a', 'a'};
-    int arri1[4] = {1, 2, 3, 4};
-
-   LinkedList<char>* llist1 = new LinkedList<char>(arr1, 3);
-   LinkedList<char>* llist2 = new LinkedList<char>(*llist1);
-
-   cout << llist2->GetLast();*/
+    LinearFormTester();
 
     return 0;
 }

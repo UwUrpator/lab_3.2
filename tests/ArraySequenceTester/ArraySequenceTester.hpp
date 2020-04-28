@@ -48,6 +48,10 @@ public:
     void TestRemoveAll();
 
     void TestConcat();
+
+    void TestCopy();
+
+    void TestSet();
 };
 
 ArraySequenceTester::ArraySequenceTester() {
@@ -83,6 +87,9 @@ ArraySequenceTester::ArraySequenceTester() {
     TestRemove();
     TestRemoveAll();
     TestConcat();
+
+    TestCopy();
+    TestSet();
 }
 
 void ArraySequenceTester::TestConstructor1() {
@@ -188,8 +195,9 @@ void ArraySequenceTester::TestConstructor3() {
     (*darrChar)[0] = 'z';
 
     if (darrChar->Get(0) == asCharCopied->Get(0)) {
-        cout << "Error: ArraySequence(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
-             << endl << "Copied array changes after changing of source" << endl;
+        cout
+                << "Error: ArraySequence(const DynamicArray<T> &array); trying to change source DynamicArray (array of chars)"
+                << endl << "Copied array changes after changing of source" << endl;
         isError = true;
     }
 
@@ -208,7 +216,8 @@ void ArraySequenceTester::TestConstructor3() {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = asClassCopied->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ArraySequence(const DynamicArray<T> &array); passed: arrayClass (array of DummyClass)" << endl
+            cout << "Error: ArraySequence(const DynamicArray<T> &array); passed: arrayClass (array of DummyClass)"
+                 << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -217,7 +226,8 @@ void ArraySequenceTester::TestConstructor3() {
     }
 
     if (!isError) {
-        cout << "Success: ArraySequence(const DynamicArray<T> &array); passed: arrayClass (array of DummyClass)" << endl;
+        cout << "Success: ArraySequence(const DynamicArray<T> &array); passed: arrayClass (array of DummyClass)"
+             << endl;
     }
 
     isError = false;
@@ -567,7 +577,8 @@ void ArraySequenceTester::TestAppend() {
     int receivedLen = asCharEmpty->GetLength();
     if (expectedItem != receivedItem || receivedLen != this->dummyCharArrLen + 1) {
         cout << "Error: ArraySequence::Append(T item); Appended char to empty arrayseq" << endl
-             << "Expected: " << expectedItem << " Received " << receivedItem << " Expected length " << receivedLen << endl;
+             << "Expected: " << expectedItem << " Received " << receivedItem << " Expected length " << receivedLen
+             << endl;
 
         isError = true;
     }
@@ -670,7 +681,7 @@ void ArraySequenceTester::TestRemoveAt() {
             if (i < 1) {
                 expectedItem = this->dummyCharArr[i];
             } else if (i >= 1) {
-                expectedItem = this->dummyCharArr[i+1];
+                expectedItem = this->dummyCharArr[i + 1];
             }
             if (expectedItem != receivedItem) {
                 cout << "Error: ArraySequence::RemoveAt(int index); Removed char at index of arrayseq" << endl
@@ -706,7 +717,7 @@ void ArraySequenceTester::TestRemove() {
         for (int i = 0; i < expectedLen; ++i) {
             receivedItem = asChar->Get(i);
 
-            expectedItem = this->dummyCharArr[i+1];
+            expectedItem = this->dummyCharArr[i + 1];
             if (expectedItem != receivedItem) {
                 cout << "Error: ArraySequence::Remove(T value); Removed char by its value of arrayseq" << endl
                      << "Expected: " << expectedItem << " Received " << receivedItem << endl;
@@ -741,7 +752,7 @@ void ArraySequenceTester::TestRemoveAll() {
         for (int i = 0; i < expectedLen; ++i) {
             receivedItem = asChar->Get(i);
 
-            expectedItem = this->dummyCharArr[i+1];
+            expectedItem = this->dummyCharArr[i + 1];
             if (expectedItem != receivedItem) {
                 cout << "Error: ArraySequence::RemoveAll(T value); Removed all chars by its value of arrayseq" << endl
                      << "Expected: " << expectedItem << " Received " << receivedItem << endl;
@@ -770,12 +781,12 @@ void ArraySequenceTester::TestConcat() {
     ArraySequence<char>* asChar1 = new ArraySequence<char>(this->dummyCharArr, this->dummyCharArrLen);
     ArraySequence<char>* asChar2 = new ArraySequence<char>(this->dummyCharArr, this->dummyCharArrLen);
 
-    asChar1 = new ArraySequence<char>(*(asChar1->Concat(asChar2)));
+    Sequence<char> *concatedSeq = asChar1->Concat(asChar2);
 
     int expectedLen = this->dummyCharArrLen * 2;
     try {
         for (int i = 0; i < expectedLen; ++i) {
-            receivedItem = asChar1->Get(i);
+            receivedItem = concatedSeq->Get(i);
 
             expectedItem = this->dummyCharArr[i % 3];
             if (expectedItem != receivedItem) {
@@ -794,5 +805,73 @@ void ArraySequenceTester::TestConcat() {
 
     if (!isError) {
         cout << "Success: ArraySequence::Concat(ArraySequence<T> *array); Concated 2 same arrayseq" << endl;
+    }
+}
+
+void ArraySequenceTester::TestCopy() {
+    bool isError = false;
+
+    ArraySequence<char> *asChar = new ArraySequence<char>(this->dummyCharArr, this->dummyCharArrLen);
+    Sequence<char> *sCharCopied = asChar->Copy();
+
+    for (int i = 0; i < dummyCharArrLen; ++i) {
+        char expectedItem = this->dummyCharArr[i];
+        char receivedItem = sCharCopied->Get(i);
+        if (expectedItem != receivedItem) {
+            cout << "Error: ArraySequence::Copy();" << endl
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
+
+            isError = true;
+            break;
+        }
+    }
+
+    if (!isError) {
+        cout << "Success: ArraySequence::Copy();" << endl;
+    }
+
+    isError = false;
+
+    asChar->Prepend('z');
+
+    if (asChar->Get(0) == sCharCopied->Get(0)) {
+        cout << "Error: ArraySequence::Copy(); trying to change source ArraySequence"
+             << endl << "Copied array changes after changing of source" << endl;
+        isError = true;
+    }
+
+    if (!isError) {
+        cout
+                << "Success: ArraySequence::Copy(); trying to change source ArraySequence"
+                << endl;
+    }
+
+}
+
+void ArraySequenceTester::TestSet() {
+    bool isError = false;
+
+    ArraySequence<char> *asChar = new ArraySequence<char>(this->dummyCharArr, this->dummyCharArrLen);
+    asChar->Set('z', 1);
+
+    char* newDummyCharArr = this->dummyCharArr;
+    newDummyCharArr[1] = 'z';
+
+    for (int i = 0; i < this->dummyCharArrLen; ++i) {
+        char expectedItem = newDummyCharArr[i];
+        char receivedItem = asChar->Get(i);
+
+        if (expectedItem != receivedItem) {
+            cout << "Error: ArraySequence::Set(T value, const int index); Changed ArrSeq is wrong" << endl
+                 << "Expected: " << expectedItem << " Received " << receivedItem << endl;
+
+            isError = true;
+            return;
+        }
+
+    }
+
+    if (!isError) {
+        cout << "Success: ArraySequence::Set(T value, const int index); Changed ArrSeq is correct" << endl;
     }
 }

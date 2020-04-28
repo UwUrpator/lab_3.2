@@ -49,6 +49,10 @@ public:
     void TestRemoveAll();
 
     void TestConcat();
+
+    void TestCopy();
+
+    void TestSet();
 };
 
 ListSequenceTester::ListSequenceTester() {
@@ -84,6 +88,9 @@ ListSequenceTester::ListSequenceTester() {
     TestRemove();
     TestRemoveAll();
     TestConcat();
+
+    TestCopy();
+    TestSet();
 }
 
 void ListSequenceTester::TestConstructor1() {
@@ -833,5 +840,72 @@ void ListSequenceTester::TestConcat() {
 
     if (!isError) {
         cout << "Success: ListSequence::Concat(ListSequence<T> *list); Concated 2 same listseq" << endl;
+    }
+}
+
+void ListSequenceTester::TestCopy() {
+    bool isError = false;
+
+    ListSequence<char> *lsChar = new ListSequence<char>(this->dummyCharArr, this->dummyCharArrLen);
+    Sequence<char> *sCharCopied = lsChar->Copy();
+
+    for (int i = 0; i < dummyCharArrLen; ++i) {
+        char expectedItem = this->dummyCharArr[i];
+        char receivedItem = sCharCopied->Get(i);
+        if (expectedItem != receivedItem) {
+            cout << "Error: ListSequence::Copy();" << endl
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
+
+            isError = true;
+            break;
+        }
+    }
+
+    if (!isError) {
+        cout << "Success: ListSequence::Copy();" << endl;
+    }
+
+    isError = false;
+
+    lsChar->Prepend('z');
+
+    if (lsChar->Get(0) == sCharCopied->Get(0)) {
+        cout << "Error: ListSequence::Copy(); trying to change source ListSequence"
+             << endl << "Copied list changes after changing of source" << endl;
+        isError = true;
+    }
+
+    if (!isError) {
+        cout
+                << "Success: ListSequence::Copy(); trying to change source ListSequence"
+                << endl;
+    }
+}
+
+void ListSequenceTester::TestSet() {
+    bool isError = false;
+
+    ListSequence<char> *lsChar = new ListSequence<char>(this->dummyCharArr, this->dummyCharArrLen);
+    lsChar->Set('z', 1);
+
+    char* newDummyCharArr = this->dummyCharArr;
+    newDummyCharArr[1] = 'z';
+
+    for (int i = 0; i < this->dummyCharArrLen; ++i) {
+        char expectedItem = newDummyCharArr[i];
+        char receivedItem = lsChar->Get(i);
+
+        if (expectedItem != receivedItem) {
+            cout << "Error: ListSequence::Set(T value, const int index); Changed ListSeq is wrong" << endl
+                 << "Expected: " << expectedItem << " Received " << receivedItem << endl;
+
+            isError = true;
+            return;
+        }
+
+    }
+
+    if (!isError) {
+        cout << "Success: ListSequence::Set(T value, const int index); Changed ListSeq is correct" << endl;
     }
 }

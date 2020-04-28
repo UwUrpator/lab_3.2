@@ -6,36 +6,46 @@
 
 using namespace std;
 
-template <class T>
+template<class T>
 class LinearForm {
 private:
-    Sequence<T>* coefficients;
+    Sequence<T> *coefficients;
 public:
-    LinearForm(T* items, int size);
+    LinearForm();
 
-    LinearForm<T>& operator = (LinearForm<T> &other);
+    LinearForm(T *items, int size);
 
-    LinearForm<T>& operator += (LinearForm<T> &other);
+    LinearForm<T> &operator=(const LinearForm<T> &other);
+
+    LinearForm<T> &operator+=(LinearForm<T> &other);
+
+    LinearForm<T> &operator*=(const int value);
 
     T Get(int index);
 };
 
 template<class T>
-LinearForm<T>::LinearForm(T* items, int size) {
+LinearForm<T>::LinearForm() {
+    this->coefficients = new ArraySequence<T>(1);
+}
+
+template<class T>
+LinearForm<T>::LinearForm(T *items, int size) {
     this->coefficients = new ArraySequence<T>(items, size);
 }
 
 template<class T>
-LinearForm<T> &LinearForm<T>::operator=(LinearForm<T> &other) {
-    Sequence<T> newCoef = ArraySequence<T>(other.coefficients);
-
+LinearForm<T> &LinearForm<T>::operator=(const LinearForm<T> &other) {
+    Sequence<T> *newCoef = other.coefficients->Copy();
     this->coefficients = newCoef;
+
+    return *this;
 }
 
 template<class T>
 LinearForm<T> &LinearForm<T>::operator+=(LinearForm<T> &other) {
     int size = this->coefficients->GetLength();
-    T* newItems = new T[size];
+    T *newItems = new T[size];
 
     for (int i = 0; i < size; ++i) {
         newItems[i] = this->coefficients->Get(i) + other->coefficients->Get(i);
@@ -49,15 +59,16 @@ LinearForm<T> &LinearForm<T>::operator+=(LinearForm<T> &other) {
 
 template<class T>
 T LinearForm<T>::Get(int index) {
-    this->coefficients->Get(index);
+    return this->coefficients->Get(index);
 }
 
-LinearForm<T>& operator *= (int val) {
+template<class T>
+LinearForm<T> &LinearForm<T>::operator*=(const int value) {
     int size = this->coefficients->GetLength();
-    T* newItems = new T[size];
+    T *newItems = new T[size];
 
     for (int i = 0; i < size; ++i) {
-        newItems[i] = this->coefficients->Get(i) * val;
+        newItems[i] = this->coefficients->Get(i) * value;
     }
 
     this->coefficients = new ArraySequence<T>(newItems, size);
@@ -65,3 +76,6 @@ LinearForm<T>& operator *= (int val) {
 
     return *this;
 }
+
+
+

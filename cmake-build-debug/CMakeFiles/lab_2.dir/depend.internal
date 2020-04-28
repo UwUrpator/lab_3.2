@@ -4,6 +4,7 @@
 CMakeFiles/lab_2.dir/main.cpp.obj
  ../source/ArraySequence/ArraySequence.hpp
  ../source/DynamicArray/DynamicArray.hpp
+ ../source/LinearForm/LinearForm.hpp
  ../source/LinkedList/LinkedList.hpp
  ../source/ListSequence/ListSequence.hpp
  ../source/Sequence/Sequence.hpp
@@ -16,5 +17,6 @@ CMakeFiles/lab_2.dir/main.cpp.obj
  C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+ C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
  C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp

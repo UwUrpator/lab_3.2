@@ -20,6 +20,14 @@ iostream
 Optional.hpp
 ../source/DynamicArray/Optional.hpp
 
+../source/LinearForm/LinearForm.hpp
+iostream
+-
+../Sequence/Sequence.hpp
+../source/Sequence/Sequence.hpp
+../ArraySequence/ArraySequence.hpp
+../source/ArraySequence/ArraySequence.hpp
+
 ../source/LinkedList/LinkedList.hpp
 iostream
 -
@@ -57,6 +65,8 @@ tests/ListSequenceTester/ListSequenceTester.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
 tests/ArraySequenceTester/ArraySequenceTester.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
+tests/LinearFormTester/LinearFormTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 iostream
@@ -105,6 +115,16 @@ iostream
 -
 ../source/DynamicArray/DynamicArray.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/source/DynamicArray/DynamicArray.hpp
+../DummyClass/DummyClass.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
+iostream
+-
+../source/LinearForm/LinearForm.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinearForm/LinearForm.hpp
+../source/ArraySequence/ArraySequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ArraySequence/ArraySequence.hpp
 ../DummyClass/DummyClass.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
 

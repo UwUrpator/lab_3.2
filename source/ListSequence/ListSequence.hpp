@@ -13,7 +13,7 @@ public:
 
     ListSequence(const LinkedList<T> *other);
 
-    ListSequence(Sequence<T> &other);
+    ListSequence(const Sequence<T> &other);
 
     ListSequence();
 
@@ -22,8 +22,6 @@ public:
     virtual T GetFirst() const override;
 
     virtual T GetLast() const override;
-
-    virtual T Get(const int index) const override;
 
     virtual Sequence<T> *GetSubsequence(const int start_index, const int end_index) const override;
 
@@ -35,6 +33,8 @@ public:
 
     virtual void RemoveAt(const int index) override;
 
+    virtual T Get(const int index) const override;
+
     virtual void Remove(T value) override;
 
     virtual void RemoveAll(T value) override;
@@ -42,6 +42,8 @@ public:
     virtual Sequence<T> *Concat(Sequence<T> *other) override;
 
     virtual Sequence<T> *Copy() override;
+
+    virtual void Set(T value, const int index) override;
 };
 
 template<class T>
@@ -55,15 +57,14 @@ ListSequence<T>::ListSequence(const LinkedList<T> *other) {
 }
 
 template<class T>
-ListSequence<T>::ListSequence(Sequence<T> &other) {
-    //ListSequence<T> *castedList = static_cast<ListSequence<T> *>(&other);
+ListSequence<T>::ListSequence(const Sequence<T> &other) {
+    const ListSequence<T> *castedList = static_cast<const ListSequence<T> *>(&other);
 
-    /*if (castedList) {
+    if (castedList) {
         this->items = new LinkedList<T>(*castedList->items);
-        this->count = castedList->GetLength();
 
         return;
-    }*/
+    }
 
     int newLength = other.GetLength();
     LinkedList<T> *newList = new LinkedList<T>();
@@ -139,7 +140,7 @@ void ListSequence<T>::RemoveAll(T value) {
 
 template<class T>
 Sequence<T> *ListSequence<T>::Concat(Sequence<T> *other) {
-    ListSequence<T> *newSequence = new ListSequence<T>(*this);
+    ListSequence<T> *newSequence = new ListSequence<T>(*(Sequence<T>*)this);
     ListSequence<T> *castedList = static_cast<ListSequence<T> *>(other);
 
     if (castedList) {
@@ -155,5 +156,12 @@ Sequence<T> *ListSequence<T>::Concat(Sequence<T> *other) {
 
 template<class T>
 Sequence<T> *ListSequence<T>::Copy() {
-    return new ListSequence<T>(*this);
+    Sequence<T>* newSequence = new ListSequence<T>(*(Sequence<T>*)this);
+    return newSequence;
+}
+
+template<class T>
+void ListSequence<T>::Set(T value, const int index) {
+    this->RemoveAt(index);
+    this->InsertAt(value, index);
 }
