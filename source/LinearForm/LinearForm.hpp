@@ -21,6 +21,10 @@ public:
 
     LinearForm<T> operator+(const LinearForm<T> &other);
 
+    LinearForm<T> &operator-=(const LinearForm<T> &other);
+
+    LinearForm<T> operator-(const LinearForm<T> &other);
+
     LinearForm<T> &operator*=(const int value);
 
     T Get(int index);

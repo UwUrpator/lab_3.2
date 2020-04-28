@@ -82,7 +82,7 @@ void DynamicArrayTester::TestConstructor1() {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = darrClass->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: DynamicArray(T* items, int size); passed: dummyClassArr, dummyClassArrLen" << endl <<
+            cout << "Error: DynamicArray(T* items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl <<
                  "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -91,7 +91,7 @@ void DynamicArrayTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: DynamicArray(T* items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
+        cout << "Success: DynamicArray(T* items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl;
     }
 
     isError = false;

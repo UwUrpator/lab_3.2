@@ -121,7 +121,7 @@ void LinkedListTester::TestConstructor1() {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = llistClass->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: LinkedList(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl
+            cout << "Error: LinkedList(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -130,7 +130,7 @@ void LinkedListTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: LinkedList(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
+        cout << "Success: LinkedList(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl;
     }
 }
 

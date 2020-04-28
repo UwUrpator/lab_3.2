@@ -132,7 +132,7 @@ void ArraySequenceTester::TestConstructor1() {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = asClass->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ArraySequence(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl
+            cout << "Error: ArraySequence(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -141,7 +141,7 @@ void ArraySequenceTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: ArraySequence(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
+        cout << "Success: ArraySequence(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl;
     }
 }
 

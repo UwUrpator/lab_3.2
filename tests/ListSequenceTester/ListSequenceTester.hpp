@@ -133,7 +133,7 @@ void ListSequenceTester::TestConstructor1() {
         DummyClass expectedItem = this->dummyClassArr[i];
         DummyClass receivedItem = lsClass->Get(i);
         if (expectedItem != receivedItem) {
-            cout << "Error: ListSequence(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl
+            cout << "Error: ListSequence(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -142,7 +142,7 @@ void ListSequenceTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: ListSequence(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
+        cout << "Success: ListSequence(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl;
     }
 }
 

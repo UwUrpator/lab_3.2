@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <complex>
 #include "../source/LinearForm/LinearForm.hpp"
 #include "../source/ArraySequence/ArraySequence.hpp"
 #include "../DummyClass/DummyClass.hpp"
@@ -12,8 +13,8 @@ private:
     int *dummyIntArr;
     int dummyIntArrLen;
 
-    DummyClass *dummyClassArr;
-    int dummyClassArrLen;
+    complex<double> *dummyComplexArr;
+    int dummyComplexArrLen;
 public:
     LinearFormTester();
 
@@ -33,12 +34,12 @@ LinearFormTester::LinearFormTester() {
     this->dummyIntArr[2] = 3;
     this->dummyIntArrLen = 3;
 
-    this->dummyClassArr = static_cast<DummyClass *>(operator new[](2 * sizeof(DummyClass)));
-    DummyClass *dummyClassObj1 = new DummyClass(123);
-    DummyClass *dummyClassObj2 = new DummyClass(321);
-    this->dummyClassArr[0] = *(dummyClassObj1);
-    this->dummyClassArr[1] = *(dummyClassObj2);
-    this->dummyClassArrLen = 2;
+    this->dummyComplexArr = static_cast<complex<double> *>(operator new[](2 * sizeof(complex<double>)));
+    complex<double> *dummyComplex1 = new complex<double>(1.0, 2.0);
+    complex<double> *dummyComplex2 = new complex<double>(2.0, 3.0);
+    this->dummyComplexArr[0] = *(dummyComplex1);
+    this->dummyComplexArr[1] = *(dummyComplex2);
+    this->dummyComplexArrLen = 2;
 
     TestConstructor1();
 
@@ -63,10 +64,10 @@ void LinearFormTester::TestConstructor1() {
 
     isError = false;
 
-    LinearForm<int> *lfChar = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
+    LinearForm<int> *lfInt = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
     for (int i = 0; i < this->dummyIntArrLen; ++i) {
         int expectedItem = this->dummyIntArr[i];
-        int receivedItem = lfChar->Get(i);
+        int receivedItem = lfInt->Get(i);
         if (expectedItem != receivedItem) {
             cout << "Error: LinearForm(T *items, int size); passed: dummyIntArr, dummyIntArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
@@ -82,12 +83,12 @@ void LinearFormTester::TestConstructor1() {
 
     isError = false;
 
-    LinearForm<DummyClass> *lfClass = new LinearForm<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
-    for (int i = 0; i < this->dummyClassArrLen; ++i) {
-        DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass receivedItem = lfClass->Get(i);
-        if (expectedItem != receivedItem) {
-            cout << "Error: LinearForm(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl
+    LinearForm<complex<double>> *lfComplex = new LinearForm<complex<double>>(this->dummyComplexArr, this->dummyComplexArrLen);
+    for (int i = 0; i < this->dummyComplexArrLen; ++i) {
+        complex<double> expectedItem = this->dummyComplexArr[i];
+        complex<double> receivedItem = lfComplex->Get(i);
+        if (!(expectedItem == receivedItem)) {
+            cout << "Error: LinearForm(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
 
             isError = true;
@@ -96,8 +97,9 @@ void LinearFormTester::TestConstructor1() {
     }
 
     if (!isError) {
-        cout << "Success: LinearForm(T *items, int size); passed: dummyClassArr, dummyClassArrLen" << endl;
+        cout << "Success: LinearForm(T *items, int size); passed: dummyComplexArr, dummyComplexArrLen" << endl;
     }
+
 }
 
 void LinearFormTester::TestSimpleAssign() {
@@ -128,10 +130,10 @@ void LinearFormTester::TestSimpleAssign() {
 
     isError = false;
 
-    int* newDummyCharArr = dummyIntArr;
-    newDummyCharArr[0] = 4;
+    int* newDummyIntArr = dummyIntArr;
+    newDummyIntArr[0] = 4;
 
-    lfChar = new LinearForm<int>(newDummyCharArr, this->dummyIntArrLen - 1);
+    lfChar = new LinearForm<int>(newDummyIntArr, this->dummyIntArrLen - 1);
 
     if (lfChar->Get(0) == lfCharCopied->Get(0)) {
         cout << "Error: LinearForm::operator=; trying to change source LinearForm"
@@ -147,59 +149,17 @@ void LinearFormTester::TestSimpleAssign() {
 
     isError = false;
 
-    LinearForm<DummyClass> *lfClass = new LinearForm<DummyClass>(this->dummyClassArr, this->dummyClassArrLen);
-    LinearForm<DummyClass> *lfClassCopied = new LinearForm<DummyClass>();
-
-    *lfClassCopied = *lfClass;
-
-    for (int i = 0; i < dummyClassArrLen; ++i) {
-        DummyClass expectedItem = this->dummyClassArr[i];
-        DummyClass receivedItem = lfClassCopied->Get(i);
-        if (expectedItem != receivedItem) {
-            cout << "Error: LinearForm::operator=; passed other LinearForm" << endl
-                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
-
-            isError = true;
-            break;
-        }
-    }
-
-    if (!isError) {
-        cout << "Success: LinearForm::operator=; passed other LinearForm" << endl;
-    }
-
-    isError = false;
-
-    DummyClass *newArr = this->dummyClassArr;
-    newArr[0] = *(new DummyClass(456));
-    lfClass = new LinearForm<DummyClass>(newArr, this->dummyClassArrLen);
-
-    DummyClass firstSource = lfClass->Get(0);
-    DummyClass firstCopied = lfClassCopied->Get(0);
-
-    if (firstSource == firstCopied) {
-        cout
-                << "Error: LinearForm::operator=; trying to change source LinearForm"
-                << endl << "Copied array changes after changing of source" << endl;
-        isError = true;
-    }
-
-    if (!isError) {
-        cout
-                << "Success: LinearForm::operator=; trying to change source LinearForm"
-                << endl;
-    }
 }
 
 void LinearFormTester::TestAdditionAssign() {
     bool isError = false;
     LinearForm<int> *lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
-    LinearForm<int> *lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyClassArrLen);
+    LinearForm<int> *lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyComplexArrLen);
 
     *lf1 += *lf2;
 
     for (int i = 0; i < this->dummyIntArrLen; ++i) {
-        if (i < dummyClassArrLen) {
+        if (i < dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i] * 2;
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -210,7 +170,7 @@ void LinearFormTester::TestAdditionAssign() {
                 break;
             }
         }
-        else if (i >= dummyClassArrLen) {
+        else if (i >= dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i];
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -229,13 +189,13 @@ void LinearFormTester::TestAdditionAssign() {
 
     isError = false;
 
-    lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyClassArrLen);
+    lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyComplexArrLen);
     lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
 
     *lf1 += *lf2;
 
     for (int i = 0; i < this->dummyIntArrLen; ++i) {
-        if (i < dummyClassArrLen) {
+        if (i < dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i] * 2;
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -246,7 +206,7 @@ void LinearFormTester::TestAdditionAssign() {
                 break;
             }
         }
-        else if (i >= dummyClassArrLen) {
+        else if (i >= dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i];
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -290,12 +250,12 @@ void LinearFormTester::TestAdditionAssign() {
 void LinearFormTester::TestAdd() {
     bool isError = false;
     LinearForm<int> *lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
-    LinearForm<int> *lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyClassArrLen);
+    LinearForm<int> *lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyComplexArrLen);
 
     *lf1 = *lf1 + *lf2;
 
     for (int i = 0; i < this->dummyIntArrLen; ++i) {
-        if (i < dummyClassArrLen) {
+        if (i < dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i] * 2;
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -306,7 +266,7 @@ void LinearFormTester::TestAdd() {
                 break;
             }
         }
-        else if (i >= dummyClassArrLen) {
+        else if (i >= dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i];
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -325,13 +285,13 @@ void LinearFormTester::TestAdd() {
 
     isError = false;
 
-    lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyClassArrLen);
+    lf1 = new LinearForm<int>(this->dummyIntArr, this->dummyComplexArrLen);
     lf2 = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
 
     *lf1 = *lf1 + *lf2;
 
     for (int i = 0; i < this->dummyIntArrLen; ++i) {
-        if (i < dummyClassArrLen) {
+        if (i < dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i] * 2;
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
@@ -342,7 +302,7 @@ void LinearFormTester::TestAdd() {
                 break;
             }
         }
-        else if (i >= dummyClassArrLen) {
+        else if (i >= dummyComplexArrLen) {
             int expectedItem = this->dummyIntArr[i];
             int receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
