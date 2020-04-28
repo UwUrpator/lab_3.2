@@ -93,14 +93,10 @@ T LinearForm<T>::Get(int index) {
 template<class T>
 LinearForm<T> &LinearForm<T>::operator*=(const int value) {
     int size = this->coefficients->GetLength();
-    T *newItems = new T[size];
 
     for (int i = 0; i < size; ++i) {
-        newItems[i] = this->coefficients->Get(i) * value;
+        this->coefficients->Set(this->coefficients->Get(i) * value, i);
     }
-
-    this->coefficients = new ArraySequence<T>(newItems, size);
-    cout << newItems[0] << endl;
 
     return *this;
 }
