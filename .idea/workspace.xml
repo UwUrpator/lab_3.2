@@ -35,12 +35,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/LinearForm/LinearForm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/LinearForm/LinearForm.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ArraySequenceTester/ArraySequenceTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArraySequenceTester/ArraySequenceTester.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/DynamicArrayTester/DynamicArrayTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/DynamicArrayTester/DynamicArrayTester.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/LinearFormTester/LinearFormTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LinearFormTester/LinearFormTester.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/LinkedListTester/LinkedListTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LinkedListTester/LinkedListTester.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/ListSequenceTester/ListSequenceTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ListSequenceTester/ListSequenceTester.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +112,7 @@
       <workItem from="1587895848765" duration="38860000" />
       <workItem from="1587978076955" duration="18477000" />
       <workItem from="1588051638392" duration="15064000" />
-      <workItem from="1588075294130" duration="24442000" />
+      <workItem from="1588075294130" duration="25679000" />
     </task>
     <servers />
   </component>
@@ -170,25 +165,25 @@
     </state>
     <state x="991" y="380" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587931747622" />
     <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1587740062241" />
-    <state width="2517" height="261" key="GridCell.Tab.0.bottom" timestamp="1588111316704">
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom" timestamp="1588112978425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588111316704" />
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588112978425" />
     <state width="1872" height="199" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
-    <state width="2517" height="261" key="GridCell.Tab.0.center" timestamp="1588111316704">
+    <state width="2517" height="261" key="GridCell.Tab.0.center" timestamp="1588112978425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588111316704" />
+    <state width="2517" height="261" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588112978425" />
     <state width="1872" height="199" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999746" />
-    <state width="2517" height="261" key="GridCell.Tab.0.left" timestamp="1588111316703">
+    <state width="2517" height="261" key="GridCell.Tab.0.left" timestamp="1588112978425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588111316703" />
+    <state width="2517" height="261" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588112978425" />
     <state width="1872" height="199" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999745" />
-    <state width="2517" height="261" key="GridCell.Tab.0.right" timestamp="1588111316704">
+    <state width="2517" height="261" key="GridCell.Tab.0.right" timestamp="1588112978425">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588111316704" />
+    <state width="2517" height="261" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588112978425" />
     <state width="1872" height="199" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
     <state width="2517" height="373" key="GridCell.Tab.1.bottom" timestamp="1588104359952">
       <screen x="0" y="0" width="2560" height="1400" />
