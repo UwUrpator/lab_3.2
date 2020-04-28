@@ -107,14 +107,14 @@ void LinearFormTester::TestSimpleAssign() {
 
     isError = false;
 
-    LinearForm<int> *lfChar = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
-    LinearForm<int> *lfCharCopied = new LinearForm<int>();
+    LinearForm<int> *lfInt = new LinearForm<int>(this->dummyIntArr, this->dummyIntArrLen);
+    LinearForm<int> *lfIntCopied = new LinearForm<int>();
 
-    *lfCharCopied = *lfChar;
+    *lfIntCopied = *lfInt;
 
     for (int i = 0; i < dummyIntArrLen; ++i) {
         int expectedItem = this->dummyIntArr[i];
-        int receivedItem = lfCharCopied->Get(i);
+        int receivedItem = lfIntCopied->Get(i);
         if (expectedItem != receivedItem) {
             cout << "Error: LinearForm::operator=; passed other LinearForm" << endl
                  << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
@@ -133,9 +133,9 @@ void LinearFormTester::TestSimpleAssign() {
     int* newDummyIntArr = dummyIntArr;
     newDummyIntArr[0] = 4;
 
-    lfChar = new LinearForm<int>(newDummyIntArr, this->dummyIntArrLen - 1);
+    lfInt = new LinearForm<int>(newDummyIntArr, this->dummyIntArrLen - 1);
 
-    if (lfChar->Get(0) == lfCharCopied->Get(0)) {
+    if (lfInt->Get(0) == lfIntCopied->Get(0)) {
         cout << "Error: LinearForm::operator=; trying to change source LinearForm"
              << endl << "Copied array changes after changing of source" << endl;
         isError = true;
@@ -144,6 +144,48 @@ void LinearFormTester::TestSimpleAssign() {
     if (!isError) {
         cout
                 << "Success: LinearForm::operator=; trying to change source LinearForm"
+                << endl;
+    }
+
+    isError = false;
+
+    LinearForm<complex<double>> *lfComplex = new LinearForm<complex<double>>(this->dummyComplexArr, this->dummyComplexArrLen);
+    LinearForm<complex<double>> *lfComplexCopied = new LinearForm<complex<double>>();
+
+    *lfComplexCopied = *lfComplex;
+
+    for (int i = 0; i < dummyComplexArrLen; ++i) {
+        complex<double> expectedItem = this->dummyComplexArr[i];
+        complex<double> receivedItem = lfComplexCopied->Get(i);
+        if (expectedItem != receivedItem) {
+            cout << "Error: LinearForm::operator=; passed other Complex LinearForm" << endl
+                 << "Expected: " << expectedItem << " Received: " << receivedItem << endl;
+
+            isError = true;
+            break;
+        }
+    }
+
+    if (!isError) {
+        cout << "Success: LinearForm::operator=; passed other Complex LinearForm" << endl;
+    }
+
+    isError = false;
+
+    complex<double>* newDummyComplexArr = dummyComplexArr;
+    newDummyComplexArr[0] = 4.0;
+
+    lfComplex = new LinearForm<complex<double>>(newDummyComplexArr, this->dummyComplexArrLen - 1);
+
+    if (lfComplex->Get(0) == lfComplexCopied->Get(0)) {
+        cout << "Error: LinearForm::operator=; trying to change source Complex LinearForm"
+             << endl << "Copied array changes after changing of source" << endl;
+        isError = true;
+    }
+
+    if (!isError) {
+        cout
+                << "Success: LinearForm::operator=; trying to change source Complex LinearForm"
                 << endl;
     }
 
