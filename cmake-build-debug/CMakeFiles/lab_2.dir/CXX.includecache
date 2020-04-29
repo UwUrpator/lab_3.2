@@ -57,16 +57,8 @@ source/DynamicArray/DynamicArray.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 source/LinkedList/LinkedList.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
-tests/DynamicArrayTester/DynamicArrayTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
-tests/LinkedListTester/LinkedListTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
-tests/ListSequenceTester/ListSequenceTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
-tests/ArraySequenceTester/ArraySequenceTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
-tests/LinearFormTester/LinearFormTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
+tests/TestRunner.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 iostream
@@ -149,4 +141,16 @@ C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ListSequence/ListSequence.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
 ../source/Sequence/Sequence.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/tests/source/Sequence/Sequence.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
+ArraySequenceTester/ArraySequenceTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
+DynamicArrayTester/DynamicArrayTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+LinearFormTester/LinearFormTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
+LinkedListTester/LinkedListTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
+ListSequenceTester/ListSequenceTester.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
 

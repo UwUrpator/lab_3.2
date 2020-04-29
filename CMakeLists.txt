@@ -21,6 +21,7 @@ set(SOURCE_FILES
         tests/ArraySequenceTester/ArraySequenceTester.hpp
         tests/ListSequenceTester/ListSequenceTester.hpp
         tests/LinearFormTester/LinearFormTester.hpp
+        tests/TestRunner.hpp
         )
 
 add_executable(lab_2 ${SOURCE_FILES})

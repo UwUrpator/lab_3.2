@@ -19,4 +19,5 @@ CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/DynamicArrayTester/DynamicArrayTeste
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/LinearFormTester/LinearFormTester.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/LinkedListTester/LinkedListTester.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/ListSequenceTester/ListSequenceTester.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/TestRunner.hpp
 

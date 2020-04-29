@@ -127,6 +127,9 @@
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp">
 			<Option target="lab_2"/>
 		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
