@@ -129,6 +129,8 @@ T LinkedList<T>::Get(int index) {
         cur = cur->next;
         cur_index++;
     }
+
+    return 0;
 }
 
 template<class T>

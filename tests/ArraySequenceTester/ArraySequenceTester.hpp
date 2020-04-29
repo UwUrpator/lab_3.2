@@ -851,6 +851,7 @@ void ArraySequenceTester::TestCopy() {
 void ArraySequenceTester::TestSet() {
     bool isError = false;
 
+
     ArraySequence<char> *asChar = new ArraySequence<char>(this->dummyCharArr, this->dummyCharArrLen);
     asChar->Set('z', 1);
 

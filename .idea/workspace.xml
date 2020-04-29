@@ -35,6 +35,11 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/main.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lab_2.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lab_2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lab_2.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/ArraySequence/ArraySequence.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/ArraySequence/ArraySequence.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/DynamicArray/DynamicArray.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/DynamicArray/DynamicArray.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/LinearForm/LinearForm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/LinearForm/LinearForm.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/LinkedList/LinkedList.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/source/LinkedList/LinkedList.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/ArraySequenceTester/ArraySequenceTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ArraySequenceTester/ArraySequenceTester.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/LinearFormTester/LinearFormTester.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/LinearFormTester/LinearFormTester.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +117,9 @@
       <workItem from="1587895848765" duration="38860000" />
       <workItem from="1587978076955" duration="18477000" />
       <workItem from="1588051638392" duration="15064000" />
-      <workItem from="1588075294130" duration="26804000" />
+      <workItem from="1588075294130" duration="27027000" />
+      <workItem from="1588141688136" duration="1309000" />
+      <workItem from="1588144220067" duration="11758000" />
     </task>
     <servers />
   </component>
@@ -165,42 +172,42 @@
     </state>
     <state x="991" y="380" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1587931747622" />
     <state x="743" y="311" width="426" height="479" key="FileChooserDialogImpl/0.25.1920.1055@0.25.1920.1055" timestamp="1587740062241" />
-    <state width="2517" height="261" key="GridCell.Tab.0.bottom" timestamp="1588114076193">
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom" timestamp="1588185086124">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588114076193" />
+    <state width="2517" height="261" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588185086124" />
     <state width="1872" height="199" key="GridCell.Tab.0.bottom/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
-    <state width="2517" height="261" key="GridCell.Tab.0.center" timestamp="1588114076193">
+    <state width="2517" height="261" key="GridCell.Tab.0.center" timestamp="1588185086124">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588114076193" />
+    <state width="2517" height="261" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588185086124" />
     <state width="1872" height="199" key="GridCell.Tab.0.center/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999746" />
-    <state width="2517" height="261" key="GridCell.Tab.0.left" timestamp="1588114076193">
+    <state width="2517" height="261" key="GridCell.Tab.0.left" timestamp="1588185086124">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588114076193" />
+    <state width="2517" height="261" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588185086124" />
     <state width="1872" height="199" key="GridCell.Tab.0.left/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999745" />
-    <state width="2517" height="261" key="GridCell.Tab.0.right" timestamp="1588114076193">
+    <state width="2517" height="261" key="GridCell.Tab.0.right" timestamp="1588185086124">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="261" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588114076193" />
+    <state width="2517" height="261" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588185086124" />
     <state width="1872" height="199" key="GridCell.Tab.0.right/0.25.1920.1055@0.25.1920.1055" timestamp="1587637999747" />
-    <state width="2517" height="373" key="GridCell.Tab.1.bottom" timestamp="1588104359952">
+    <state width="2517" height="373" key="GridCell.Tab.1.bottom" timestamp="1588184712987">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="373" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588104359952" />
-    <state width="2517" height="373" key="GridCell.Tab.1.center" timestamp="1588104359952">
+    <state width="2517" height="373" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1588184712987" />
+    <state width="2517" height="373" key="GridCell.Tab.1.center" timestamp="1588184712986">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="373" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588104359952" />
-    <state width="2517" height="373" key="GridCell.Tab.1.left" timestamp="1588104359952">
+    <state width="2517" height="373" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1588184712986" />
+    <state width="2517" height="373" key="GridCell.Tab.1.left" timestamp="1588184712986">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="373" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588104359952" />
-    <state width="2517" height="373" key="GridCell.Tab.1.right" timestamp="1588104359952">
+    <state width="2517" height="373" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1588184712986" />
+    <state width="2517" height="373" key="GridCell.Tab.1.right" timestamp="1588184712986">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="373" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588104359952" />
+    <state width="2517" height="373" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1588184712986" />
     <state x="449" y="188" key="SettingsEditor" timestamp="1587126149968">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
@@ -209,14 +216,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="251" y="378" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1587831078734" />
-    <state x="834" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588104339555">
+    <state x="834" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588145029269">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="834" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1588104339555" />
-    <state x="788" y="432" width="1123" height="863" key="find.popup" timestamp="1588109120064">
+    <state x="834" y="428" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400@0.0.2560.1400" timestamp="1588145029269" />
+    <state x="788" y="432" width="1123" height="863" key="find.popup" timestamp="1588185014265">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="788" y="432" width="1123" height="863" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588109120064" />
+    <state x="788" y="432" width="1123" height="863" key="find.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1588185014265" />
     <state x="616" y="265" width="842" height="650" key="find.popup/0.25.1920.1055@0.25.1920.1055" timestamp="1587742014102" />
     <state x="1240" y="492" key="refactoring.ChangeSignatureDialog" timestamp="1588093275166">
       <screen x="0" y="0" width="2560" height="1400" />

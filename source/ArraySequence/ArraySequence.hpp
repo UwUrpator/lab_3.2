@@ -139,17 +139,29 @@ void ArraySequence<T>::Append(T value) {
 
 template<class T>
 void ArraySequence<T>::InsertAt(T value, const int index) {
+
+    if (index < 0 || index > this->count) {
+        throw new Exception;
+    }
+
     this->items->Resize(this->count + 1);
+
     for (int i = this->count; i > index; --i) {
         (*(this->items))[i] = (*(this->items))[i - 1];
     }
+
     (*(this->items))[index] = value;
 
     this->count++;
+
 }
 
 template<class T>
 void ArraySequence<T>::RemoveAt(const int index) {
+    if (this->count <= 1) {
+        throw new Exception;
+    }
+
     for (int i = index; i < this->count - 1; ++i) {
         (*(this->items))[i] = (*(this->items))[i + 1];
     }
@@ -196,7 +208,19 @@ Sequence<T> *ArraySequence<T>::Copy() {
 
 template<class T>
 void ArraySequence<T>::Set(T value, const int index) {
+
+    if (index < 0 || index >= this->count) {
+        throw new Exception;
+    }
+
+    if (this->count == 1) {
+        this->InsertAt(value, 0);
+        this->items->Resize(1);
+        this->count--;
+    }
+
     this->RemoveAt(index);
+
     this->InsertAt(value, index);
 }
 

@@ -105,7 +105,7 @@ void DynamicArray<T>::Resize(int newSize) {
             this->items[i].~Optional();
         }
     } else if (newSize > this->size) {
-        Optional<T> *newItems = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+        Optional<T> *newItems = static_cast<Optional<T> *>(operator new[](newSize * sizeof(Optional<T>)));
         for (int i = 0; i < this->size; ++i) {
             newItems[i] = this->items[i];
         }
