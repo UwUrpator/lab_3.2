@@ -34,6 +34,7 @@ public:
 
     void TestMinus();
 
+    void TestEval();
 };
 
 LinearFormTester::LinearFormTester() {
@@ -59,6 +60,8 @@ LinearFormTester::LinearFormTester() {
     TestMultiply();
     TestMinusAssign();
     TestMinus();
+
+    TestEval();
 }
 
 void LinearFormTester::TestConstructor1() {
@@ -161,6 +164,8 @@ void LinearFormTester::TestSimpleAssign() {
                 << endl;
     }
 
+    newDummyDoubleArr[0] = 1;
+
     isError = false;
 
     LinearForm<complex<double>> *lfComplex = new LinearForm<complex<double>>(this->dummyComplexArr,
@@ -188,7 +193,7 @@ void LinearFormTester::TestSimpleAssign() {
     isError = false;
 
     complex<double> *newDummyComplexArr = dummyComplexArr;
-    newDummyComplexArr[0] = 4.0;
+    newDummyComplexArr[0] = *(new complex<double>(4.0, 5.0));
 
     lfComplex = new LinearForm<complex<double>>(newDummyComplexArr, this->dummyComplexArrLen - 1);
 
@@ -205,6 +210,8 @@ void LinearFormTester::TestSimpleAssign() {
     }
 
     isError = false;
+
+    newDummyComplexArr[0] = *(new complex<double>(1.0, 2.0));
 
 }
 
@@ -825,6 +832,42 @@ void LinearFormTester::TestMinus() {
 
     if (!isError) {
         cout << "Success: LinearForm::operator-; passed other Complex LinearForm (smaller)" << endl;
+    }
+}
+
+void LinearFormTester::TestEval() {
+    bool isError = false;
+
+    LinearForm<double> *lf1 = new LinearForm<double>(this->dummyDoubleArr, this->dummyDoubleArrLen);
+
+    double receivedRes = lf1->eval(this->dummyDoubleArr, this->dummyComplexArrLen);
+    double expectedRes = 9.0;
+
+    if (receivedRes != expectedRes) {
+        cout << "Error: LinearForm<T>::eval(T *values, int size); passed Array of Double" << endl
+             << "Expected: " << expectedRes << " Received: " << receivedRes << endl;
+
+        isError = true;
+    }
+    if (!isError) {
+        cout << "Success: LinearForm<T>::eval(T *values, int size); passed Array of Double" << endl;
+    }
+
+    isError = false;
+
+    LinearForm<complex<double>> *lfComplex1 = new LinearForm<complex<double>>(this->dummyComplexArr, this->dummyComplexArrLen);
+
+    complex<double> receivedResComplex = lfComplex1->eval(this->dummyComplexArr, this->dummyComplexArrLen - 1);
+    complex<double> expectedResComplex = *(new complex<double>(-3.0, 9.0));
+
+    if (receivedResComplex != expectedResComplex) {
+        cout << "Error: LinearForm<T>::eval(T *values, int size); passed Array of Complex" << endl
+             << "Expected: " << expectedResComplex << " Received: " << receivedResComplex << endl;
+
+        isError = true;
+    }
+    if (!isError) {
+        cout << "Success: LinearForm<T>::eval(T *values, int size); passed Array of Complex" << endl;
     }
 }
 

@@ -29,6 +29,8 @@ public:
 
     LinearForm<T> operator*(const double value);
 
+    T eval(T *values, int size);
+
     T Get(int index);
 };
 
@@ -145,6 +147,22 @@ template<class T>
 LinearForm<T> LinearForm<T>::operator-(const LinearForm<T> &other) {
     LinearForm<T> result = *this;
     result -= other;
+
+    return result;
+}
+
+template<class T>
+T LinearForm<T>::eval(T *values, int size) {
+    int thisLen = this->coefficients->GetLength();
+    if (size != thisLen - 1) {
+        throw new Exception;
+    }
+
+    T result = this->coefficients->Get(0);
+
+    for (int i = 1; i < thisLen; ++i) {
+        result += this->coefficients->Get(i) * values[i - 1];
+    }
 
     return result;
 }
