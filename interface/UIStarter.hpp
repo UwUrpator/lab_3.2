@@ -16,6 +16,10 @@ public:
 };
 
 UIStarter::UIStarter() {
+    TestRunner();
+
+    cout << endl;
+
     this->type = typeSelector();
     switch (this->type) {
         case 1:

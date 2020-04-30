@@ -629,7 +629,7 @@ void LinearFormTester::TestMinusAssign() {
                 break;
             }
         } else if (i >= dummyComplexArrLen) {
-            double expectedItem = this->dummyDoubleArr[i];
+            double expectedItem = -(this->dummyDoubleArr[i]);
             double receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
                 cout << "Error: LinearForm::operator-=; passed other LinearForm (bigger)" << endl
@@ -758,7 +758,7 @@ void LinearFormTester::TestMinus() {
                 break;
             }
         } else if (i >= dummyComplexArrLen) {
-            double expectedItem = this->dummyDoubleArr[i];
+            double expectedItem = -(this->dummyDoubleArr[i]);
             double receivedItem = lf1->Get(i);
             if (expectedItem != receivedItem) {
                 cout << "Error: LinearForm::operator-; passed other LinearForm (bigger)" << endl
