@@ -3,6 +3,9 @@
 #include "../Sequence/Sequence.hpp"
 #include "../DynamicArray/DynamicArray.hpp"
 
+#include <iostream>
+using namespace std;
+
 template<class T>
 class ArraySequence : public Sequence<T> {
 private:
@@ -217,6 +220,8 @@ void ArraySequence<T>::Set(T value, const int index) {
         this->InsertAt(value, 0);
         this->items->Resize(1);
         this->count--;
+
+        return;
     }
 
     this->RemoveAt(index);

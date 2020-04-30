@@ -6,11 +6,17 @@
 
 #IncludeRegexTransform: 
 
+../Exception.hpp
+iostream
+../iostream
+
 ../source/ArraySequence/ArraySequence.hpp
 ../Sequence/Sequence.hpp
 ../source/Sequence/Sequence.hpp
 ../DynamicArray/DynamicArray.hpp
 ../source/DynamicArray/DynamicArray.hpp
+iostream
+-
 
 ../source/DynamicArray/DynamicArray.hpp
 iostream
@@ -20,13 +26,11 @@ iostream
 Optional.hpp
 ../source/DynamicArray/Optional.hpp
 
-../source/LinearForm/LinearForm.hpp
+../source/DynamicArray/Optional.hpp
+../../Exception.hpp
+../Exception.hpp
 iostream
 -
-../Sequence/Sequence.hpp
-../source/Sequence/Sequence.hpp
-../ArraySequence/ArraySequence.hpp
-../source/ArraySequence/ArraySequence.hpp
 
 ../source/LinkedList/LinkedList.hpp
 iostream
@@ -35,6 +39,12 @@ Node.hpp
 ../source/LinkedList/Node.hpp
 ../../Exception.hpp
 ../Exception.hpp
+
+../source/LinkedList/Node.hpp
+iostream
+-
+../DynamicArray/Optional.hpp
+../source/DynamicArray/Optional.hpp
 
 ../source/ListSequence/ListSequence.hpp
 iostream
@@ -46,19 +56,37 @@ iostream
 
 ../source/Sequence/Sequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
-iostream
-C:/Users/Uzurpator/CLionProjects/lab2/iostream
+C:/Users/Uzurpator/CLionProjects/lab2/interface/LinearFormUI.hpp
+UIStarter.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+stdio.h
+-
+stdlib.h
+-
+ctype.h
+-
+
+C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+../tests/TestRunner.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
+../source/LinearForm/LinearForm.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinearForm/LinearForm.hpp
+LinearFormUI.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/interface/LinearFormUI.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/main.cpp
 iostream
 -
-source/DynamicArray/DynamicArray.hpp
+interface/UIStarter.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp
+../Sequence/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+../DynamicArray/DynamicArray.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
-source/LinkedList/LinkedList.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
-tests/TestRunner.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
+iostream
+-
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
 iostream
@@ -68,25 +96,15 @@ C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
 Optional.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
-../../Exception.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinearForm/LinearForm.hpp
 iostream
 -
+../Sequence/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+../ArraySequence/ArraySequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
-iostream
--
-Node.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
-../../Exception.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
-
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
-iostream
--
-../DynamicArray/Optional.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
 iostream

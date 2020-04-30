@@ -1,12 +1,10 @@
 #include <iostream>
-#include "source/DynamicArray/DynamicArray.hpp"
-#include "source/LinkedList/LinkedList.hpp"
-#include "tests/TestRunner.hpp"
+#include "interface/UIStarter.hpp"
 
 using namespace std;
 
 int main() {
-    TestRunner();
+    UIStarter();
 
     return 0;
 }

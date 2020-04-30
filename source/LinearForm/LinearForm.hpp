@@ -25,13 +25,18 @@ public:
 
     LinearForm<T> operator-(const LinearForm<T> &other);
 
-    LinearForm<T> &operator*=(const double value);
+    LinearForm<T> &operator*=(const T value);
 
-    LinearForm<T> operator*(const double value);
+    LinearForm<T> operator*(const T value);
 
     T eval(T *values, int size);
 
+    template<class M>
+    friend ostream &operator << (ostream &os, const LinearForm<M> &lf);
+
     T Get(int index);
+
+    int GetLength();
 };
 
 template<class T>
@@ -95,7 +100,7 @@ T LinearForm<T>::Get(int index) {
 }
 
 template<class T>
-LinearForm<T> &LinearForm<T>::operator*=(const double value) {
+LinearForm<T> &LinearForm<T>::operator*=(const T value) {
     int size = this->coefficients->GetLength();
 
     for (int i = 0; i < size; ++i) {
@@ -106,7 +111,7 @@ LinearForm<T> &LinearForm<T>::operator*=(const double value) {
 }
 
 template<class T>
-LinearForm<T> LinearForm<T>::operator*(const double value) {
+LinearForm<T> LinearForm<T>::operator*(const T value) {
     LinearForm<T> result = *this;
     result *= value;
 
@@ -136,7 +141,7 @@ LinearForm<T> &LinearForm<T>::operator-=(const LinearForm<T> &other) {
 
     for (int i = size_min; i < size_max; ++i) {
         if (size1 < size2) {
-            this->coefficients->Append(other.coefficients->Get(i));
+            this->coefficients->Append(-other.coefficients->Get(i));
         }
     }
 
@@ -166,4 +171,24 @@ T LinearForm<T>::eval(T *values, int size) {
 
     return result;
 }
+
+template<class M>
+ostream &operator<<(ostream &os, const LinearForm<M> &lf) {
+    if (lf.coefficients->GetLength() < 1) {
+        throw new Exception;
+    }
+
+    os << "c = " << lf.coefficients->Get(0);
+    for (int i = 1; i < lf.coefficients->GetLength(); ++i) {
+        os << ", x" << i << " = " << lf.coefficients->Get(i);
+    }
+
+    return os;
+}
+
+template<class T>
+int LinearForm<T>::GetLength() {
+    return this->coefficients->GetLength();
+}
+
 

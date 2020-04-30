@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/interface/LinearFormUI.hpp">
+			<Option target="lab_2"/>
+		</Unit>
+		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp">
+			<Option target="lab_2"/>
+		</Unit>
 		<Unit filename="C:/Users/Uzurpator/CLionProjects/lab2/main.cpp">
 			<Option target="lab_2"/>
 		</Unit>
