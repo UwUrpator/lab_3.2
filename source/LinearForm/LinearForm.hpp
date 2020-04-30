@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../Sequence/Sequence.hpp"
 #include "../ArraySequence/ArraySequence.hpp"
+#include "../ListSequence/ListSequence.hpp"
 
 using namespace std;
 
@@ -41,7 +42,7 @@ public:
 
 template<class T>
 LinearForm<T>::LinearForm() {
-    this->coefficients = new ArraySequence<T>(1);
+    //this->coefficients = new ArrySequence<T>(1);
 }
 
 template<class T>

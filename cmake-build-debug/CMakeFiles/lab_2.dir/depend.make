@@ -15,6 +15,8 @@ CMakeFiles/lab_2.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/ArraySequence/ArraySequence.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/DynamicArray/DynamicArray.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/LinearForm/LinearForm.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../source/LinkedList/LinkedList.hpp
+CMakeFiles/lab_2.dir/main.cpp.obj: ../source/ListSequence/ListSequence.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../source/Sequence/Sequence.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/ArraySequenceTester/ArraySequenceTester.hpp
 CMakeFiles/lab_2.dir/main.cpp.obj: ../tests/DummyClass/DummyClass.hpp

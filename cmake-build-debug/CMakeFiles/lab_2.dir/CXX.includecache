@@ -103,6 +103,24 @@ iostream
 C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
 ../ArraySequence/ArraySequence.hpp
 C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp
+../ListSequence/ListSequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/ListSequence/ListSequence.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
+iostream
+-
+Node.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
+../../Exception.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+
+C:/Users/Uzurpator/CLionProjects/lab2/source/ListSequence/ListSequence.hpp
+iostream
+-
+../Sequence/Sequence.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+../LinkedList/LinkedList.hpp
+C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
 
 C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
 
