@@ -56,9 +56,9 @@ iostream
 
 ../source/Sequence/Sequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/interface/LinearFormUI.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/interface/LinearFormUI.hpp
 UIStarter.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/interface/UIStarter.hpp
 stdio.h
 -
 stdlib.h
@@ -66,127 +66,127 @@ stdlib.h
 ctype.h
 -
 
-C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/interface/UIStarter.hpp
 ../tests/TestRunner.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/TestRunner.hpp
 ../source/LinearForm/LinearForm.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinearForm/LinearForm.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/LinearForm/LinearForm.hpp
 LinearFormUI.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/interface/LinearFormUI.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/interface/LinearFormUI.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/main.cpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/main.cpp
 iostream
 -
 interface/UIStarter.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/interface/UIStarter.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/interface/UIStarter.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/ArraySequence/ArraySequence.hpp
 ../Sequence/Sequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/Sequence/Sequence.hpp
 ../DynamicArray/DynamicArray.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/DynamicArray/DynamicArray.hpp
 iostream
 -
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/DynamicArray.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/DynamicArray/DynamicArray.hpp
 iostream
 -
 ../../Exception.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/Exception.hpp
 Optional.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/DynamicArray/Optional.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/DynamicArray/Optional.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinearForm/LinearForm.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/LinearForm/LinearForm.hpp
 iostream
 -
 ../Sequence/Sequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/Sequence/Sequence.hpp
 ../ArraySequence/ArraySequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/ArraySequence/ArraySequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/ArraySequence/ArraySequence.hpp
 ../ListSequence/ListSequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/ListSequence/ListSequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/ListSequence/ListSequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/LinkedList/LinkedList.hpp
 iostream
 -
 Node.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/Node.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/LinkedList/Node.hpp
 ../../Exception.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/Exception.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/Exception.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/ListSequence/ListSequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/ListSequence/ListSequence.hpp
 iostream
 -
 ../Sequence/Sequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/Sequence/Sequence.hpp
 ../LinkedList/LinkedList.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/source/LinkedList/LinkedList.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/LinkedList/LinkedList.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/source/Sequence/Sequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/source/Sequence/Sequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/ArraySequenceTester/ArraySequenceTester.hpp
 iostream
 -
 ../source/DynamicArray/DynamicArray.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/DynamicArray/DynamicArray.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/DynamicArray/DynamicArray.hpp
 ../source/ArraySequence/ArraySequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ArraySequence/ArraySequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/ArraySequence/ArraySequence.hpp
 ../DummyClass/DummyClass.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 iostream
 -
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DynamicArrayTester/DynamicArrayTester.hpp
 iostream
 -
 ../source/DynamicArray/DynamicArray.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/DynamicArray/DynamicArray.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/DynamicArray/DynamicArray.hpp
 ../DummyClass/DummyClass.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/LinearFormTester/LinearFormTester.hpp
 iostream
 -
 complex
 -
 ../source/LinearForm/LinearForm.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinearForm/LinearForm.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/LinearForm/LinearForm.hpp
 ../source/ArraySequence/ArraySequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ArraySequence/ArraySequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/ArraySequence/ArraySequence.hpp
 ../DummyClass/DummyClass.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/LinkedListTester/LinkedListTester.hpp
 iostream
 -
 ../source/LinkedList/LinkedList.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinkedList/LinkedList.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/LinkedList/LinkedList.hpp
 ../DummyClass/DummyClass.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/ListSequenceTester/ListSequenceTester.hpp
 iostream
 -
 ../source/LinkedList/LinkedList.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/LinkedList/LinkedList.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/LinkedList/LinkedList.hpp
 ../source/ListSequence/ListSequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/ListSequence/ListSequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/ListSequence/ListSequence.hpp
 ../DummyClass/DummyClass.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DummyClass/DummyClass.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DummyClass/DummyClass.hpp
 ../source/Sequence/Sequence.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/source/Sequence/Sequence.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/source/Sequence/Sequence.hpp
 
-C:/Users/Uzurpator/CLionProjects/lab2/tests/TestRunner.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/TestRunner.hpp
 ArraySequenceTester/ArraySequenceTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ArraySequenceTester/ArraySequenceTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/ArraySequenceTester/ArraySequenceTester.hpp
 DynamicArrayTester/DynamicArrayTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/DynamicArrayTester/DynamicArrayTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/DynamicArrayTester/DynamicArrayTester.hpp
 LinearFormTester/LinearFormTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinearFormTester/LinearFormTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/LinearFormTester/LinearFormTester.hpp
 LinkedListTester/LinkedListTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/LinkedListTester/LinkedListTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/LinkedListTester/LinkedListTester.hpp
 ListSequenceTester/ListSequenceTester.hpp
-C:/Users/Uzurpator/CLionProjects/lab2/tests/ListSequenceTester/ListSequenceTester.hpp
+/home/uwurpator/mephi/3rd_semester_labs/lab1/tests/ListSequenceTester/ListSequenceTester.hpp
 
