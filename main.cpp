@@ -1,7 +1,7 @@
 #include <iostream>
 #include "interface/UIStarter.hpp"
 
-#include "source/Sorter/QuickSort.hpp"
+#include "source/Sorter/QuickSorter.hpp"
 
 using namespace std;
 
@@ -24,7 +24,7 @@ int main() {
 
     Sequence<int>* seq = new ArraySequence<int>(arr, 3);
 
-    QuickSort<int>* sorter = new QuickSort<int>();
+    QuickSorter<int>* sorter = new QuickSorter<int>();
 
     Sequence<int>* seqSorted = sorter->Sort(seq, [](int a, int b) -> int { return a - b; });
 

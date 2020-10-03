@@ -16,7 +16,7 @@ set(SOURCE_FILES
         source/ListSequence/ListSequence.hpp
         source/Sequence/Sequence.hpp
         source/Sorter/ISorter.hpp
-        source/Sorter/QuickSort.hpp
+        source/Sorter/QuickSorter.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
         tests/LinkedListTester/LinkedListTester.hpp
