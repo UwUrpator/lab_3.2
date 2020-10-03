@@ -28,6 +28,8 @@ set(SOURCE_FILES
         tests/SorterTester/QuickSorterTester.hpp
         tests/SorterTester/ShellSorterTester.hpp
         tests/TestRunner.hpp
+        interface/basic/SelectorUI.hpp
+        interface/basic/SingleField.hpp
         interface/UIStarter.hpp
         #interface/LinearFormUI.hpp
         )
