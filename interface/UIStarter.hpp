@@ -25,7 +25,7 @@ UIStarter::UIStarter() {
                 SortRandomDataUI();
                 break;
             case 3:
-                //???
+                SortEnteredDataUI();
                 break;
             case 4:
                 return;

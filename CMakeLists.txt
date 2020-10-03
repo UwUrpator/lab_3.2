@@ -30,6 +30,7 @@ set(SOURCE_FILES
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
+        interface/basic/MultiField.hpp
         interface/UIStarter.hpp
         #interface/LinearFormUI.hpp
         )

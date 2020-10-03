@@ -158,7 +158,7 @@ void SortRandomDataUI::SortSeq() {
     }
 
     start = chrono::high_resolution_clock::now();
-    sortedSeq = ShellSorter<int>().Sort(this->sequence, [](int a, int b) -> int { return a - b;});
+    sortedSeq = ShellSorter<int>().Sort(this->sequence->Copy(), [](int a, int b) -> int { return a - b;});
     end = chrono::high_resolution_clock::now();
 
     milliseconds = chrono::duration_cast<chrono::milliseconds>(end - start).count();
@@ -191,6 +191,3 @@ void SortRandomDataUI::printSeq(Sequence<int>* seq) {
 
     cout << seq->Get(length - 1) << " ]" << endl;
 }
-
-
-
