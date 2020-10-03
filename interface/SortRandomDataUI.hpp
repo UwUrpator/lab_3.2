@@ -8,7 +8,7 @@
 #include "../source/ListSequence/ListSequence.hpp"
 #include "../source/Sorter/QuickSorter.hpp"
 #include "../source/Sorter/ShellSorter.hpp"
-#include "../interface/SelectorUI.hpp"
+#include "basic/SelectorUI.hpp"
 
 class SortRandomDataUI {
 private:

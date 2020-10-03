@@ -28,6 +28,8 @@ public:
 ShellSorterTester::ShellSorterTester() {
     this->dummyIntArrLen = 6;
 
+    this->dummyIntArr = static_cast<int *>(operator new[](this->dummyIntArrLen * sizeof(int)));
+
     this->dummyIntArr[0] = -1;
     this->dummyIntArr[1] = 3;
     this->dummyIntArr[2] = -2;

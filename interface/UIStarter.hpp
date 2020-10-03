@@ -5,6 +5,7 @@
 //#include "LinearFormUI.hpp"
 #include "SortRandomDataUI.hpp"
 #include "SortEnteredDataUI.hpp"
+#include "basic/SelectorUI.hpp"
 
 class UIStarter {
 public:
