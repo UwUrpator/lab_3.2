@@ -24,7 +24,7 @@ int main() {
 
     Sequence<int>* seq = new ArraySequence<int>(arr, 3);
 
-    QuickSorter<int>* sorter = new QuickSorter<int>();
+    ShellSorter<int>* sorter = new ShellSorter<int>();
 
     Sequence<int>* seqSorted = sorter->Sort(seq, [](int a, int b) -> int { return a - b; });
 

@@ -4,7 +4,7 @@
 #include "../Sequence/Sequence.hpp"
 
 template<class T>
-class QuickSorter : ISorter<T> {
+class ShellSorter : ISorter<T> {
 public:
     virtual Sequence<T>* Sort(Sequence<T>* sequence, int (*comparator)(T, T)) override;
 
@@ -13,12 +13,12 @@ private:
 };
 
 template<class T>
-Sequence<T>* QuickSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)) {
+Sequence<T>* ShellSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)) {
     return this->Sort(sequence, comparator, 0, sequence->GetLength() - 1);
 }
 
 template<class T>
-Sequence<T> *QuickSorter<T>::Sort(Sequence<T> *sequence, int (*comparator)(T, T), int left, int right) {
+Sequence<T> *ShellSorter<T>::Sort(Sequence<T> *sequence, int (*comparator)(T, T), int left, int right) {
     int l = left;
     int r = right;
 
