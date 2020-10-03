@@ -1,7 +1,7 @@
 #include <iostream>
 #include "interface/UIStarter.hpp"
 
-#include "source/Sorter/QuickSorter.hpp"
+#include "source/Sorter/ShellSorter.hpp"
 
 using namespace std;
 
@@ -17,7 +17,8 @@ int comparator(int a, int b) {
 }
 
 int main() {
-    //UIStarter();
+    UIStarter();
+
     int n = 3;
 
     int arr[] = {4, 2, 1};

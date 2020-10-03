@@ -18,12 +18,14 @@ set(SOURCE_FILES
         source/Sorter/ISorter.hpp
         source/Sorter/QuickSorter.hpp
         source/Sorter/ShellSorter.hpp
+        tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
         tests/LinkedListTester/LinkedListTester.hpp
         tests/ArraySequenceTester/ArraySequenceTester.hpp
         tests/ListSequenceTester/ListSequenceTester.hpp
         #tests/LinearFormTester/LinearFormTester.hpp
+        tests/SorterTester/QuickSorterTester.hpp
         tests/TestRunner.hpp
         interface/UIStarter.hpp
         #interface/LinearFormUI.hpp
