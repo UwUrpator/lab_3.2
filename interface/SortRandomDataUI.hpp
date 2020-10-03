@@ -22,6 +22,11 @@ public:
 
     void QuickSortUI();
     void ShellSortUI();
+
+    void QuickSortArrSeqUI();
+    void QuickSortListSeqUI();
+    void ShellSortArrSeqUI();
+    void ShellSortListSeqUI();
 };
 
 SortRandomDataUI::SortRandomDataUI() {
@@ -52,7 +57,7 @@ int SortRandomDataUI::SeqSelector() {
 }
 
 void SortRandomDataUI::QuickSortUI() {
-    /*while(true) {
+    while(true) {
         this->seq_choice = this->SeqSelector();
 
         switch(this->seq_choice) {
@@ -65,9 +70,38 @@ void SortRandomDataUI::QuickSortUI() {
             case 3:
                 return;
         }
-    }*/
+    }
 }
 
 void SortRandomDataUI::ShellSortUI() {
+    while(true) {
+        this->seq_choice = this->SeqSelector();
+
+        switch(this->seq_choice) {
+            case 1:
+                this->ShellSortArrSeqUI();
+                break;
+            case 2:
+                this->ShellSortListSeqUI();
+                break;
+            case 3:
+                return;
+        }
+    }
+}
+
+void SortRandomDataUI::QuickSortArrSeqUI() {
+
+}
+
+void SortRandomDataUI::QuickSortListSeqUI() {
+
+}
+
+void SortRandomDataUI::ShellSortArrSeqUI() {
+
+}
+
+void SortRandomDataUI::ShellSortListSeqUI() {
 
 }
