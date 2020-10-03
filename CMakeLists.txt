@@ -26,6 +26,7 @@ set(SOURCE_FILES
         tests/ListSequenceTester/ListSequenceTester.hpp
         #tests/LinearFormTester/LinearFormTester.hpp
         tests/SorterTester/QuickSorterTester.hpp
+        tests/SorterTester/ShellSorterTester.hpp
         tests/TestRunner.hpp
         interface/UIStarter.hpp
         #interface/LinearFormUI.hpp

@@ -6,6 +6,7 @@
 #include "LinkedListTester/LinkedListTester.hpp"
 #include "ListSequenceTester/ListSequenceTester.hpp"
 #include "SorterTester/QuickSorterTester.hpp"
+#include "SorterTester/ShellSorterTester.hpp"
 
 class TestRunner {
 public:
@@ -19,4 +20,5 @@ TestRunner::TestRunner() {
     ArraySequenceTester();
     //LinearFormTester();
     QuickSorterTester();
+    ShellSorterTester();
 }

@@ -6,11 +6,11 @@
 #include "../source/Sequence/Sequence.hpp"
 #include "../source/ArraySequence/ArraySequence.hpp"
 #include "../source/ListSequence/ListSequence.hpp"
-#include "../source/Sorter/QuickSorter.hpp"
+#include "../source/Sorter/ShellSorter.hpp"
 
 using namespace std;
 
-class QuickSorterTester {
+class ShellSorterTester {
 private:
     int *dummyIntArr;
     int dummyIntArrLen;
@@ -19,13 +19,13 @@ private:
     Sequence<int>* dummySeqList;
 
 public:
-    QuickSorterTester();
+    ShellSorterTester();
 
     void TestArrSeqSort();
     void TestListSeqSort();
 };
 
-QuickSorterTester::QuickSorterTester() {
+ShellSorterTester::ShellSorterTester() {
     this->dummyIntArrLen = 6;
 
     this->dummyIntArr[0] = -1;
@@ -42,33 +42,12 @@ QuickSorterTester::QuickSorterTester() {
     this->TestListSeqSort();
 }
 
-void QuickSorterTester::TestArrSeqSort() {
-    QuickSorter<int>* qsorter = new QuickSorter<int>();
+void ShellSorterTester::TestArrSeqSort() {
+    ShellSorter<int>* ssorter = new ShellSorter<int>();
 
     Sequence<int>* copiedSeq = this->dummySeqArr->Copy();
 
-    Sequence<int>* copiedSeqSorted = qsorter->Sort(copiedSeq, [](int a, int b) -> int { return a - b; });
-
-    Informator(
-            (
-                    copiedSeqSorted->Get(0) == -2 &&
-            copiedSeqSorted->Get(1) == -1 &&
-            copiedSeqSorted->Get(2) == 0 &&
-            copiedSeqSorted->Get(3) == 3 &&
-            copiedSeqSorted->Get(4) == 3 &&
-            copiedSeqSorted->Get(5) == 4
-    ),
-    "Success: Sequence<T>* QuickSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); passed ArraySequence",
-    "Error: Sequence<T>* QuickSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); sorted incorrectly, passed ArraySequence"
-    );
-}
-
-void QuickSorterTester::TestListSeqSort() {
-    QuickSorter<int>* qsorter = new QuickSorter<int>();
-
-    Sequence<int>* copiedSeq = this->dummySeqList->Copy();
-
-    Sequence<int>* copiedSeqSorted = qsorter->Sort(copiedSeq, [](int a, int b) -> int { return a - b; });
+    Sequence<int>* copiedSeqSorted = ssorter->Sort(copiedSeq, [](int a, int b) -> int { return a - b; });
 
     Informator(
             (
@@ -79,7 +58,28 @@ void QuickSorterTester::TestListSeqSort() {
                     copiedSeqSorted->Get(4) == 3 &&
                     copiedSeqSorted->Get(5) == 4
             ),
-            "Success: Sequence<T>* QuickSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); passed ListSequence",
-            "Error: Sequence<T>* QuickSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); sorted incorrectly, passed ListSequence"
+            "Success: Sequence<T>* ShellSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); passed ArraySequence",
+            "Error: Sequence<T>* ShellSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); sorted incorrectly, passed ArraySequence"
+    );
+}
+
+void ShellSorterTester::TestListSeqSort() {
+    ShellSorter<int>* ssorter = new ShellSorter<int>();
+
+    Sequence<int>* copiedSeq = this->dummySeqList->Copy();
+
+    Sequence<int>* copiedSeqSorted = ssorter->Sort(copiedSeq, [](int a, int b) -> int { return a - b; });
+
+    Informator(
+            (
+                    copiedSeqSorted->Get(0) == -2 &&
+                    copiedSeqSorted->Get(1) == -1 &&
+                    copiedSeqSorted->Get(2) == 0 &&
+                    copiedSeqSorted->Get(3) == 3 &&
+                    copiedSeqSorted->Get(4) == 3 &&
+                    copiedSeqSorted->Get(5) == 4
+            ),
+            "Success: Sequence<T>* ShellSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); passed ListSequence",
+            "Error: Sequence<T>* ShellSorter<T>::Sort(Sequence<T>* sequence, int (*comparator)(T, T)); sorted incorrectly, passed ListSequence"
     );
 }
