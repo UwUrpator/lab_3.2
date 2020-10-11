@@ -55,8 +55,6 @@ int main() {
 
     cats->RemoveAll(&isOld);
 
-    cout << cats->Get(1).name;
-
     cout << cats->GetLength() << endl;
 
     return 0;

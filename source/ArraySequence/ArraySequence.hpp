@@ -210,9 +210,7 @@ void ArraySequence<T>::RemoveAll(T value) {
 template<class T>
 void ArraySequence<T>::RemoveAll(bool (*checker)(T item)) {
     for (int i = 0; i < this->count; ++i) {
-        while (checker(this->Get(i)) and i < this->count) {
-            this->RemoveAt(i);
-        }
+        this->RemoveAt(i);
     }
 }
 
