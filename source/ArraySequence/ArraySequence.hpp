@@ -42,7 +42,11 @@ public:
 
     virtual void Remove(T value) override;
 
+    virtual void Remove(bool (*checker)(T item));
+
     virtual void RemoveAll(T value) override;
+
+    virtual void RemoveAll(bool (*checker)(T item));
 
     virtual Sequence<T> *Concat(Sequence<T> *other) override;
 
@@ -106,7 +110,8 @@ T ArraySequence<T>::GetLast() const {
 
 template<class T>
 T ArraySequence<T>::Get(const int index) const {
-    return (*(this->items))[index];
+    //return (*(this->items))[index];
+    return this->items->Get(index);
 }
 
 template<class T>
@@ -184,9 +189,28 @@ void ArraySequence<T>::Remove(T value) {
 }
 
 template<class T>
+void ArraySequence<T>::Remove(bool (*checker)(T item)) {
+    for (int i = 0; i < this->count; ++i) {
+        if (checker(this->Get(i))) {
+            this->RemoveAt(i);
+            return;
+        }
+    }
+}
+
+template<class T>
 void ArraySequence<T>::RemoveAll(T value) {
     for (int i = 0; i < this->count; ++i) {
-        if ((((*(this->items)))[i]).GetValue() == value) {
+        while ((((*(this->items)))[i]).GetValue() == value) {
+            this->RemoveAt(i);
+        }
+    }
+}
+
+template<class T>
+void ArraySequence<T>::RemoveAll(bool (*checker)(T item)) {
+    for (int i = 0; i < this->count; ++i) {
+        while (checker(this->Get(i)) and i < this->count) {
             this->RemoveAt(i);
         }
     }
@@ -228,4 +252,6 @@ void ArraySequence<T>::Set(T value, const int index) {
 
     this->InsertAt(value, index);
 }
+
+
 
