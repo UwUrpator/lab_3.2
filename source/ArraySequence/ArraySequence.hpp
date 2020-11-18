@@ -209,9 +209,27 @@ void ArraySequence<T>::RemoveAll(T value) {
 
 template<class T>
 void ArraySequence<T>::RemoveAll(bool (*checker)(T item)) {
-    for (int i = 0; i < this->count; ++i) {
-        this->RemoveAt(i);
+    int i = 0;
+    int j = 0;
+
+    int len = this->GetLength();
+
+    for (; i < len; ++i) {
+        T toCheck = this->Get(i);
+        if (!checker(toCheck) && i == j) {
+            j++;
+            continue;
+        }
+        if (!checker(toCheck) && i != j) {
+            T temp = this->Get(j);
+            Set(toCheck, j);
+            Set(temp, i);
+            j++;
+        }
     }
+
+    this->items->Resize(j);
+    this->count = j;
 }
 
 template<class T>

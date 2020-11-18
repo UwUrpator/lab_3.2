@@ -43,13 +43,15 @@ int main() {
     Cat cat1 = Cat("Barcik", 2);
     Cat cat2 = Cat("Vacya", 12);
     Cat cat3 = Cat("Ivan", 50);
+    Cat cat4 = Cat("Barcik", 3);
 
-    Cat* catsArr = new Cat[3];
+    Cat* catsArr = new Cat[4];
     catsArr[0] = cat1;
     catsArr[1] = cat2;
     catsArr[2] = cat3;
+    catsArr[3] = cat4;
 
-    ArraySequence<Cat>* cats = new ArraySequence<Cat>(catsArr, 3);
+    ArraySequence<Cat>* cats = new ArraySequence<Cat>(catsArr, 4);
 
     cout << cats->GetLength() << endl;
 
