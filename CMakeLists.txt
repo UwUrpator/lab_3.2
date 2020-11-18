@@ -18,6 +18,8 @@ set(SOURCE_FILES
         source/Sorter/ISorter.hpp
         source/Sorter/QuickSorter.hpp
         source/Sorter/ShellSorter.hpp
+        source/Set/ISet.hpp
+        source/Set/SetSequence.hpp
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
@@ -27,6 +29,7 @@ set(SOURCE_FILES
         #tests/LinearFormTester/LinearFormTester.hpp
         tests/SorterTester/QuickSorterTester.hpp
         tests/SorterTester/ShellSorterTester.hpp
+        tests/SetTester/SetSequenceTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
