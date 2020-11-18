@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(lab_1)
+project(lab_3.2)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -35,4 +35,4 @@ set(SOURCE_FILES
         #interface/LinearFormUI.hpp
         )
 
-add_executable(lab_1 ${SOURCE_FILES})
+add_executable(lab_3.2 ${SOURCE_FILES})
