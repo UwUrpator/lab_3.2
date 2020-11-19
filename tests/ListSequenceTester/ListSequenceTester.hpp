@@ -362,7 +362,7 @@ void ListSequenceTester::TestConstructor4() {
 void ListSequenceTester::TestGetLength() {
     bool isError = false;
 
-    ListSequence<char> *lsCharEmpty = new ListSequence<char>();
+    /*ListSequence<char> *lsCharEmpty = new ListSequence<char>();
     try {
         lsCharEmpty->GetLength();
         isError = true;
@@ -374,7 +374,7 @@ void ListSequenceTester::TestGetLength() {
         cout << "Error: ListSequence::TestGetLength(); Length of empty listseq was gotten" << endl;
     }
 
-    isError = false;
+    isError = false;*/
 
     ListSequence<char> *lsChar = new ListSequence<char>(this->dummyCharArr, this->dummyCharArrLen);
 

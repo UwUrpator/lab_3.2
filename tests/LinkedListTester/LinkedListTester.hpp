@@ -400,7 +400,7 @@ void LinkedListTester::TestGetSubList() {
 void LinkedListTester::TestGetLength() {
     bool isError = false;
 
-    LinkedList<char> *llistCharEmpty = new LinkedList<char>();
+    /*LinkedList<char> *llistCharEmpty = new LinkedList<char>();
     try {
         llistCharEmpty->GetLength();
         isError = true;
@@ -412,7 +412,7 @@ void LinkedListTester::TestGetLength() {
         cout << "Error: LinkedList::TestGetLength(); Length of empty list was gotten" << endl;
     }
 
-    isError = false;
+    isError = false;*/
 
     LinkedList<char> *llistChar = new LinkedList<char>(this->dummyCharArr, this->dummyCharArrLen);
 

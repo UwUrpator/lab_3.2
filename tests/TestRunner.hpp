@@ -8,6 +8,7 @@
 #include "SorterTester/QuickSorterTester.hpp"
 #include "SorterTester/ShellSorterTester.hpp"
 #include "SetTester/SetSequenceTester.hpp"
+#include "BinaryTreeTester/BinaryTreeTester.hpp"
 
 class TestRunner {
 public:
@@ -22,5 +23,6 @@ TestRunner::TestRunner() {
     //LinearFormTester();
     QuickSorterTester();
     ShellSorterTester();
+    BinaryTreeTester();
     SetSequenceTester();
 }

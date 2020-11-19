@@ -20,6 +20,9 @@ set(SOURCE_FILES
         source/Sorter/ShellSorter.hpp
         source/Set/ISet.hpp
         source/Set/SetSequence.hpp
+        source/Set/SetBinaryTree.hpp
+        source/BinaryTree/BinaryTree.hpp
+        source/BinaryTree/TreeNode.hpp
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
@@ -30,6 +33,7 @@ set(SOURCE_FILES
         tests/SorterTester/QuickSorterTester.hpp
         tests/SorterTester/ShellSorterTester.hpp
         tests/SetTester/SetSequenceTester.hpp
+        tests/BinaryTreeTester/BinaryTreeTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
