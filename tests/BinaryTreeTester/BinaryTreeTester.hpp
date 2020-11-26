@@ -57,6 +57,8 @@ public:
     void testContainsSubTree();
 
     void testCount();
+
+    void testGet();
 };
 
 BinaryTreeTester::BinaryTreeTester() {
@@ -73,6 +75,7 @@ BinaryTreeTester::BinaryTreeTester() {
     testGetSubTree();
     testContainsSubTree();
     testCount();
+    testGet();
 }
 
 void BinaryTreeTester::testInsert() {
@@ -419,5 +422,25 @@ void BinaryTreeTester::testCount() {
         (binaryTree->Count() == 9),
         "Success: BinaryTree::Count(); correct amount of nodes",
         "Error: BinaryTree::Count(); incorrect amount of nodes"
+    );
+}
+
+void BinaryTreeTester::testGet() {
+    BinaryTree<int>* binaryTree = new BinaryTree<int>();
+
+    binaryTree->Insert(8);
+    binaryTree->Insert(3);
+    binaryTree->Insert(10);
+    binaryTree->Insert(1);
+    binaryTree->Insert(6);
+    binaryTree->Insert(14);
+    binaryTree->Insert(4);
+    binaryTree->Insert(7);
+    binaryTree->Insert(13);
+
+    Informator(
+            (binaryTree->Get(0) == 8),
+            "Success: BinaryTree<T>::Get(int index); correct item was gotten",
+            "Error: BinaryTree<T>::Get(int index); incorrect item was gotten"
     );
 }

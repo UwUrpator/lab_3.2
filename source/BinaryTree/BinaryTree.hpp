@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <queue>
 
 #include "TreeNode.hpp"
 #include "../Exception.hpp"
@@ -41,6 +42,8 @@ public:
 
     int Count();
 
+    T Get(int index);
+
 private:
     TreeNode<T>* root;
 
@@ -70,7 +73,9 @@ private:
 
     bool _ContainsSubTree(TreeNode<T>* node1, TreeNode<T>* node2);
 
-    int _Count(int count, TreeNode<T>* node);
+    int _Count(TreeNode<T>* root);
+
+    T _Get(int index, TreeNode<T>* node);
 };
 
 template<typename T>
@@ -356,16 +361,57 @@ bool BinaryTree<T>::_ContainsSubTree(TreeNode<T> *node1, TreeNode<T> *node2) {
 
 template<typename T>
 int BinaryTree<T>::Count() {
-    return this->_Count(0, this->root);
+    return this->_Count(this->root);
 }
 
 template<typename T>
-int BinaryTree<T>::_Count(int count, TreeNode<T>* node) {
-    if (node != NULL) {
+int BinaryTree<T>::_Count(TreeNode<T>* root) {
+    int count = 0;
+    queue<TreeNode<T>*> q;
+
+    q.push(root);
+
+    while(!q.empty()) {
+        if (q.front()->left)
+            q.push(q.front()->left);
+        if (q.front()->right)
+            q.push(q.front()->right);
+
+        q.pop();
         count++;
-        count = this->_Count(count, node->left);
-        count = this->_Count(count, node->right);
     }
 
     return count;
 }
+
+template<typename T>
+T BinaryTree<T>::Get(int index) {
+    return this->_Get(index, this->root);
+}
+
+template<typename T>
+T BinaryTree<T>::_Get(int index, TreeNode<T> *node) {
+    if (index < 0 || index >= this->Count()) {
+        throw new Exception;
+    }
+
+    int cur_index = 0;
+    queue<TreeNode<T>*> q;
+
+    q.push(root);
+
+    while(!q.empty()) {
+        if (cur_index == index) {
+            return *(q.front()->value);
+        }
+
+        if (q.front()->left)
+            q.push(q.front()->left);
+        if (q.front()->right)
+            q.push(q.front()->right);
+
+        q.pop();
+        cur_index++;
+    }
+}
+

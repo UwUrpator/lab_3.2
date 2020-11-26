@@ -7,8 +7,8 @@
 #include "ListSequenceTester/ListSequenceTester.hpp"
 #include "SorterTester/QuickSorterTester.hpp"
 #include "SorterTester/ShellSorterTester.hpp"
-#include "SetTester/SetSequenceTester.hpp"
 #include "BinaryTreeTester/BinaryTreeTester.hpp"
+#include "SetTester/SetTester.hpp"
 
 class TestRunner {
 public:
@@ -24,5 +24,5 @@ TestRunner::TestRunner() {
     QuickSorterTester();
     ShellSorterTester();
     BinaryTreeTester();
-    SetSequenceTester();
+    SetTester();
 }

@@ -27,5 +27,22 @@ SetBinaryTree<T>::SetBinaryTree() {
 
 template<class T>
 void SetBinaryTree<T>::Insert(T value) {
-    this->items->Insert(value);
+    if (!this->items->Search(value)) {
+        this->items->Insert(value);
+    }
+}
+
+template<class T>
+T SetBinaryTree<T>::Get(const int index) const {
+    return this->items->Get(index);
+}
+
+template<class T>
+void SetBinaryTree<T>::Erase(T value) {
+    this->items->DeleteTreeNode(value);
+}
+
+template<class T>
+int SetBinaryTree<T>::Count() const {
+   return this->items->Count();
 }

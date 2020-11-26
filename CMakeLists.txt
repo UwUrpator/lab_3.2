@@ -32,7 +32,8 @@ set(SOURCE_FILES
         #tests/LinearFormTester/LinearFormTester.hpp
         tests/SorterTester/QuickSorterTester.hpp
         tests/SorterTester/ShellSorterTester.hpp
-        tests/SetTester/SetSequenceTester.hpp
+        tests/SetTester/ISetTester.hpp
+        tests/SetTester/SetTester.hpp
         tests/BinaryTreeTester/BinaryTreeTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
