@@ -414,4 +414,3 @@ T BinaryTree<T>::_Get(int index, TreeNode<T> *node) {
         cur_index++;
     }
 }
-

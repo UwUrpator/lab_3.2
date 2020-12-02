@@ -36,7 +36,9 @@ public:
 
     void testToString();
 
-    void testSearch();
+    void testSearch1();
+
+    void testSearch2();
 
     void testDeleteTreeNode();
 
@@ -64,7 +66,8 @@ public:
 BinaryTreeTester::BinaryTreeTester() {
     testInsert();
     testToString();
-    testSearch();
+    testSearch1();
+    //testSearch2();
     testDeleteTreeNode();
     testMapOneType();
     testMapTwoTypes();
@@ -123,7 +126,7 @@ void BinaryTreeTester::testToString() {
 }
 
 
-void BinaryTreeTester::testSearch() {
+void BinaryTreeTester::testSearch1() {
     BinaryTree<int>* binaryTree = new BinaryTree<int>();
 
     binaryTree->Insert(8);
@@ -147,6 +150,32 @@ void BinaryTreeTester::testSearch() {
 
     delete binaryTree;
 }
+
+/*void BinaryTreeTester::testSearch2() {
+
+    BinaryTree<int>* binaryTree = new BinaryTree<int>();
+
+    binaryTree->Insert(8);
+    binaryTree->Insert(3);
+    binaryTree->Insert(10);
+    binaryTree->Insert(1);
+    binaryTree->Insert(6);
+    binaryTree->Insert(14);
+    binaryTree->Insert(4);
+    binaryTree->Insert(7);
+    binaryTree->Insert(13);
+
+    TreeNode<int>* foundTreeNode = binaryTree->Search(isEven);
+
+    if (*foundTreeNode->value != 8) {
+        cout << "Error: BinaryTree::search(); wrong node was found by check-function" << endl;
+        return;
+    }
+
+    cout << "Success: BinaryTree::search(); correct node was found by check-function" << endl;
+
+    delete binaryTree;
+}*/
 
 void BinaryTreeTester::testDeleteTreeNode() {
     BinaryTree<int> *binaryTree = new BinaryTree<int>();

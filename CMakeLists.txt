@@ -26,6 +26,7 @@ set(SOURCE_FILES
         source/Dictionary/Pair.hpp
         source/Dictionary/IDictionary.hpp
         source/Dictionary/DictionarySequence.hpp
+        source/Dictionary/DictionaryBinaryTree.hpp
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp

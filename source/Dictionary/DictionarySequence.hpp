@@ -74,7 +74,7 @@ template<class K, class T>
 void DictionarySequence<K, T>::Add(const K key, const T element) {
     if (!(this->ContainsKey(key) && (this->count != this->capacity))) {
         this->items->Set(Pair<K, T>(key, element), count);
-        count++;
+        this->count++;
     }
     else {
         throw new Exception;

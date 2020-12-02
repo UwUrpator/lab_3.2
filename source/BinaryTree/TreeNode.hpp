@@ -17,7 +17,8 @@ public:
 
 template<class T>
 TreeNode<T>::TreeNode(T value) {
-    this->value = static_cast<T*>(operator new[](sizeof(T) + 1));
+    //this->value = static_cast<T*>(operator new[](sizeof(T) + 1));
+    this->value = new T();
 
     *this->value = value;
 
