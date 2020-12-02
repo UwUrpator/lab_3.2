@@ -28,7 +28,7 @@ public:
 
     T& operator=(const T& other);
 
-private:
+//private:
     Optional();
 };
 
@@ -71,7 +71,7 @@ bool Optional<T>::TryGetValue(T &value) const {
 
 template<class T>
 bool Optional<T>::operator==(Optional<T> &other) {
-    return this->hasValue == other->hasValue && (!this->hasValue || this->value == other->value);
+    return this->hasValue == other.hasValue && (!this->hasValue || this->value == other.value);
 }
 
 template<class T>

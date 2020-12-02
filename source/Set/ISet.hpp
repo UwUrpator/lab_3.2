@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../Sequence/Sequence.hpp"
-
 template <class T>
 class ISet {
 public:

@@ -18,11 +18,14 @@ set(SOURCE_FILES
         source/Sorter/ISorter.hpp
         source/Sorter/QuickSorter.hpp
         source/Sorter/ShellSorter.hpp
+        source/BinaryTree/BinaryTree.hpp
+        source/BinaryTree/TreeNode.hpp
         source/Set/ISet.hpp
         source/Set/SetSequence.hpp
         source/Set/SetBinaryTree.hpp
-        source/BinaryTree/BinaryTree.hpp
-        source/BinaryTree/TreeNode.hpp
+        source/Dictionary/Pair.hpp
+        source/Dictionary/IDictionary.hpp
+        source/Dictionary/DictionarySequence.hpp
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
@@ -34,6 +37,9 @@ set(SOURCE_FILES
         tests/SorterTester/ShellSorterTester.hpp
         tests/SetTester/ISetTester.hpp
         tests/SetTester/SetTester.hpp
+        tests/DictionaryTester/PairTester.hpp
+        tests/DictionaryTester/IDictionaryTester.hpp
+        tests/DictionaryTester/DictionaryTester.hpp
         tests/BinaryTreeTester/BinaryTreeTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp

@@ -53,6 +53,8 @@ public:
     virtual Sequence<T> *Copy() override;
 
     virtual void Set(T value, const int index) override;
+
+    int GetCapacity();
 };
 
 template<class T>
@@ -267,6 +269,11 @@ void ArraySequence<T>::Set(T value, const int index) {
     this->RemoveAt(index);
 
     this->InsertAt(value, index);
+}
+
+template<class T>
+int ArraySequence<T>::GetCapacity() {
+    return this->count;
 }
 
 

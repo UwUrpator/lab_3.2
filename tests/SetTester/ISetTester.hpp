@@ -13,8 +13,11 @@ public:
 
 private:
     string name;
+
     void TestSetCount();
+
     void TestSetInsert();
+
     void TestSetErase();
 };
 

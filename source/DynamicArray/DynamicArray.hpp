@@ -35,7 +35,8 @@ DynamicArray<T>::DynamicArray(T *items, int size) {
     if (size < 1) {
         throw new Exception;
     }
-    this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    //this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    this->items = new Optional<T>[size];
     this->size = size;
     for (int i = 0; i < size; ++i) {
         this->items[i] = items[i];
@@ -47,10 +48,13 @@ DynamicArray<T>::DynamicArray(const int size) {
     if (size < 1) {
         throw new Exception;
     }
-    this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    //this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    this->items = new Optional<T>[size];
+
+    this->size = size;
+
     for (int i = 0; i < size; i++)
         this->items[i] = *Optional<T>::Empty();
-    this->size = size;
 }
 
 template<class T>
@@ -61,7 +65,8 @@ DynamicArray<T>::DynamicArray(const DynamicArray<T> &array) {
 template<class T>
 DynamicArray<T> &DynamicArray<T>::operator=(const DynamicArray &array) {
     this->size = array.size;
-    this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    //this->items = static_cast<Optional<T> *>(operator new[](size * sizeof(Optional<T>)));
+    this->items = new Optional<T>[size];
     for (int i = 0; i < this->size; ++i) {
         this->items[i] = array.items[i];
     }
@@ -105,7 +110,9 @@ void DynamicArray<T>::Resize(int newSize) {
             this->items[i].~Optional();
         }
     } else if (newSize > this->size) {
-        Optional<T> *newItems = static_cast<Optional<T> *>(operator new[](newSize * sizeof(Optional<T>)));
+        //Optional<T> *newItems = static_cast<Optional<T> *>(operator new[](newSize * sizeof(Optional<T>)));
+        Optional<T> *newItems = new Optional<T>[newSize];
+
         for (int i = 0; i < this->size; ++i) {
             newItems[i] = this->items[i];
         }

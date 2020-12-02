@@ -9,6 +9,8 @@
 #include "SorterTester/ShellSorterTester.hpp"
 #include "BinaryTreeTester/BinaryTreeTester.hpp"
 #include "SetTester/SetTester.hpp"
+#include "DictionaryTester/PairTester.hpp"
+#include "DictionaryTester/DictionaryTester.hpp"
 
 class TestRunner {
 public:
@@ -16,7 +18,7 @@ public:
 };
 
 TestRunner::TestRunner() {
-    DynamicArrayTester();
+    /*DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
@@ -25,4 +27,6 @@ TestRunner::TestRunner() {
     ShellSorterTester();
     BinaryTreeTester();
     SetTester();
+    PairTester();*/
+    DictionaryTester();
 }
