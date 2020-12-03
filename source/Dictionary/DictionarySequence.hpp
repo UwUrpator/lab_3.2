@@ -78,9 +78,6 @@ void DictionarySequence<K, T>::Add(const K key, const T element) {
         this->items->Set(Pair<K, T>(key, element), count);
         this->count++;
     }
-    else {
-        throw new Exception;
-    }
 }
 
 template<class K, class T>

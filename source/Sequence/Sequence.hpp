@@ -13,7 +13,6 @@ public:
 
     virtual Sequence<T> *GetSubsequence(const int start, const int end) const = 0;
 
-public:
     virtual void Prepend(T value) = 0;
 
     virtual void Append(T value) = 0;

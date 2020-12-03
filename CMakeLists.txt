@@ -19,6 +19,9 @@ set(SOURCE_FILES
         source/Sorter/QuickSorter.hpp
         source/Sorter/ShellSorter.hpp
         source/BinaryTree/BinaryTree.hpp
+
+        source/BinaryTree/BinaryHeap.hpp
+
         source/BinaryTree/TreeNode.hpp
         source/Set/ISet.hpp
         source/Set/SetSequence.hpp
@@ -27,6 +30,7 @@ set(SOURCE_FILES
         source/Dictionary/IDictionary.hpp
         source/Dictionary/DictionarySequence.hpp
         source/Dictionary/DictionaryBinaryTree.hpp
+        source/Cache/Cache.hpp
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
@@ -42,6 +46,7 @@ set(SOURCE_FILES
         tests/DictionaryTester/IDictionaryTester.hpp
         tests/DictionaryTester/DictionaryTester.hpp
         tests/BinaryTreeTester/BinaryTreeTester.hpp
+        tests/BinaryTreeTester/BinaryHeapTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
