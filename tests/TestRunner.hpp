@@ -18,15 +18,14 @@ public:
 };
 
 TestRunner::TestRunner() {
-    /*DynamicArrayTester();
+    DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
-    //LinearFormTester();
     QuickSorterTester();
     ShellSorterTester();
     BinaryTreeTester();
     SetTester();
-    PairTester();*/
+    PairTester();
     DictionaryTester();
 }

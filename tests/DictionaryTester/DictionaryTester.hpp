@@ -14,6 +14,6 @@ public:
 };
 
 DictionaryTester::DictionaryTester() {
-    //IDictionaryTester<DictionarySequence<string, int>>("DictionarySequence");
+    IDictionaryTester<DictionarySequence<string, int>>("DictionarySequence");
     IDictionaryTester<DictionaryBinaryTree<string, int>>("DictionaryBinaryTree");
 }

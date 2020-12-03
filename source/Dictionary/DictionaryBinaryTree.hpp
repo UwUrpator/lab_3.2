@@ -25,6 +25,8 @@ public:
     virtual void Add(const K key, const T element) override;
 
     virtual void Remove(const K key) override;
+
+    virtual void Change(const K key, T element) override;
 };
 
 template<class K, class T>
@@ -82,4 +84,19 @@ void DictionaryBinaryTree<K, T>::Remove(const K key) {
 
     this->items->DeleteTreeNode(Pair<K, T>(key, T()));
     this->count--;
+}
+
+template<class K, class T>
+void DictionaryBinaryTree<K, T>::Change(const K key, T element) {
+    if (this->count <= 0) {
+        throw new Exception;
+    }
+
+    TreeNode<Pair<K, T>>* node = this->items->Search(Pair<K, T>(key, T()));
+    if (node) {
+        node->value = new Pair<K, T>(key, element);
+        return;
+    }
+
+    throw new Exception;
 }

@@ -25,6 +25,8 @@ private:
     void TestAdd();
 
     void TestRemove();
+
+    void TestChange();
 };
 
 template<class T>
@@ -37,6 +39,7 @@ IDictionaryTester<T>::IDictionaryTester(string name) {
     this->TestContainsKey();
     this->TestAdd();
     this->TestRemove();
+    this->TestChange();
 }
 
 template<class T>
@@ -139,5 +142,24 @@ void IDictionaryTester<T>::TestRemove() {
             ),
             "Success: void " + this->name + "::Remove(); Removed correctly",
             "Error: void " + this->name + "::Remove(); Removed incorrectly"
+    );
+}
+
+template<class T>
+void IDictionaryTester<T>::TestChange() {
+    IDictionary<string, int>* dict = new T(3);
+
+    dict->Add("Peter", 30);
+    dict->Change("Peter", dict->Get("Peter") + 1);
+
+    Informator(
+            (
+                    dict->ContainsKey("Peter") &&
+                    dict->Capacity() == 3 &&
+                    dict->Count() == 1 &&
+                    dict->Get("Peter") == 31
+            ),
+            "Success: void " + this->name + "::Change(); Changed correctly",
+            "Error: void " + this->name + "::Change(); Changed incorrectly"
     );
 }

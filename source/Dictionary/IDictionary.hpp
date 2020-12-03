@@ -17,4 +17,6 @@ public:
     virtual void Add(const K key, const T element) = 0;
 
     virtual void Remove(const K key) = 0;
+
+    virtual void Change(const K key, T element) = 0;
 };
