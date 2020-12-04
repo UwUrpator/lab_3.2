@@ -12,6 +12,8 @@ public:
 
     virtual T Get(const K key) const = 0;
 
+    //virtual K GetKeyByIndex(const int index) const = 0;
+
     virtual bool ContainsKey(const K key) const = 0;
 
     virtual void Add(const K key, const T element) = 0;

@@ -20,6 +20,8 @@ public:
 
     virtual T Get(const K key) const override;
 
+    //virtual K GetKeyByIndex(const int index) const override;
+
     virtual bool ContainsKey(const K key) const override;
 
     virtual void Add(const K key, const T element) override;
@@ -60,6 +62,15 @@ T DictionarySequence<K, T>::Get(const K key) const {
 
     throw new Exception;
 }
+
+/*template<class K, class T>
+K DictionarySequence<K, T>::GetKeyByIndex(const int index) const {
+    if (this->count <= 0 || this->count <= index || index < 0) {
+        throw new Exception;
+    }
+
+    return this->items->Get(index).GetFirst();
+}*/
 
 template<class K, class T>
 bool DictionarySequence<K, T>::ContainsKey(const K key) const {
@@ -113,3 +124,4 @@ void DictionarySequence<K, T>::Change(const K key, T element) {
 
     throw new Exception;
 }
+

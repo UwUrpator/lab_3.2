@@ -65,7 +65,7 @@ void BinaryHeap<T>::_bubbleUp(int index) {
 
     int parent = this->_getParent(index);
 
-    if (heap[parent] < heap[index]) {
+    if (heap[parent] <= heap[index]) {
         T tmp = heap[parent];
         heap[parent] = heap[index];
         heap[index] = tmp;
@@ -84,12 +84,12 @@ void BinaryHeap<T>::_bubbleDown(int index) {
 
     int maxIndex = index;
 
-    if(heap[left] > heap[index])
+    if(heap[left] >= heap[index])
     {
         maxIndex = left;
     }
 
-    if(!this->_isLeaf(right) && (heap[right] > heap[maxIndex]))
+    if(!this->_isLeaf(right) && (heap[right] >= heap[maxIndex]))
     {
         maxIndex = right;
     }
@@ -171,7 +171,7 @@ T BinaryHeap<T>::remove(int index) {
     heap[index] = heap[heap.size()-1];
     heap.pop_back();
     int p = this->_getParent(index);
-    if(index == 0 || heap[index] < heap[p])
+    if(index == 0 || heap[index] <= heap[p])
         this->_bubbleDown(index);
     else
         this->_bubbleUp(index);

@@ -51,38 +51,38 @@ T Pair<K, T>::GetSecond() {
 
 template<class K, class T>
 bool Pair<K, T>::operator==(const Pair<K, T> &pair) {
-    //return (this->first == pair.first);
-    return (this->second == pair.second);
+    return (this->first == pair.first);
+    //return (this->second == pair.second);
 }
 
 template<class K, class T>
 bool Pair<K, T>::operator!=(const Pair<K, T> &pair) {
-    //return !(this->first == pair.first);
-    return !(this->second != pair.second);
+    return !(this->first == pair.first);
+    //return !(this->second != pair.second);
 }
 
 template<class K, class T>
 bool Pair<K, T>::operator<(const Pair<K, T> &pair) {
-    //return (this->first < pair.first);
-    return (this->second < pair.second);
+    return (this->first < pair.first);
+    //return (this->second < pair.second);
 }
 
 template<class K, class T>
 bool Pair<K, T>::operator>(const Pair<K, T> &pair) {
-    //return (this->first > pair.first);
-    return (this->second > pair.second);
+    return (this->first > pair.first);
+    //return (this->second > pair.second);
 }
 
 template<class K, class T>
 bool Pair<K, T>::operator<=(const Pair<K, T> &pair) {
-    //return (this->first <= pair.first);
-    return (this->second <= pair.second);
+    return (this->first <= pair.first);
+    //return (this->second <= pair.second);
 }
 
 template<class K, class T>
 bool Pair<K, T>::operator>=(const Pair<K, T> &pair) {
-    //return (this->first >= pair.first);
-    return (this->second >= pair.second);
+    return (this->first >= pair.first);
+    //return (this->second >= pair.second);
 }
 
 template<class K, class T>

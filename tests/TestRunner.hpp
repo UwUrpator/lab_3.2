@@ -12,6 +12,7 @@
 #include "SetTester/SetTester.hpp"
 #include "DictionaryTester/PairTester.hpp"
 #include "DictionaryTester/DictionaryTester.hpp"
+#include "CacheTester/CacheTester.hpp"
 
 class TestRunner {
 public:
@@ -19,7 +20,7 @@ public:
 };
 
 TestRunner::TestRunner() {
-    DynamicArrayTester();
+    /*DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
@@ -28,6 +29,7 @@ TestRunner::TestRunner() {
     BinaryTreeTester();
     BinaryHeapTester();
     SetTester();
-    PairTester();
+    PairTester();*/
     DictionaryTester();
+    //CacheTester();
 }

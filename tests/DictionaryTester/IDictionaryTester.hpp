@@ -20,6 +20,8 @@ private:
 
     void TestGet();
 
+    //void TestGetKeyByIndex();
+
     void TestContainsKey();
 
     void TestAdd();
@@ -36,6 +38,7 @@ IDictionaryTester<T>::IDictionaryTester(string name) {
     this->TestCount();
     this->TestCapacity();
     this->TestGet();
+    //this->TestGetKeyByIndex();
     this->TestContainsKey();
     this->TestAdd();
     this->TestRemove();
@@ -85,9 +88,24 @@ void IDictionaryTester<T>::TestGet() {
     Informator(
             (dict->Get("Bob") == 32),
             "Success: T " + this->name + "::Get(); Correct item was gotten",
-            "Error: T " + this->name + "::Capacity(); Incorrect item was gotten"
+            "Error: T " + this->name + "::Get(); Incorrect item was gotten"
     );
 }
+
+/*template<class T>
+void IDictionaryTester<T>::TestGetKeyByIndex() {
+    IDictionary<string, int>* dict = new T(3);
+
+    dict->Add("Bob", 32);
+    dict->Add("Peter", 30);
+    dict->Add("Jack", 28);
+
+    Informator(
+            (dict->GetKeyByIndex(2) == "Jack"),
+            "Success: T " + this->name + "::GetKeyByIndex(); Correct item was gotten",
+            "Error: T " + this->name + "::GetKeyByIndex(); Incorrect item was gotten"
+    );
+}*/
 
 template<class T>
 void IDictionaryTester<T>::TestContainsKey() {
@@ -165,3 +183,4 @@ void IDictionaryTester<T>::TestChange() {
             "Error: void " + this->name + "::Change(); Changed incorrectly"
     );
 }
+

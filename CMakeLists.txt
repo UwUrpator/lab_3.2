@@ -47,6 +47,7 @@ set(SOURCE_FILES
         tests/DictionaryTester/DictionaryTester.hpp
         tests/BinaryTreeTester/BinaryTreeTester.hpp
         tests/BinaryTreeTester/BinaryHeapTester.hpp
+        tests/CacheTester/CacheTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
