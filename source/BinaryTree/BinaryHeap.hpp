@@ -67,6 +67,7 @@ void BinaryHeap<T>::_bubbleUp(int index) {
 
     if (heap[parent] < heap[index]) {
         T tmp = heap[parent];
+        heap[parent] = heap[index];
         heap[index] = tmp;
         this->_bubbleUp(parent);
     }
