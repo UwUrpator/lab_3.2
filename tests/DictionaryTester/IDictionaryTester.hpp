@@ -132,13 +132,15 @@ void IDictionaryTester<T>::TestRemove() {
     IDictionary<string, int>* dict = new T(3);
 
     dict->Add("Peter", 30);
-    dict->Remove("Peter");
+    dict->Add("Jack", 28);
+    dict->Add("Bob", 32);
+    dict->Remove("Bob");
 
     Informator(
             (
-                    !dict->ContainsKey("Peter") &&
+                    !dict->ContainsKey("Bob") &&
                     dict->Capacity() == 3 &&
-                    dict->Count() == 0
+                    dict->Count() == 2
             ),
             "Success: void " + this->name + "::Remove(); Removed correctly",
             "Error: void " + this->name + "::Remove(); Removed incorrectly"
