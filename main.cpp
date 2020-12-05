@@ -7,9 +7,7 @@
 #include "tests/TestRunner.hpp"
 
 int main() {
-    //UIStarter();
-
-   TestRunner();
+    UIStarter();
 
     return 0;
 }

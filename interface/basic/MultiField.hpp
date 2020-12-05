@@ -13,9 +13,8 @@ public:
 
 template<class T>
 MultiField<T>::MultiField(string message, int size) {
-    this->items = new int[size];
+    this->items = new T[size];
 
-    cout << endl;
     cout << message << " (" << size << " argument(s)):\n";
     for (int i = 0; i < size; ++i) {
         while (!(cin >> items[i])) {

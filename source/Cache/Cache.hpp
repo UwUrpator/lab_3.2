@@ -16,6 +16,8 @@ private:
     K _GetMaxKey();
 
 public:
+    Cache(int capacity);
+
     Cache(const Sequence<K>* sequence, int capacity);
 
     void Tick();
@@ -24,6 +26,11 @@ public:
 
     IDictionary<K, int>* Show();
 };
+
+template<class K>
+Cache<K>::Cache(int capacity) {
+    this->dictionary = new DictionaryBinaryTree<K, int>(capacity);
+}
 
 template<class K>
 Cache<K>::Cache(const Sequence<K>* sequence, int capacity) {
@@ -65,6 +72,10 @@ void Cache<K>::Tick() {
 
 template<class K>
 IDictionary<K, int>* Cache<K>::Show() {
+    if (this->dictionary->Count() == 0) {
+        return NULL;
+    }
+
     return this->dictionary;
 }
 
@@ -85,3 +96,4 @@ K Cache<K>::_GetMaxKey() {
 
     return maxKey;
 }
+

@@ -54,6 +54,7 @@ set(SOURCE_FILES
         interface/basic/SingleField.hpp
         interface/basic/MultiField.hpp
         interface/UIStarter.hpp
+        interface/EnterCacheUI.hpp
         )
 
 add_executable(lab_3.2 ${SOURCE_FILES})

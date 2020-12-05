@@ -1,10 +1,7 @@
 #pragma once
 
 #include "../tests/TestRunner.hpp"
-#include "../source/LinearForm/LinearForm.hpp"
-//#include "LinearFormUI.hpp"
-#include "SortRandomDataUI.hpp"
-#include "SortEnteredDataUI.hpp"
+#include "EnterCacheUI.hpp"
 #include "basic/SelectorUI.hpp"
 
 class UIStarter {
@@ -22,18 +19,15 @@ UIStarter::UIStarter() {
                 TestRunner();
                 break;
             case 2:
-                SortRandomDataUI();
+                EnterCacheUI();
                 break;
             case 3:
-                SortEnteredDataUI();
-                break;
-            case 4:
                 return;
         }
     }
 }
 
 int UIStarter::Selector() {
-    string answers[4] = {"Run tests", "Sort random data", "Sort entered data", "Exit"};
-    return SelectorUI("What do you want to do", 4, answers).choice;
+    string answers[3] = {"Run tests", "Work with cache", "Exit"};
+    return SelectorUI("What do you want to do", 3, answers).choice;
 }
