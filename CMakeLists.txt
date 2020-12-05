@@ -7,6 +7,8 @@ include_directories(source)
 
 set(SOURCE_FILES
         main.cpp
+
+        #source
         source/ArraySequence/ArraySequence.hpp
         source/DynamicArray/DynamicArray.hpp
         source/DynamicArray/Optional.hpp
@@ -19,7 +21,6 @@ set(SOURCE_FILES
         source/Sorter/QuickSorter.hpp
         source/Sorter/ShellSorter.hpp
         source/BinaryTree/BinaryTree.hpp
-
         source/BinaryTree/TreeNode.hpp
         source/Set/ISet.hpp
         source/Set/SetSequence.hpp
@@ -29,13 +30,14 @@ set(SOURCE_FILES
         source/Dictionary/DictionarySequence.hpp
         source/Dictionary/DictionaryBinaryTree.hpp
         source/Cache/Cache.hpp
+
+        #tests
         tests/Informator/Informator.hpp
         tests/DummyClass/DummyClass.hpp
         tests/DynamicArrayTester/DynamicArrayTester.hpp
         tests/LinkedListTester/LinkedListTester.hpp
         tests/ArraySequenceTester/ArraySequenceTester.hpp
         tests/ListSequenceTester/ListSequenceTester.hpp
-        #tests/LinearFormTester/LinearFormTester.hpp
         tests/SorterTester/QuickSorterTester.hpp
         tests/SorterTester/ShellSorterTester.hpp
         tests/SetTester/ISetTester.hpp
@@ -46,11 +48,12 @@ set(SOURCE_FILES
         tests/BinaryTreeTester/BinaryTreeTester.hpp
         tests/CacheTester/CacheTester.hpp
         tests/TestRunner.hpp
+
+        #interface
         interface/basic/SelectorUI.hpp
         interface/basic/SingleField.hpp
         interface/basic/MultiField.hpp
         interface/UIStarter.hpp
-        #interface/LinearFormUI.hpp
         )
 
 add_executable(lab_3.2 ${SOURCE_FILES})
