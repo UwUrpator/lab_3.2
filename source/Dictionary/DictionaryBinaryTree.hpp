@@ -32,6 +32,8 @@ public:
     virtual void Remove(const K key) override;
 
     virtual void Change(const K key, T element) override;
+
+    virtual Sequence<K>* GetKeys() override;
 };
 
 template<class K, class T>
@@ -164,5 +166,20 @@ void DictionaryBinaryTree<K, T>::Change(const K key, T element) {
             this->items->insert(Pair<K, T>(key, element));
         }
     }*/
+}
+
+template<class K, class T>
+Sequence<K> *DictionaryBinaryTree<K, T>::GetKeys() {
+    if (this->count <= 0) {
+        throw new Exception;
+    }
+
+    Sequence<Pair<K, T>>* tmpSequence = this->items->Get();
+    Sequence<K>* resultSequence = new ArraySequence<K>(this->Count());
+    for (int i = 0; i < this->count; ++i) {
+        resultSequence->Set(tmpSequence->Get(i).GetFirst(), i);
+    }
+
+    return resultSequence;
 }
 

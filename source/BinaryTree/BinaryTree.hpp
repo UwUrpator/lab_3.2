@@ -8,6 +8,8 @@
 #include "TreeNode.hpp"
 #include "../Exception.hpp"
 #include "../source/LinkedList/LinkedList.hpp"
+#include "../Sequence/Sequence.hpp"
+#include "../ArraySequence/ArraySequence.hpp"
 
 using namespace std;
 
@@ -42,7 +44,7 @@ public:
 
     int Count();
 
-    T Get(int index);
+    Sequence<T>* Get();
 
 private:
     TreeNode<T>* root;
@@ -75,7 +77,7 @@ private:
 
     int _Count(TreeNode<T>* root);
 
-    T _Get(int index, TreeNode<T>* node);
+    Sequence<T>* _Get(TreeNode<T>* node, Sequence<T>* sequence, int* index);
 };
 
 template<typename T>
@@ -385,13 +387,14 @@ int BinaryTree<T>::_Count(TreeNode<T>* root) {
 }
 
 template<typename T>
-T BinaryTree<T>::Get(int index) {
-    return this->_Get(index, this->root);
+Sequence<T>* BinaryTree<T>::Get() {
+    int index = 0;
+    return this->_Get(this->root, new ArraySequence<T>(this->Count()), &index);
 }
 
 template<typename T>
-T BinaryTree<T>::_Get(int index, TreeNode<T> *node) {
-    if (index < 0 || index >= this->Count()) {
+Sequence<T>* BinaryTree<T>::_Get(TreeNode<T> *node, Sequence<T>* sequence, int* index) {
+    /*if (index < 0 || index >= this->Count()) {
         throw new Exception;
     }
 
@@ -412,5 +415,19 @@ T BinaryTree<T>::_Get(int index, TreeNode<T> *node) {
 
         q.pop();
         cur_index++;
+    }*/
+
+    if (this->Count() == 0) {
+        throw new Exception;
     }
+
+    if (node != NULL) {
+        sequence->Set(*node->value, *index);
+
+        (*index)++;
+        this->_Get(node->left, sequence, index);
+        this->_Get(node->right, sequence, index);
+    }
+
+    return sequence;
 }

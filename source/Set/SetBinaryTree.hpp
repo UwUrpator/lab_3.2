@@ -34,7 +34,7 @@ void SetBinaryTree<T>::Insert(T value) {
 
 template<class T>
 T SetBinaryTree<T>::Get(const int index) const {
-    return this->items->Get(index);
+   return this->items->Get()->Get(index);
 }
 
 template<class T>

@@ -29,6 +29,8 @@ private:
     void TestRemove();
 
     void TestChange();
+
+    void TestGetKeys();
 };
 
 template<class T>
@@ -43,6 +45,7 @@ IDictionaryTester<T>::IDictionaryTester(string name) {
     this->TestAdd();
     this->TestRemove();
     this->TestChange();
+    this->TestGetKeys();
 }
 
 template<class T>
@@ -181,6 +184,27 @@ void IDictionaryTester<T>::TestChange() {
             ),
             "Success: void " + this->name + "::Change(); Changed correctly",
             "Error: void " + this->name + "::Change(); Changed incorrectly"
+    );
+}
+
+template<class T>
+void IDictionaryTester<T>::TestGetKeys() {
+    IDictionary<string, int>* dict = new T(3);
+
+    dict->Add("Peter", 30);
+    dict->Add("Jack", 28);
+    dict->Add("Bob", 32);
+
+    Sequence<string>* resultSeq = dict->GetKeys();
+
+    Informator(
+            (
+                    resultSeq->Get(0) == "Peter" &&
+                    resultSeq->Get(1) == "Jack" &&
+                    resultSeq->Get(2) == "Bob"
+            ),
+            "Success: Sequence<K>* " + this->name + "::GetKeys(); Correct keys",
+            "Error: Sequence<K>* " + this->name + "::GetKeys(); Incorrect kyes"
     );
 }
 

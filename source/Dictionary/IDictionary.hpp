@@ -21,4 +21,6 @@ public:
     virtual void Remove(const K key) = 0;
 
     virtual void Change(const K key, T element) = 0;
+
+    virtual Sequence<K>* GetKeys() = 0;
 };

@@ -467,8 +467,10 @@ void BinaryTreeTester::testGet() {
     binaryTree->Insert(7);
     binaryTree->Insert(13);
 
+    Sequence<int>* sequence = binaryTree->Get();
+
     Informator(
-            (binaryTree->Get(0) == 8),
+            (sequence->Get(8) == 13),
             "Success: BinaryTree<T>::Get(int index); correct item was gotten",
             "Error: BinaryTree<T>::Get(int index); incorrect item was gotten"
     );

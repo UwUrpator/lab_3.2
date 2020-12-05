@@ -29,6 +29,8 @@ public:
     virtual void Remove(const K key) override;
 
     virtual void Change(const K key, T element) override;
+
+    virtual Sequence<K>* GetKeys() override;
 };
 
 template<class K, class T>
@@ -123,5 +125,19 @@ void DictionarySequence<K, T>::Change(const K key, T element) {
     }
 
     throw new Exception;
+}
+
+template<class K, class T>
+Sequence<K> *DictionarySequence<K, T>::GetKeys() {
+    if (this->count <= 0) {
+        throw new Exception;
+    }
+
+    Sequence<K>* resultSequence = new ArraySequence<K>(this->count);
+    for (int i = 0; i < this->count; ++i) {
+        resultSequence->Set(this->items->Get(i).GetFirst(), i);
+    }
+
+    return resultSequence;
 }
 
