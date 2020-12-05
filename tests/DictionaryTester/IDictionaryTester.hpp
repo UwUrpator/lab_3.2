@@ -95,21 +95,6 @@ void IDictionaryTester<T>::TestGet() {
     );
 }
 
-/*template<class T>
-void IDictionaryTester<T>::TestGetKeyByIndex() {
-    IDictionary<string, int>* dict = new T(3);
-
-    dict->Add("Bob", 32);
-    dict->Add("Peter", 30);
-    dict->Add("Jack", 28);
-
-    Informator(
-            (dict->GetKeyByIndex(2) == "Jack"),
-            "Success: T " + this->name + "::GetKeyByIndex(); Correct item was gotten",
-            "Error: T " + this->name + "::GetKeyByIndex(); Incorrect item was gotten"
-    );
-}*/
-
 template<class T>
 void IDictionaryTester<T>::TestContainsKey() {
     IDictionary<string, int>* dict = new T(3);

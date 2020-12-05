@@ -164,10 +164,6 @@ LinkedList<T> *LinkedList<T>::GetSubList(int start_index, int end_index) {
 
 template<class T>
 int LinkedList<T>::GetLength() {
-    /*if (!head) {
-        throw new Exception;
-    }*/
-
     int len = 0;
     Node<T> *cur = this->head;
 

@@ -13,7 +13,6 @@
 
 using namespace std;
 
-
 template<typename T>
 class BinaryTree {
 public:
@@ -394,29 +393,6 @@ Sequence<T>* BinaryTree<T>::Get() {
 
 template<typename T>
 Sequence<T>* BinaryTree<T>::_Get(TreeNode<T> *node, Sequence<T>* sequence, int* index) {
-    /*if (index < 0 || index >= this->Count()) {
-        throw new Exception;
-    }
-
-    int cur_index = 0;
-    queue<TreeNode<T>*> q;
-
-    q.push(root);
-
-    while(!q.empty()) {
-        if (cur_index == index) {
-            return *(q.front()->value);
-        }
-
-        if (q.front()->left)
-            q.push(q.front()->left);
-        if (q.front()->right)
-            q.push(q.front()->right);
-
-        q.pop();
-        cur_index++;
-    }*/
-
     if (this->Count() == 0) {
         throw new Exception;
     }

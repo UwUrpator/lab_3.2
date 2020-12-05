@@ -8,7 +8,6 @@
 #include "SorterTester/QuickSorterTester.hpp"
 #include "SorterTester/ShellSorterTester.hpp"
 #include "BinaryTreeTester/BinaryTreeTester.hpp"
-#include "BinaryTreeTester/BinaryHeapTester.hpp"
 #include "SetTester/SetTester.hpp"
 #include "DictionaryTester/PairTester.hpp"
 #include "DictionaryTester/DictionaryTester.hpp"
@@ -27,7 +26,6 @@ TestRunner::TestRunner() {
     QuickSorterTester();
     ShellSorterTester();
     BinaryTreeTester();
-    BinaryHeapTester();
     SetTester();
     PairTester();
     DictionaryTester();

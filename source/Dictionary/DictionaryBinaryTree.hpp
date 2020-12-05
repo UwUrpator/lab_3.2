@@ -3,14 +3,12 @@
 #include "../Dictionary/IDictionary.hpp"
 #include "../Dictionary/Pair.hpp"
 #include "../BinaryTree/BinaryTree.hpp"
-//#include "../BinaryTree/BinaryHeap.hpp"
 
 template <class K, class T>
 class DictionaryBinaryTree : public IDictionary<K, T> {
 private:
     BinaryTree<Pair<K, T>>* items;
 
-    //BinaryHeap<Pair<K, T>>* items;
     int capacity;
     int count;
 
@@ -22,8 +20,6 @@ public:
     virtual int Capacity() const override;
 
     virtual T Get(const K key) const override;
-
-    //virtual K GetKeyByIndex(const int index) const override;
 
     virtual bool ContainsKey(const K key) const override;
 
@@ -39,7 +35,6 @@ public:
 template<class K, class T>
 DictionaryBinaryTree<K, T>::DictionaryBinaryTree(int capacity) {
     this->items = new BinaryTree<Pair<K, T>>();
-    //this->items = new BinaryHeap<Pair<K, T>>();
     this->capacity = capacity;
     this->count = 0;
 }
@@ -56,19 +51,6 @@ int DictionaryBinaryTree<K, T>::Capacity() const {
 
 template<class K, class T>
 T DictionaryBinaryTree<K, T>::Get(const K key) const {
-    /*if (this->count <= 0) {
-        throw new Exception;
-    }
-
-    for (int i = 0; i < this->count; ++i) {
-        Pair<K, T> resultItem = this->items->search(i);
-        if (resultItem.GetFirst() == key) {
-            return resultItem.GetSecond();
-        }
-    }
-
-    throw new Exception;*/
-
     if (this->count <= 0) {
         throw new Exception;
     }
@@ -81,26 +63,8 @@ T DictionaryBinaryTree<K, T>::Get(const K key) const {
     throw new Exception;
 }
 
-/*template<class K, class T>
-K DictionaryBinaryTree<K, T>::GetKeyByIndex(const int index) const {
-    if (this->count <= 0 || this->count <= index || index < 0) {
-        throw new Exception;
-    }
-
-    return this->items->search(index).GetFirst();
-}*/
-
 template<class K, class T>
 bool DictionaryBinaryTree<K, T>::ContainsKey(const K key) const {
-    /*for (int i = 0; i < this->count; ++i) {
-        Pair<K, T> resultItem = this->items->search(i);
-        if (resultItem.GetFirst() == key) {
-            return true;
-        }
-    }
-
-    return false;*/
-
     return (this->items->Search(Pair<K, T>(key, T())) != NULL);
 }
 
@@ -110,11 +74,6 @@ void DictionaryBinaryTree<K, T>::Add(const K key, const T element) {
         this->items->Insert(Pair<K, T>(key, element));
         this->count++;
     }
-
-    /*if (this->count != this->capacity) {
-        this->items->insert(Pair<K, T>(key, element));
-        this->count++;
-    }*/
 }
 
 template<class K, class T>
@@ -125,18 +84,6 @@ void DictionaryBinaryTree<K, T>::Remove(const K key) {
 
     this->items->DeleteTreeNode(Pair<K, T>(key, T()));
     this->count--;
-
-    /*if (this->count <= 0) {
-        throw new Exception;
-    }
-
-    for (int i = 0; i < this->count; ++i) {
-        Pair<K, T> resultItem = this->items->search(i);
-        if (resultItem.GetFirst() == key) {
-            this->items->remove(i);
-            this->count--;
-        }
-    }*/
 }
 
 template<class K, class T>
@@ -152,20 +99,6 @@ void DictionaryBinaryTree<K, T>::Change(const K key, T element) {
     }
 
     throw new Exception;
-
-    /*if (this->count <= 0) {
-        throw new Exception;
-    }
-
-    for (int i = 0; i < this->count; ++i) {
-        Pair<K, T> resultItem = this->items->search(i);
-        if (resultItem.GetFirst() == key) {
-            //this->items->change(i, Pair<K, T>(key, element));
-
-            this->items->remove(i);
-            this->items->insert(Pair<K, T>(key, element));
-        }
-    }*/
 }
 
 template<class K, class T>
@@ -182,4 +115,3 @@ Sequence<K> *DictionaryBinaryTree<K, T>::GetKeys() {
 
     return resultSequence;
 }
-

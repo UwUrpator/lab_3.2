@@ -20,8 +20,6 @@ set(SOURCE_FILES
         source/Sorter/ShellSorter.hpp
         source/BinaryTree/BinaryTree.hpp
 
-        source/BinaryTree/BinaryHeap.hpp
-
         source/BinaryTree/TreeNode.hpp
         source/Set/ISet.hpp
         source/Set/SetSequence.hpp
@@ -46,7 +44,6 @@ set(SOURCE_FILES
         tests/DictionaryTester/IDictionaryTester.hpp
         tests/DictionaryTester/DictionaryTester.hpp
         tests/BinaryTreeTester/BinaryTreeTester.hpp
-        tests/BinaryTreeTester/BinaryHeapTester.hpp
         tests/CacheTester/CacheTester.hpp
         tests/TestRunner.hpp
         interface/basic/SelectorUI.hpp

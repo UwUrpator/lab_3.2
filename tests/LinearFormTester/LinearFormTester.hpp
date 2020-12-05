@@ -448,8 +448,6 @@ void LinearFormTester::TestAdd() {
 
     LinearForm<complex<double>> lfRes = *lfComplex1 + *lfComplex2;
 
-    //*lfComplex1 = *lfComplex1 + *lfComplex2;
-
     for (int i = 0; i < this->dummyComplexArrLen; ++i) {
         if (i < 1) {
             complex<double> expectedItem = this->dummyComplexArr[i] * 2.0;
@@ -530,8 +528,6 @@ void LinearFormTester::TestMultiply() {
     LinearForm<double> *lf1 = new LinearForm<double>(this->dummyDoubleArr, this->dummyDoubleArrLen);
 
     LinearForm<double> lfRes = *lf1 * 2;
-
-    //*lf1 = *lf1 * 2;
 
     for (int i = 0; i < this->dummyDoubleArrLen; ++i) {
         double expectedItem = this->dummyDoubleArr[i] * 2.0;
@@ -803,8 +799,6 @@ void LinearFormTester::TestMinus() {
     LinearForm<complex<double>> *lfComplex2 = new LinearForm<complex<double>>(this->dummyComplexArr, 1);
 
     LinearForm<complex<double>> lfRes = *lfComplex1 - *lfComplex2;
-
-    //*lfComplex1 = *lfComplex1 + *lfComplex2;
 
     for (int i = 0; i < this->dummyComplexArrLen; ++i) {
         if (i < 1) {
