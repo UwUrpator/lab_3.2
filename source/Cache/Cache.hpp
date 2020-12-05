@@ -13,6 +13,8 @@ class Cache {
 private:
     IDictionary<K, int>* dictionary;
 
+    K _GetMaxKey();
+
 public:
     Cache(const Sequence<K>* sequence, int capacity);
 
@@ -20,7 +22,7 @@ public:
 
     void Update(const Sequence<K>* sequence);
 
-    //IDictionary<K, int> Show();
+    IDictionary<K, int>* Show();
 };
 
 template<class K>
@@ -28,18 +30,6 @@ Cache<K>::Cache(const Sequence<K>* sequence, int capacity) {
     this->dictionary = new DictionaryBinaryTree<K, int>(capacity);
 
     Update(sequence);
-
-    /*for (int i = 0; i < sequence.GetLength(); ++i) {
-        K key = sequence.Get(i);
-        if (this->dictionary->ContainsKey(key)) {
-            this->dictionary->Change(key, this->dictionary->Get(key) + 1);
-        }
-        else {
-            if (this->dictionary->Count() < this->dictionary->Capacity()) {
-                this->dictionary->Add(key, 1);
-            }
-        }
-    }*/
 }
 
 template<class K>
@@ -51,13 +41,12 @@ void Cache<K>::Update(const Sequence<K>* sequence) {
             this->dictionary->Change(key, 0);
         }
         else {
-            if (this->dictionary->Count() < this->dictionary->Capacity()) {
-                this->dictionary->Add(key, 0);
+            if (this->dictionary->Count() >= this->dictionary->Capacity()) {
+                K maxKey = this->_GetMaxKey();
+                this->dictionary->Remove(maxKey);
             }
-            else {
-                /*K oldKey = this->dictionary->GetKeyByIndex(0);
-                this->dictionary->Change(oldKey, 0);*/
-            }
+
+            this->dictionary->Add(key, 0);
         }
 
         this->Tick();
@@ -66,9 +55,33 @@ void Cache<K>::Update(const Sequence<K>* sequence) {
 
 template<class K>
 void Cache<K>::Tick() {
-    for (int i = 0; i < this->dictionary->Count(); ++i) {
-        /*K key = this->dictionary->GetKeyByIndex(i);
-        this->dictionary->Change(key, this->dictionary->Get(key) + 1);*/
+    Sequence<K>* keysSequence = this->dictionary->GetKeys();
+
+    for (int i = 0; i < keysSequence->GetLength(); ++i) {
+        K key = keysSequence->Get(i);
+        this->dictionary->Change(key, this->dictionary->Get(key) + 1);
     }
 }
 
+template<class K>
+IDictionary<K, int>* Cache<K>::Show() {
+    return this->dictionary;
+}
+
+template<class K>
+K Cache<K>::_GetMaxKey() {
+    int max = -1;
+    K maxKey = K();
+    Sequence<K>* keysSequence = this->dictionary->GetKeys();
+
+    for (int i = 0; i < keysSequence->GetLength(); ++i) {
+        K currentKey = keysSequence->Get(i);
+        int currentItem = this->dictionary->Get(keysSequence->Get(i));
+        if (currentItem > max) {
+            max = currentItem;
+            maxKey = currentKey;
+        }
+    }
+
+    return maxKey;
+}

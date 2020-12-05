@@ -31,5 +31,5 @@ TestRunner::TestRunner() {
     SetTester();
     PairTester();
     DictionaryTester();
-    //CacheTester();
+    CacheTester();
 }
