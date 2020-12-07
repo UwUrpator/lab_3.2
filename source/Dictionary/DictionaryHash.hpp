@@ -212,9 +212,11 @@ int DictionaryHash<K, T>::GetHash2(K key, int capacity) const {
 template<class K, class T>
 Sequence<K> *DictionaryHash<K, T>::GetKeys() {
     Sequence<K>* resultSequence = new ArraySequence<K>(this->count);
+    int j = 0;
     for (int i = 0; i < this->capacity; ++i) {
         if (this->items[i] && this->items[i]->state) {
-            resultSequence->Set(this->items[i]->value.GetFirst(), i);
+            resultSequence->Set(this->items[i]->value.GetFirst(), j);
+            j++;
         }
     }
 

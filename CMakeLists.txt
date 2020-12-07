@@ -35,8 +35,6 @@ set(SOURCE_FILES
         tests/LinkedListTester/LinkedListTester.hpp
         tests/ArraySequenceTester/ArraySequenceTester.hpp
         tests/ListSequenceTester/ListSequenceTester.hpp
-        tests/SorterTester/QuickSorterTester.hpp
-        tests/SorterTester/ShellSorterTester.hpp
         tests/SetTester/ISetTester.hpp
         tests/SetTester/SetTester.hpp
         tests/DictionaryTester/PairTester.hpp

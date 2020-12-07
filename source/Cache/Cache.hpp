@@ -3,7 +3,7 @@
 #include "../Sequence/Sequence.hpp"
 #include "../ArraySequence/ArraySequence.hpp"
 #include "../Dictionary/IDictionary.hpp"
-#include "../Dictionary/DictionaryBinaryTree.hpp"
+#include "../Dictionary/DictionaryHash.hpp"
 #include "../Dictionary/Pair.hpp"
 
 using namespace std;
@@ -29,12 +29,12 @@ public:
 
 template<class K>
 Cache<K>::Cache(int capacity) {
-    this->dictionary = new DictionaryBinaryTree<K, int>(capacity);
+    this->dictionary = new DictionaryHash<K, int>(capacity);
 }
 
 template<class K>
 Cache<K>::Cache(const Sequence<K>* sequence, int capacity) {
-    this->dictionary = new DictionaryBinaryTree<K, int>(capacity);
+    this->dictionary = new DictionaryHash<K, int>(capacity);
 
     Update(sequence);
 }
