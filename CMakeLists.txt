@@ -29,6 +29,7 @@ set(SOURCE_FILES
         source/Dictionary/IDictionary.hpp
         source/Dictionary/DictionarySequence.hpp
         source/Dictionary/DictionaryBinaryTree.hpp
+        source/Dictionary/DictionaryHash.hpp
         source/Cache/Cache.hpp
 
         #tests

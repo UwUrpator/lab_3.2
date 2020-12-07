@@ -105,13 +105,13 @@ void IDictionaryTester<T>::TestContainsKey() {
     Informator(
             (dict->ContainsKey("Jack")),
             "Success: bool " + this->name + "::ContainsKey(); Such item is contained",
-            "Error: bool " + this->name + "::Capacity(); Such item is contained, but function returns False"
+            "Error: bool " + this->name + "::ContainsKey(); Such item is contained, but function returns False"
     );
 
     Informator(
             (!dict->ContainsKey("Bill")),
             "Success: bool " + this->name + "::ContainsKey(); Such item is not contained",
-            "Error: bool " + this->name + "::Capacity(); Such item is not contained, but function returns True"
+            "Error: bool " + this->name + "::ContainsKey(); Such item is not contained, but function returns True"
     );
 }
 
@@ -184,9 +184,16 @@ void IDictionaryTester<T>::TestGetKeys() {
 
     Informator(
             (
-                    resultSeq->Get(0) == "Peter" &&
-                    resultSeq->Get(1) == "Jack" &&
-                    resultSeq->Get(2) == "Bob"
+                (
+                        resultSeq->Get(0) == "Peter" &&
+                        resultSeq->Get(1) == "Jack" &&
+                        resultSeq->Get(2) == "Bob"
+                ) ||
+                (
+                        resultSeq->Get(0) == "Jack" &&
+                        resultSeq->Get(1) == "Peter" &&
+                        resultSeq->Get(2) == "Bob"
+                )
             ),
             "Success: Sequence<K>* " + this->name + "::GetKeys(); Correct keys",
             "Error: Sequence<K>* " + this->name + "::GetKeys(); Incorrect kyes"

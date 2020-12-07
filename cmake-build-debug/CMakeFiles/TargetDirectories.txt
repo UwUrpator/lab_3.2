@@ -1,3 +1,0 @@
-C:/Users/Uzurpator/CLionProjects/3rd_semester/lab_3.2/cmake-build-debug/CMakeFiles/lab_3.2.dir
-C:/Users/Uzurpator/CLionProjects/3rd_semester/lab_3.2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Uzurpator/CLionProjects/3rd_semester/lab_3.2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -19,7 +19,7 @@ public:
 };
 
 TestRunner::TestRunner() {
-    DynamicArrayTester();
+    /*DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
@@ -27,7 +27,7 @@ TestRunner::TestRunner() {
     ShellSorterTester();
     BinaryTreeTester();
     SetTester();
-    PairTester();
+    PairTester();*/
     DictionaryTester();
-    CacheTester();
+    //CacheTester();
 }

@@ -20,8 +20,6 @@ public:
 
     virtual T Get(const K key) const override;
 
-    //virtual K GetKeyByIndex(const int index) const override;
-
     virtual bool ContainsKey(const K key) const override;
 
     virtual void Add(const K key, const T element) override;
