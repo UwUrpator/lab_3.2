@@ -12,14 +12,10 @@ set(SOURCE_FILES
         source/ArraySequence/ArraySequence.hpp
         source/DynamicArray/DynamicArray.hpp
         source/DynamicArray/Optional.hpp
-        source/LinearForm/LinearForm.hpp
         source/LinkedList/LinkedList.hpp
         source/LinkedList/Node.hpp
         source/ListSequence/ListSequence.hpp
         source/Sequence/Sequence.hpp
-        source/Sorter/ISorter.hpp
-        source/Sorter/QuickSorter.hpp
-        source/Sorter/ShellSorter.hpp
         source/BinaryTree/BinaryTree.hpp
         source/BinaryTree/TreeNode.hpp
         source/Set/ISet.hpp

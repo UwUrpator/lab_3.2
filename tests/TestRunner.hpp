@@ -2,11 +2,8 @@
 
 #include "ArraySequenceTester/ArraySequenceTester.hpp"
 #include "DynamicArrayTester/DynamicArrayTester.hpp"
-#include "LinearFormTester/LinearFormTester.hpp"
 #include "LinkedListTester/LinkedListTester.hpp"
 #include "ListSequenceTester/ListSequenceTester.hpp"
-#include "SorterTester/QuickSorterTester.hpp"
-#include "SorterTester/ShellSorterTester.hpp"
 #include "BinaryTreeTester/BinaryTreeTester.hpp"
 #include "SetTester/SetTester.hpp"
 #include "DictionaryTester/PairTester.hpp"
@@ -19,15 +16,13 @@ public:
 };
 
 TestRunner::TestRunner() {
-    /*DynamicArrayTester();
+    DynamicArrayTester();
     LinkedListTester();
     ListSequenceTester();
     ArraySequenceTester();
-    QuickSorterTester();
-    ShellSorterTester();
     BinaryTreeTester();
     SetTester();
-    PairTester();*/
+    PairTester();
     DictionaryTester();
-    //CacheTester();
+    CacheTester();
 }
