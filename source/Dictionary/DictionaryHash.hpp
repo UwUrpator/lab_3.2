@@ -115,7 +115,7 @@ void DictionaryHash<K, T>::Add(const K key, const T element) {
             return;
         }
 
-        if (!(this->ContainsKey(key)) && !this->items[hash1]->state && firstDeleted == -1) {
+        if (!this->items[hash1]->state && firstDeleted == -1) {
             firstDeleted = hash1;
         }
 
@@ -214,6 +214,7 @@ Sequence<K> *DictionaryHash<K, T>::GetKeys() {
     Sequence<K>* resultSequence = new ArraySequence<K>(this->count);
     int j = 0;
     for (int i = 0; i < this->capacity; ++i) {
+        Node* n = this->items[i];
         if (this->items[i] && this->items[i]->state) {
             resultSequence->Set(this->items[i]->value.GetFirst(), j);
             j++;
