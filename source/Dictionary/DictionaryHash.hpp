@@ -195,7 +195,8 @@ int DictionaryHash<K, T>::GetHash(K key, int capacity, int seed) const {
     int hash = 0;
     for (int i = 0; i != key.size(); ++i)
         hash = (seed * hash + key[i]) % capacity;
-    hash = (hash * 2 + 1) % capacity;
+    //hash = (hash * 2 + 1) % capacity;
+    hash = 1 + (hash % (capacity - 1));
     return hash;
 }
 
